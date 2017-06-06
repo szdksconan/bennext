@@ -1,0 +1,36 @@
+/*
+.wrap .img-box{padding: 7% 0 0 0;}
+.wrap .rong-bg{position: absolute;top:50%;left:50%;margin-left:-25.25%;margin-top:-10.5%;width: 51.45%;height: 49.65;}
+.wrap .right{position: absolute;left:50.65%;top:28.7%;top:20.8% \0;z-index: 9999;width: 25.53%;}
+.wrap .right .jituan-p{height:3rem /0;line-height: 3rem;clear: both;}
+.wrap .right p span{width:50%;padding: 0.9em 0 0.9em 0 \0;background:#CACACA;font-weight:bold;display: inline-block;text-align: center;font-size: 1.2rem;cursor: pointer;}
+.wrap .right .shequ-1{background:#B5B5B5; }
+
+.wrap .right input{color:#ABABAB;cursor:pointer;width: 85.5%;height: 1.5em;background: #E9E9E9;border: none;margin: 4.2% 0 0 5.5%;padding: 0.5em 0 0.5em 0.7em;}
+.wrap .right .yanzheng{width: 42.5%;padding: 0.5em 0 0.5em 0.7em;float: left;}
+.wrap .right .code{width: 36.5%;height: 2.1em;display: block;margin: 4.2% 0 0 5.5%;margin:1% 0 0 5.5% \0;float: left;text-align: center;}
+.wrap .right button{width: 89%;height: 2.5em;font-size:1.2em;background: #FB552F;border: none;margin: 6% 0 0 5.5%;margin: 5% 0 0 5.5% \0;color: #ffffff;font-weight:bold;}
+.wrap .right .high-bg{background:#ffffff;}
+*/
+/* #loginform span.textbox{width:375px !important; height:50px !important;border-radius:40px;} */
+.loginput{width:375px;border-radius:40px;height:40px;padding:5px;border:1px solid #fff;text-align: center;font-size: 18px;}
+#loginform div:nth-child(3) span.textbox{width:187px !important; height:50px !important;border-radius:40px 0 0 40px; margin-right:2px;}
+/* #loginform span.textbox-focused{border:2px solid #7ec5ea;} */
+#loginform span.textbox-focused{border:1px solid #fff;}
+#loginform span.textbox input{width:351px !important; height:26px !important; text-align:center; font-size:18px;font-weight:500;}
+#loginform div:nth-child(3) span.textbox input{width:175px !important;}
+a#login{width:375px !important; height:40px; line-height:40px; border-radius:40px;}
+a#login span.l-btn-text{line-height:40px;}
+a#login span.l-btn-text span{font-size:18px; font-weight:500; font-family:黑体; color:#fff;}
+.zcwj{margin-bottom:20px;height:50px;line-height:50px;color:#ccc;font-weight:500;}
+.zcwj span{font-size:18px; font-family:黑体; color:#bababa; margin:0 40px; cursor:pointer;}
+span.textbox-yz{width:180px !important;display: inline-block;vertical-align: middle; height:50px !important;line-height:50px;border-radius:0 40px 40px 0;}
+.yzcode {
+	width: 158px;
+    height: 28px;
+    border: 0;
+    text-align: center;
+    border-radius: 40px 0 0 40px;
+    padding: 12px;
+    font-size: 18px;
+    }

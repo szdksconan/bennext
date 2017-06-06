@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- Title and other stuffs -->
+  <title>后台登陆页面</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+  <!-- Stylesheets -->
+  <link href="style/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="style/font-awesome.css">
+  <link href="style/style.css" rel="stylesheet">
+  <link href="style/bootstrap-responsive.css" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon/favicon.png">
+<link href="style/lzl.css" rel="stylesheet">
+<style type="text/css">
+body{background: url(img/loginbg.jpg) no-repeat scroll center top transparent;border: 0;}
+
+@media screen and (max-width: 1600px) {
+body{background: url(img/loginbgm.jpg) no-repeat scroll center top transparent;border: 0;}
+.ylogin{margin: 340px auto 0px;}
+.admin-form{max-width: 500px;}
+.lzl2{margin-left: 120px;}
+.lzl5{margin-top: 20px}
+.lzl3{top: 130px;margin-left: 150px;}
+.lzl6{top: 50px;width: 160px;height: 70px;margin-left: -140px;}
+.lzl7{top: 50px;width: 160px;height: 70px;margin-left: 50px;}
+}
+@media screen and (max-width: 1440px) {
+body{background: url(img/loginbgs.jpg) no-repeat scroll center top transparent;border: 0;}
+.ylogin{margin: 300px auto 0px;}
+.admin-form{max-width: 450px;}
+.lzl2{margin-left: 110px;}
+.lzl5{margin-top: 15px}
+.lzl3{top: 115px;margin-left: 140px;}
+.lzl6{top: 40px;width: 140px;height: 60px;margin-left: -125px;}
+.lzl7{top: 40px;width: 140px;height: 60px;margin-left: 50px;}
+}
+</style>
+
+<script src="js/jquery.js"></script>
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+<!-- Form area -->
+<div class="admin-form ylogin">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Widget starts -->
+            <div class="widget worange yloginctt">
+
+              <div class="widget-content">
+                <div class="padd">
+                  <!-- Login form -->
+                  <form class="form-horizontal">
+                    <!-- Email -->
+                    <div class="form-group">
+                      <div class="col-lg-9 lzl2">
+                        <input type="text" class="form-control lzl4" id="inputname" placeholder="用户名不区分大小写" maxlength="16" required="required" />
+                      </div>
+                    </div>
+                    <!-- Password -->
+                    <div class="form-group">
+                      <div class="col-lg-9 lzl2">
+                        <input type="password" class="form-control lzl5" id="inputpasswd" placeholder="请输入密码" maxlength="16" required="required" />
+                      </div>
+                    </div>
+
+                        <div class="col-lg-9 col-lg-offset-2">
+							<button type="button" class="lzl6" id="login"></button>
+							<button type="reset" class="lzl7"></button>
+						</div>
+                    <br />
+                  </form>
+				  
+				</div>
+                </div>
+              
+
+                 <a class="lzl3" href="findpasswd.html"></a>
+
+            </div>  
+      </div>
+    </div>
+  </div> 
+</div>
+	
+		
+
+
+<div id="ziye-tishixx">
+
+<div class="notification notigreen">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-ok-sign"></i><h1></h1><p></p></div>
+</div>
+
+<div class="notification notired">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-remove-sign"></i><h1></h1><p></p></div>
+</div>
+
+<div class="notification notiblue">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-exclamation-sign"></i><h1></h1><p></p></div>
+</div>
+
+</div>
+
+<div class="lzloader">
+<div class="progress progress-striped active"><div class="progress-bar progress-bar-default"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div>
+</div>
+<!-- JS -->
+<script src="js/bootstrap.js"></script>
+<script src="js/fun.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+noading();
+
+
+});
+
+
+
+
+
+$("#login").click(function(){
+  loading();
+  var name = kongge($("#inputname").val());
+  var passwd = kongge($("#inputpasswd").val());
+  if (name=="") {notiblue("温馨提示","请填写用户名");noading();}
+  else if (passwd=="") {notiblue("温馨提示","请填写密码");noading();}
+  else{
+  $.ajax({
+    type: "POST",
+    url: "../back/user/loginBackUser_no",
+    async:false,
+    data: {
+      "UName":name,
+      "UPassword":passwd,
+    },
+    dataType: "json",
+    complete:function(XMLHttpRequest, textStatus){
+      eval("var data="+XMLHttpRequest.responseText);
+      if(data.isSuccess==false){
+        notired("登录失败",data.message);
+      }
+      else{
+        location.href="3110.html";
+        //$(".logininfo p").text("当前用户："+currentuser);
+      }
+        
+    }
+  });//*******ajax
+  
+  }//else
+
+});
+
+
+
+$(".ylogin").keyup(function(event){//alert();
+    if(event.which=='13'){
+        $("#login").click();
+    }
+});
+
+
+
+
+
+
+</script>
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" >
+if (window.screen.width<=1600 && window.screen.width>1440) {
+  $("body").css({"background":"url(img/loginbgm.jpg) no-repeat scroll center top transparent","border":"0"});
+  $(".ylogin").css({"margin":"340px auto 0"});
+  $(".admin-form").css({"max-width":"500px"});
+  $(".lzl2").css({"margin-left":"120px"});
+  $(".lzl5").css({"margin-top":"20px"});
+  $(".lzl3").css({"top":"130px","margin-left":"50px"});
+  $(".lzl6").css({"top":"50px","width":"160px","height":"70px","margin-left":"-140px"});
+  $(".lzl7").css({"top":"50px","width":"160px","height":"70px","margin-left":"50px"});
+}
+else if(window.screen.width<1440){
+  $("body").css({"background":"url(img/loginbgs.jpg) no-repeat scroll center top transparent","border":"0"});
+  $(".ylogin").css({"margin":"300px auto 0"});
+  $(".admin-form").css({"max-width":"450px"});
+  $(".lzl2").css({"margin-left":"110px"});
+  $(".lzl5").css({"margin-top":"15px"});
+  $(".lzl3").css({"top":"115px","margin-left":"140px"});
+  $(".lzl6").css({"top":"40px","width":"140px","height":"60px","margin-left":"-125px"});
+  $(".lzl7").css({"top":"40px","width":"140px","height":"60px","margin-left":"50px"});
+}
+else{}
+
+
+</script>
+<![endif]-->
+</body>
+</html>

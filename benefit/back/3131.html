@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- Title and other stuffs -->
+  <title>贵州银联权益平台</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+  <!-- Stylesheets -->
+  <link href="style/bootstrap.css" rel="stylesheet">
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="style/font-awesome.css"> 
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="style/jquery-ui.css"> 
+  <!-- Calendar -->
+  <link rel="stylesheet" href="style/fullcalendar.css">
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="style/prettyPhoto.css">  
+  <!-- Star rating -->
+  <link rel="stylesheet" href="style/rateit.css">
+  <!-- Date picker -->
+  <link rel="stylesheet" href="style/jquery.datetimepicker.css">
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="style/jquery.cleditor.css"> 
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="style/bootstrap-switch.css">
+  <!-- Main stylesheet -->
+  <link href="style/style.css" rel="stylesheet">
+  <!-- Widgets stylesheet -->
+  <link href="style/widgets.css" rel="stylesheet">    
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon/favicon.png">
+<link href="style/lzl.css" rel="stylesheet">
+</head>
+
+<body onload="noading()">
+
+
+<div class="lzloader">
+<div class="progress progress-striped active"><div class="progress-bar progress-bar-default"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div>
+</div>
+
+
+<!-- Header starts -->
+  <header class="lzlheader">
+    <div></div>
+  </header>
+
+<!-- Header ends -->
+
+<!-- Main content starts -->
+
+<div class="content">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-zi"><a href="">后台管理系统</a></div>
+        <ul id="nav">
+          <li style="display:none" menuName='平台管理维护'><a href="3110.html">平台管理维护</a></li>
+          <li style="display:none" menuName='营运方管理'><a href="3120.html">营运方管理</a></li> 
+          <li style="display:none" menuName='持卡人管理'><a href="3130.html" class="open">持卡人管理</a></li>
+          <li style="display:none" menuName='数据统计管理'><a href="3150.html">数据统计管理</a></li>
+        </ul>
+    </div>
+
+    <!-- Sidebar ends -->
+
+  	<!-- Main bar -->
+  	<div class="mainbar">
+      
+	    <!-- Page heading -->
+	    <div class="page-head">
+        <!-- Page heading -->
+	      <h2 class="pull-left">持卡人信息管理
+        </h2>
+
+
+        <!-- Breadcrumb -->
+        <div class="bread-crumb pull-right">
+          <a href="index.html"><i class="icon-home"></i> 主页</a> 
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="3130.html" class="bread-current">持卡人管理</a>
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="3131.html" class="bread-current">持卡人信息管理</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+	    </div>
+	    <!-- Page heading ends -->
+
+
+
+	    <!-- Matter -->
+
+	    <div class="matter">
+        <div class="container">
+
+          <div class="row" id="bodynav">
+            <div id='twoMenus' class="col-md-12" style="text-align:center">
+              <a href="3131.html" style="display:none" menuName='持卡人信息管理' class="btn btn-info"><i class="icon-magic"></i> 持卡人信息管理</a>
+              <a href="3136.html" style="display:none" menuName='权益信息查询' class="btn btn-info">权益信息查询</a>
+            </div>
+          </div> 
+
+          <div class="row">
+
+            <div class="col-md-12">
+ 			 <div class="widget wgreen" id="addWin">
+                
+                <div class="widget-head">
+                  <div class="pull-left">添加持卡人</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wclose"><i class="icon-remove"></i></a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+
+                     <form class="form-horizontal" role="form">
+                              
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">用户名</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="aa" maxlength="20" />
+                          </div>
+                          <div class="col-lg-4 hide dong3">
+                            <div class="alert alert-success lzl1" id='aacheckok'><i class="icon-ok"></i> &nbsp;&nbsp;这个用户可以注册</div>
+                          </div>
+                          <div class="col-lg-4 hide dong3">
+                            <div class="alert alert-danger lzl1" id='aacheckno'><i class="icon-remove"></i> &nbsp;&nbsp;这个用户已经注册过</div>
+                          </div>
+                        </div>
+						            <div class="form-group">
+                          <label class="col-lg-4 control-label">姓名</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="bb" maxlength="16" />
+                          </div>
+                        </div>
+                        
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">手机号码</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="cc" maxlength="11" name="numonly" />
+                          </div>
+                          <div class="col-lg-4 hide dong3">
+                            <div class="alert alert-success lzl1" id='cccheckok'><i class="icon-ok"></i> &nbsp;&nbsp;手机号码可以使用</div>
+                          </div>
+                          <div class="col-lg-4 hide dong3">
+                            <div class="alert alert-danger lzl1" id='cccheckno'><i class="icon-remove"></i> &nbsp;&nbsp;这个手机号码已被注册或不可用</div>
+                          </div>
+                        </div>
+
+                        <div class="form-group mailyz">
+                          <label class="col-lg-4 control-label">邮箱</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="dd" maxlength="30" />
+                          </div>
+                          <div class="col-lg-4 hide dong3">
+                            <div class="alert alert-success lzl1" id='ddcheckok'><i class="icon-ok"></i> &nbsp;&nbsp;邮箱可以使用</div>
+                          </div>
+                          <div class="col-lg-4 hide dong3">
+                            <div class="alert alert-danger lzl1" id='ddcheckno'><i class="icon-remove"></i> &nbsp;&nbsp;这个邮箱已被注册或不可用</div>
+                          </div>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                          <div class="col-lg-offset-1 col-lg-9">
+                            <button type="button" class="btn btn-primary" id="queren">添加</button>
+                            <button type="reset" class="btn btn-default">清空信息</button>
+                            
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+                  <div class="widget-foot">
+                    <!-- Footer goes here -->
+                  </div>
+              </div>
+
+
+
+
+
+               <div class="widget wgreen" id="editWin">
+                
+                <div class="widget-head">
+                  <div class="pull-left">修改持卡人</div>
+                  <div class="widget-icons pull-right">
+                  	
+                    <a href="#" class="wclose"><i class="icon-remove"></i></a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+
+                     <form class="form-horizontal" role="form">
+                              
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">用户名</label>
+                          <div class="col-lg-6">
+                            <div class="alert alert-success" id="aaa" style="margin-bottom:0;padding: 8px 10px;"></div>
+                          </div>
+                        </div>
+						            <div class="form-group">
+                          <label class="col-lg-4 control-label">姓名</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" placeholder="Input Box" id="bbb" maxlength="16" />
+                          </div>
+                        </div>
+                        
+
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">手机号码</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" placeholder="Input Box" id="ccc" maxlength="11" name="numonly" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">邮箱</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" placeholder="Input Box" id="ddd" maxlength="30" />
+                          </div>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                          <div class="col-lg-offset-1 col-lg-9">
+                            <button type="button" class="btn btn-primary" id="xiugai">修改</button>
+                            <button type="reset" class="btn btn-default">清空信息</button>
+                            
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+                  <div class="widget-foot">
+                    <!-- Footer goes here -->
+                  </div>
+              </div>
+
+
+
+              <!-- 查询条件 --> 
+        <div class="widget">
+            <div class="widget-head">
+              <div class="pull-left"></div>
+              
+              <div class="clearfix"></div>
+            </div>
+             <div class="widget-content">
+               <div class="padd">
+                 <form class="form-horizontal" role="form">
+               <div class="form-group">
+                    
+
+                    <label class="col-lg-4 control-label">持卡人用户名</label>
+                    <div class="col-lg-3">
+                      <input type="text" class="form-control" id="aaaa" placeholder="输入持卡人用户名" maxlength="16" />
+                    </div>
+
+                    <div class="col-lg-2">
+                      <a href="#" class="btn btn-primary" id="xxsearch"><i class="icon-search"></i> 查询</a>
+                    </div>
+                  </div>
+                  </form>
+                 </div>
+               </div>
+                  
+
+        </div>
+
+
+
+
+              <div class="widget">
+
+                <div class="widget-head">
+                  <div class="pull-left">持卡人列表</div>
+                  <div class="pull-right">
+                    <button style="display:none" class="btn btn-info tianjia" id="addWinBtn"><i class="icon-plus"></i> 添加持卡人</button>
+                    <a style="display:none" href="#" id="deleteBatch" class="btn btn-danger allshanchu disabled"><i class="icon-remove"></i> 选中项删除</a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                  <div class="widget-content">
+
+                    <table class="table table-striped table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th><input class="fugouxuan" type="checkbox" name="" value="" />全选</th>
+                          <th>持卡人用户名</th>
+                          <th>持卡人姓名</th>
+                          <th>手机号码</th>
+                          <th>邮箱</th>
+                          <!-- <th>绑定银行卡</th> -->
+                          <th>详细操作</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tableData">
+
+                      </tbody>
+                    </table>
+
+                    <div class="widget-foot">
+                      
+                       <ul class="pager">
+                          <li class="previous"><a href="" id="qianBtn"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+                          <li id="currentPage">加载中</li>
+                          <li id="countPage">加载中</li>
+                          <li><input class="form-control" style="width:80px;display:inline;" placeholder="第几页" type="text" id="tiaozhuanPage" name="numonly"></li>
+                          <li><button class="btn btn-success" href="" id="tiaozhuanBtn">跳转</button></li>
+                          <li class="next"><a href="" id="houBtn">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                        </ul>
+                     
+                      <div class="clearfix"></div> 
+
+                    </div>
+
+                  </div>
+
+                </div>
+              
+            
+
+            
+
+
+            
+
+
+
+
+              
+
+            </div>
+
+          </div>
+
+        </div>
+		  </div>
+
+		<!-- Matter ends -->
+
+    </div>
+
+   <!-- Mainbar ends -->	    	
+   <div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span> 
+
+
+<!-- Modal -->
+<div id="bangkatan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title">绑定银行卡</h4>
+    </div>
+    <div class="modal-body">
+
+                  
+                  <form class="form-horizontal">
+                    <!-- Registration form starts -->
+                      <!-- Name -->
+                          <div class="form-group">
+                            <label class="control-label col-lg-3">姓名</label>
+                            <div class="col-lg-9">
+                              <input type="text" class="form-control" id="aa" maxlength="40" required="required" >
+                            </div>
+                          </div>   
+
+                          <!-- <div class="form-group">
+                            <label class="control-label col-lg-3">身份证号</label>
+                            <div class="col-lg-9">
+                              <input type="text" class="form-control" id="bb" maxlength="18" required="required" />
+                            </div>
+                          </div>  -->
+
+                          <!-- Email -->
+                          <div class="form-group">
+                            <label class="control-label col-lg-3" for="email">银行卡号</label>
+                            <div class="col-lg-9">
+                              <input type="text" class="form-control" id="cc" maxlength="19" required="required" />
+                            </div>
+                          </div> 
+
+                            
+
+                          <!-- Email -->
+                          <div class="form-group">
+                            <label class="control-label col-lg-3">手机验证码</label>
+                            <div class="col-lg-6">
+                              <input type="text" class="form-control" placeholder="发送到手机的验证码" id="dd" maxlength="6" required="required" />
+                            </div>
+                            <div class="col-lg-3">
+                              <button type="button" class="btn btn-info">发送手机验证码</button>
+                            </div>
+                          </div>                                    
+
+                          <!-- Accept box and button s-->
+                          <div class="form-group">
+                            <div class="col-lg-9 col-lg-offset-3">
+                              <br />
+                              <button type="button" class="btn btn-success" id="queren">确认并提交</button>
+                              <button type="reset" class="btn btn-danger">重新输入</button>
+                            </div>
+                          </div>
+                      <br />
+                  </form>
+
+
+
+
+    
+ 
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭窗口</button>
+      <button type="button" class="btn btn-primary" id="savegong">保存更改</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<!--*****************************************添加的在这里哦*******************************************************************-->
+<div class="cd-popup" role="">
+    <div class="cd-popup-container">
+        <p>您真的要删除这些数据吗?</p>
+        <ul class="cd-buttons">
+            <li><a href="javascript:void(0)">确定</a></li>
+            <li><a href="javascript:void(0)">取消</a></li>
+        </ul>
+        <a href="" class="cd-popup-close"></a>
+    </div> 
+</div>
+
+<div id="ziye-tishixx">
+
+<div class="notification notigreen">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-ok-sign"></i><h1></h1><p></p></div>
+</div>
+
+<div class="notification notired">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-remove-sign"></i><h1></h1><p></p></div>
+</div>
+
+<div class="notification notiblue">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-exclamation-sign"></i><h1></h1><p></p></div>
+</div>
+
+</div>
+
+<div class="suo"></div>
+<div class="geren"></div><div class="gerenyin"></div>
+<!-- JS -->
+<script src="js/jquery.js"></script> <!-- jQuery -->
+<script src="js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script> <!-- jQuery UI -->
+<script src="js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+
+<!-- jQuery Flot -->
+<script src="js/excanvas.min.js"></script>
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.flot.resize.js"></script>
+<script src="js/jquery.flot.pie.js"></script>
+<script src="js/jquery.flot.stack.js"></script>
+
+<!-- jQuery Notification - Noty -->
+<script src="js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="js/themes/default.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<script src="js/sparklines.js"></script> <!-- Sparklines -->
+<script src="js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="js/jquery.datetimepicker.js"></script> <!-- Date picker -->
+<script src="js/bootstrap-switch.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="js/filter.js"></script> <!-- Filter for support page -->
+<script src="js/custom.js"></script> <!-- Custom codes -->
+<script src="js/charts.js"></script> <!-- Charts & Graphs -->
+
+<script src="js/fun.js"></script>
+<script type="text/javascript">
+
+//根据用户菜单隐藏
+generalAjax('',"GET","../back/user/findMenus_ro",function(data){
+  //隐藏一级菜单
+  for ( var key in data.itemList[0]) {
+    $('#nav li[menuName="'+key+'"]').css('display','');
+  }
+  debugger;
+  //隐藏二级菜单
+  var twoMenus=data.itemList[0]['持卡人管理'];
+  for ( var idx in twoMenus) {
+    $('#twoMenus a[menuName="'+twoMenus[idx]+'"]').css('display','');
+  }
+  
+});
+
+
+
+$(document).ready(function(){
+  $('#dd').autoMail({
+    emails:['qq.com','163.com','126.com','sina.com','sohu.com','yahoo.cn','gmail.com','hotmail.com','live.cn']
+  });
+});
+
+
+$("#aa").blur(function(){
+
+  //loading();
+  var name = kongge($("#aa").val());
+  var yonghuming = /^[a-zA-Z0-9]{4,20}$/;
+  if (!yonghuming.test(name)) {
+    notiblue("温馨提示","4到20位字母或者数字");
+    $("#aacheckok").parent().addClass("hide");
+    $("#aacheckno").parent().addClass("hide");
+  }
+  else{
+  $.ajax({
+    type: "POST",
+    url: "../back/user/validateUName_no",
+    async:false,
+    data: {
+      "UName":name,
+    },
+    dataType: "json",
+    complete:function(XMLHttpRequest, textStatus){
+      eval("var data="+XMLHttpRequest.responseText);
+      if(data.isSuccess==false){
+        $("#aacheckno").parent().removeClass("hide");
+        $("#aacheckok").parent().addClass("hide");
+      }
+      else{
+        $("#aacheckok").parent().removeClass("hide");
+        $("#aacheckno").parent().addClass("hide");
+      }
+        
+    }
+  });//*******ajax
+  
+  }//else
+
+});
+
+$("#cc").blur(function(){
+
+  //loading();
+  var name = kongge($("#cc").val());
+  var shouji = /^1\d{10}$/;
+  if(name ==""){
+    $("#cccheckno").parent().addClass("hide");
+    $("#cccheckok").parent().addClass("hide");
+  }
+  else if (!shouji.test(name)) {
+    $("#cccheckno").parent().removeClass("hide");
+    $("#cccheckok").parent().addClass("hide");
+  }
+  else{
+  $.ajax({
+    type: "POST",
+    url: "../back/user/validatePhone_no",
+    async:false,
+    data: {
+      "Phone":name,
+    },
+    dataType: "json",
+    complete:function(XMLHttpRequest, textStatus){
+      eval("var data="+XMLHttpRequest.responseText);
+      if(data.isSuccess==false){
+        $("#cccheckno").parent().removeClass("hide");
+        $("#cccheckok").parent().addClass("hide");
+      }
+      else{
+        $("#cccheckok").parent().removeClass("hide");
+        $("#cccheckno").parent().addClass("hide");
+      }
+        
+    }
+  });//*******ajax
+  
+  }//else
+
+});
+
+// $("#dd").blur(function(){
+
+//   //loading();
+//   var name = kongge($("#dd").val());
+//   var youxiang  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+//   if(name ==""){
+//     $("#cccheckno").parent().addClass("hide");
+//     $("#cccheckok").parent().addClass("hide");
+//   }
+//   else if (!youxiang.test(name)) {
+//     $("#ddcheckno").parent().removeClass("hide");
+//     $("#ddcheckok").parent().addClass("hide");
+//   }
+//   else{
+//   $.ajax({
+//     type: "POST",
+//     url: "../back/user/validateEmail_no",
+//     async:false,
+//     data: {
+//       "Email":name,
+//     },
+//     dataType: "json",
+//     complete:function(XMLHttpRequest, textStatus){
+//       eval("var data="+XMLHttpRequest.responseText);
+//       if(data.isSuccess==false){
+//         $("#ddcheckno").parent().removeClass("hide");
+//         $("#ddcheckok").parent().addClass("hide");
+//       }
+//       else{
+//         $("#ddcheckok").parent().removeClass("hide");
+//         $("#ddcheckno").parent().addClass("hide");
+//       }
+        
+//     }
+//   });//*******ajax
+  
+//   }//else
+
+// });
+
+
+/**
+ * 添加
+ */
+$("#queren").click(function(event){
+	var thisclick = $(this);
+	var aa = kongge($("#aa").val());
+	var bb = kongge($("#bb").val());
+	var cc = kongge($("#cc").val());
+	var dd = kongge($("#dd").val());
+	
+	var youxiang  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	var shouji = /^1\d{10}$/;
+	var dianhua =/^0\d{2,3}-?\d{7,8}$/;
+  var yonghuming = /^[a-zA-Z0-9]{4,20}$/;
+	
+	if (aa=="" || bb=="" || cc=="" || dd=="") {notiblue("温馨提示","还有内容没填呢");return false;}
+  else if (!yonghuming.test(aa)) {
+    notiblue("温馨提示","用户名为4到20位字母或者数字");
+    $("#aacheckok").parent().addClass("hide");
+    $("#aacheckno").parent().addClass("hide");
+  }
+	else if(!shouji.test(cc)){
+	    notired("保存失败","请输入正确的手机号码");
+	  }
+	else if(!youxiang.test(dd)){
+	    notired("保存失败","请输入正确的邮箱");
+	 }
+	else{
+		event.preventDefault();
+		var params={
+				UName:aa,
+				RealName:bb,
+				Phone:cc,
+				Email:dd
+		};
+		generalAjax(params,"POST","../back/user/addCardUser",function(){
+			//注册成功
+			notigreen("添加成功","您成功的添加了一个持卡人");
+			thisclick.next().click();
+			tiaozhuanPage(currentPage,20,"GET","../back/user/findCardUser");
+			$("#addWin").hide(100);
+      $("#aacheckok").parent().addClass("hide");
+      $("#aacheckno").parent().addClass("hide");
+      $("#cccheckok").parent().addClass("hide");
+      $("#cccheckno").parent().addClass("hide");
+      $("#ddcheckok").parent().addClass("hide");
+      $("#ddcheckno").parent().addClass("hide");
+		});
+	}
+});//************** click
+
+/**
+ * 修改
+ */
+function xiugai(event,obj){
+    event.preventDefault();
+    var thischeck = $(obj);
+    $("#addWin").hide();
+
+	debugger;
+	//设置对应值
+	var  tds= thischeck.parent().parent().children('td');
+	var gai0 =$(tds.get(0)).attr('val'); 
+	var gai1 =$(tds.get(1)).attr('val'); 
+	var gai2 =$(tds.get(2)).attr('val'); 
+	var gai3 =$(tds.get(3)).attr('val'); 
+	var gai4 =$(tds.get(4)).attr('val'); 
+	$("#aaa").text(gai1);
+	$("#bbb").val(gai2);
+ 	$("#ccc").val(gai3);
+	$("#ddd").val(gai4);
+	//显示窗口
+	var $wcontent = $("#editWin");
+	if(!$wcontent.is(':visible')){
+		showOrHideWin("editWin");
+	}
+	$("#xiugai").unbind().click(function(){
+	var gaiclick = $(this);
+	debugger;
+
+	var aaa = $("#aaa").text();
+	var bbb = kongge($("#bbb").val());
+	var ccc = $("#ccc").val();
+	var ddd = kongge($("#ddd").val());
+  var youxiang  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  var shouji = /^1\d{10}$/;
+  var dianhua =/^0\d{2,3}-?\d{7,8}$/;
+
+	if (bbb=="" || ccc=="" || ddd=="") {notiblue("温馨提示","还有内容没填呢");return false;}
+
+  else if(!shouji.test(ccc)){
+      notired("保存失败","请输入正确的手机号码");
+    }
+  else if(!youxiang.test(ddd)){
+      notired("保存失败","请输入正确的邮箱");
+   }
+	
+	else{
+		event.preventDefault();
+		var params={
+				UName:aaa,
+        RealName:bbb,
+        Phone:ccc,
+        Email:ddd
+		};
+		generalAjax(params,"POST","../back/user/editCardUser",function(){
+			//"修改成功"
+			 notigreen("修改成功","您成功的修改了一个持卡人");
+			 gaiclick.next().click();
+			 tiaozhuanPage(currentPage,20,"GET","../back/user/findCardUser");
+			 $("#editWin").hide(100);
+		});
+	}	
+	});
+}//********** xiugai
+
+/**
+ * 删除
+ */
+
+function shanchu(event,obj){
+  event.preventDefault();
+	var thisclick = $(obj);
+	var  tds= thisclick.parent().parent().children('td');
+	debugger;
+	var id =$(tds.get(1)).attr('val');
+  $('.cd-popup').addClass('is-visible');
+	$(".cd-buttons a:eq(0)").unbind().click(function(){
+		//thisclick.parent().parent().remove();
+		var param={objs:id};
+		generalAjax(param,"POST","../back/user/deleteCardUser",function(){
+			//删除成功-关闭窗口 更新数据
+			$('.cd-popup').removeClass('is-visible');
+			tiaozhuanPage(currentPage,20,"GET","../back/user/findCardUser");
+      $("#addWin").hide();$("#editWin").hide();
+		});
+    });
+	/**
+	窗口其他监听
+	*/
+	$('.cd-buttons a:eq(1)').on('click', function(event){
+	        event.preventDefault();
+	        $('.cd-popup').removeClass('is-visible');
+	});
+	//close popup
+    $('.cd-popup').on('click', function(event){
+        if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+            event.preventDefault();
+            $(this).removeClass('is-visible');
+        }
+    });
+    //close popup when clicking the esc keyboard button
+    $(document).keyup(function(event){
+        if(event.which=='27'){
+            $('.cd-popup').removeClass('is-visible');
+        }
+    });
+}
+
+
+/**
+ * 查询
+ */
+$("#xxsearch").unbind().bind('click',function(){
+  //加入条件
+  debugger;
+  var xname=$("#aaaa").val();
+  searchParams= {
+    UName: xname,
+  };
+  tiaozhuanPage(1,20,"GET","../back/user/findCardUser");
+  return false;
+}); 
+//默认无条件查询第一页
+var searchParams= {
+  UName:"",
+};
+tiaozhuanPage(1,20,"GET","../back/user/findCardUser");
+
+//更新table数据
+function updateData(list){
+	for(var i=0;i<list.length;i++){
+		var obj=list[i];
+		var tr= '<tr>'+
+          '<td><input class="zigouxuan" type="checkbox" name="" val="" /></td>'+
+			    '<td val="'+obj.UName+'">'+obj.UName+'</td>'+
+			    '<td val="'+obj.RealName+'">'+obj.RealName+'</td>'+
+			    '<td val="'+obj.Phone+'">'+obj.Phone+'</td>'+
+			    '<td val="'+obj.Email+'">'+obj.Email+'</td>'+
+          //'<td><a href="#bangkatan" class="btn btn-default bangkatan" data-toggle="modal">绑定银行卡</a></td>'+
+			    '<td><button style="display:none" class="btn btn-xs btn-warning xiugai"><i class="icon-pencil"></i> </button>'+
+			    '<button style="display:none" class="btn btn-xs btn-danger shanchu"><i class="icon-remove"></i> </button>'+
+			    '</td>'+
+			  ' </tr>';
+		$("#tableData").append(tr);
+    complete();
+	}
+	debugger//隐藏不需的功能（增加、删除、修改、审核）
+  //addWinBtn deleteBatch auditBatch shenhe xiugai shanchu
+  generalAjax({menuName:'持卡人信息管理'},"GET","../back/user/findPermissionsForMenuName_ro",function(data){
+    //隐藏功能按钮
+    for ( var idx in data.itemList) {
+      var pName=data.itemList[idx]['PName'];
+      var pbtn=[];
+      if(pName=='添加持卡人'){
+        pbtn.push($('#addWinBtn'));
+      }else
+      if(pName=='修改持卡人'){
+        pbtn.push($('.xiugai'));
+      }else
+      if(pName=='删除持卡人'){
+        pbtn.push($('#deleteBatch'));
+        pbtn.push($('.shanchu'));
+      }
+      debugger;
+      if(pbtn.length!=0){
+        for ( var idx in pbtn) {
+          pbtn[idx].css('display','');
+        }
+      }
+    }
+  });
+	//设置每行数据的操作监听
+	$(".xiugai").unbind().bind('click',function(event){
+		debugger;
+		xiugai(event,this);
+	});
+	$(".shanchu").unbind().bind('click',function(event){
+		debugger;
+		shanchu(event,this);
+	});
+}
+
+
+
+
+
+$(".allshanchu").unbind().click(function(event){
+event.preventDefault();
+var geshu = $("#tableData input:checked").length;
+
+var idall = "";
+for(i=0;i<geshu;i++){
+idall += $("#tableData input:checked").eq(i).parent().next().text()+",";
+}
+var chuliidall = idall.substring(0,idall.length-1);
+//alert(chuliidall);
+
+
+  $('.cd-popup').addClass('is-visible');
+  $(".cd-buttons a:eq(0)").unbind().click(function(){
+    //thisclick.parent().parent().remove();
+    var param={objs:chuliidall};
+    generalAjax(param,"POST","../back/user/deleteCardUser",function(){
+      //删除成功-关闭窗口 更新数据
+      $('.cd-popup').removeClass('is-visible');
+      tiaozhuanPage(currentPage,20,"GET","../back/user/findCardUser");
+      $("#addWin").hide();$("#editWin").hide();
+    });
+    });
+  /**
+  窗口其他监听
+  */
+  $('.cd-buttons a:eq(1)').on('click', function(event){
+          event.preventDefault();
+          $('.cd-popup').removeClass('is-visible');
+  });
+  //close popup
+    $('.cd-popup').on('click', function(event){
+        if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+            event.preventDefault();
+            $(this).removeClass('is-visible');
+        }
+    });
+    //close popup when clicking the esc keyboard button
+    $(document).keyup(function(event){
+        if(event.which=='27'){
+            $('.cd-popup').removeClass('is-visible');
+        }
+    });
+//alert($("#tableData input:checked").eq(0).parent().next().text());
+});
+
+
+
+
+
+
+
+// $(".allshenhe").unbind().click(function(){
+
+// var geshu = $("#tableData input:checked").length;
+
+// var idall = "";
+// for(i=0;i<geshu;i++){
+// idall += $("#tableData input:checked").eq(i).parent().next().text()+",";
+// }
+// var chuliidall = idall.substring(0,idall.length-1);
+// //alert(chuliidall);
+
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function complete(){
+
+
+
+
+
+$(".fugouxuan").change(function() {
+
+var thisxuan = $(this);
+if (thisxuan.is(':checked')) {
+    $(".zigouxuan").prop("checked",true);
+    thisxuan.parent().parent().parent().parent().children("tbody").children("tr").addClass("warning").addClass("checkgouxuan");;
+}
+else{
+    $(".zigouxuan").prop("checked",false);
+    thisxuan.parent().parent().parent().parent().children("tbody").children("tr").removeClass("warning checkgouxuan");
+}
+
+$(".checkgouxuan").length > 0?$(".allshanchu").removeClass("disabled"):$(".allshanchu").addClass("disabled");
+});
+
+
+$(".zigouxuan").change(function() {
+
+var thisxuan = $(this);
+if (thisxuan.is(':checked')) {
+   thisxuan.parent().parent().addClass("warning").addClass("checkgouxuan");
+}
+else{
+    thisxuan.parent().parent().removeClass("warning checkgouxuan");
+}
+
+$(".checkgouxuan").length > 0?$(".allshanchu").removeClass("disabled"):$(".allshanchu").addClass("disabled");
+});
+
+
+
+
+
+
+
+
+
+
+
+}
+</script>
+</body>
+</html>

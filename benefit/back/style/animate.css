@@ -1,0 +1,815 @@
+/* General styles for the modal */
+
+/* 
+Styles for the html/body for special modal where we want 3d effects
+Note that we need a container wrapping all content on the page for the 
+perspective effects (not including the modals and the overlay).
+*/
+.md-perspective,
+.md-perspective body {
+	height: 100%;
+	overflow: hidden;
+}
+
+.md-perspective body  {
+	background: #222;
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+	perspective: 600px;
+}
+
+.erji-container {
+
+}
+
+.md-modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 50%;
+	max-width: 630px;
+	min-width: 320px;
+	height: auto;
+	z-index: 500;
+	visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.md-show {
+	visibility: visible;
+}
+
+.md-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+	z-index: 300;
+	opacity: 0;
+	background: rgba(255,255,255,0.8);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.md-overlayshow {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* Content styles */
+.md-content {
+	color: #555;
+	background: #fff;
+/*	background: #e74c3c;*/
+	position: relative;
+	border-radius: 3px;
+	margin: 0 auto;
+	border:1px solid #C7C7C7;
+	box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.md-content h3 {
+	margin: 0;
+	padding: 15px;
+	text-align: center;
+	font-size: 36px;
+	font-weight: 300;
+	opacity: 0.8;
+	background: rgba(0,0,0,0.1);
+	border-radius: 3px 3px 0 0;
+}
+
+.md-content > div {
+	padding: 15px 40px 30px;
+	margin: 0;
+	font-weight: 300;
+	font-size: 16px;
+	text-align: center;
+}
+
+.md-content > div > p {
+	margin: 0;
+	padding: 10px 0;
+}
+
+.md-content > div > ul {
+	margin: 0;
+	padding: 0 0 30px 20px;
+	text-align: left;
+}
+
+.md-content > div > ul > li {
+	padding: 3px 0;
+  width: 100%;
+  float: left;
+}
+
+
+.md-content button {
+	display: inline-block;
+	margin: 0 auto;
+	border: none;
+	padding: 15px 45px;
+	background: #51bbe1;
+	color: #fff;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	margin: 15px 40px 0;
+	border-radius: 2px;
+	transition: all 0.5s;
+}
+.md-content button:hover{}
+
+
+article h3 {
+	margin: 0;
+	padding: 15px;
+	text-align: center;
+	font-size: 36px;
+	font-weight: 300;
+	opacity: 0.8;
+}
+
+article > div {
+	padding: 15px 40px 30px;
+	margin: 0;
+	font-weight: 300;
+	font-size: 16px;
+	text-align: center;
+}
+
+article > div p {
+	margin: 0;
+	padding: 10px 0;
+}
+
+article > div ul {
+	margin: 0;
+	padding: 0 0 30px 20px;
+	text-align: left;
+}
+
+article > div ul li {
+	padding: 5px 0;
+}
+
+
+article button {
+	display: inline-block;
+	margin: 0 auto;
+	border: none;
+	padding: 15px 45px;
+	background: #51bbe1;
+	color: #fff;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	margin: 3px 40px;
+	border-radius: 2px;
+	transition: all 0.5s;
+}
+article button:hover{}
+.xqleft{text-align: right;float: left;width: 120px;height: 30px;margin-right: 25px;}
+.wengaowttgg{width: 100%;max-width: 100%;position: fixed;min-height: 100%;max-height: 100%;overflow-y:scroll;left: 50%;top: 50%}
+.wengaonttgg{box-shadow: 0px 0px 0px #fff;border:0;width: 50%;margin: 0 auto;/*transition: .5s;*/}
+.wengaonttyy{box-shadow: 0px 0px 0px #fff;border:0;width: 50%;margin: 0;}
+
+.wengaowttng{width: 100%;max-width: 100%;position: fixed;min-height: 100%;max-height: 100%;overflow-y:scroll;left: 50%;top: 50%}
+.wengaonttng{box-shadow: 0px 0px 0px #fff;border:0;width: 50%;}
+
+.wengaowttss{width: 100%;max-width: 100%;position: fixed;min-height: 100%;max-height: 100%;overflow-y:scroll;left: 50%;top: 50%}
+.wengaonttss{box-shadow: 0px 0px 0px #fff;border:0;width: 50%;margin: 0 auto;/*transition: .5s;*/}
+/*.xqright{width: 200px;text-align: left;}*/
+
+
+
+
+
+
+
+
+
+
+
+
+/* Individual modal styles with animations/transitions */
+
+/* Effect 1: Fade in and scale up */
+.md-effect-1 .md-content {
+	-webkit-transform: scale(0.7);
+	-ms-transform: scale(0.7);
+	transform: scale(0.7);
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.md-show.md-effect-1 .md-content {
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+}
+
+/* Effect 3: Slide from the bottom */
+.md-effect-3 .md-content {
+	-webkit-transform: translateY(20%);
+	-ms-transform: translateY(20%);
+	transform: translateY(20%);
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.md-show.md-effect-3 .md-content {
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+	opacity: 1;
+}
+
+/* Effect 8: 3D flip horizontal */
+.md-effect-8.md-modal {
+	-webkit-perspective: 1300px;
+	-moz-perspective: 1300px;
+	perspective: 1300px;
+}
+
+.md-effect-8 .md-content {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: rotateY(-70deg);
+	-moz-transform: rotateY(-70deg);
+	-ms-transform: rotateY(-70deg);
+	transform: rotateY(-70deg);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	opacity: 0;
+}
+
+.md-show.md-effect-8 .md-content {
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+	opacity: 1;
+}
+
+/* Effect 12:  Just me */
+.md-effect-12 .md-content {
+	-webkit-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.md-show.md-effect-12 ~ .md-overlay {
+	background: #fff;
+} 
+
+.md-effect-12 .md-content h3,
+.md-effect-12 .md-content {
+	background: transparent;
+}
+
+.md-show.md-effect-12 .md-content {
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************************  ziye loading **********************************************/
+
+.preloader {
+    font-size: 30px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    margin-left: -15px;
+    z-index: -1;
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    -webkit-transform-origin: 50% 250%;
+    -ms-transform-origin: 50% 250%;
+    transform-origin: 50% 250%;
+    -webkit-animation: blink 1s steps(1, start) infinite, counter-clock 8s linear infinite;
+    -ms-animation: blink 1s steps(1, start) infinite, counter-clock 8s linear infinite;
+    animation: blink 1s steps(1, start) infinite, counter-clock 8s linear infinite;
+}
+
+.preloader:after {
+    content: "";
+    width: 3em;
+    height: 3em;
+    background: red;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    background: white;
+    background: rgba(255,255,255,0.6);
+    left: -1em;
+    top: 1em;
+}
+
+@-webkit-keyframes counter-clock {
+    to { -webkit-transform: rotate(-360deg); }
+}
+
+@-ms-keyframes counter-clock {
+    to { -ms-transform: rotate(-360deg); }
+}
+
+@keyframes counter-clock {
+    to { transform: rotate(-360deg); }
+}
+
+@-webkit-keyframes blink {
+    12.5% {
+    background: rgba(18,52,86,0.6); 
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    25% {
+    background: #123456;
+      box-shadow:
+       1em 1em rgba(18,52,86,0.6),
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    37.5% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em rgba(18,52,86,0.6),
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    50% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em rgba(18,52,86,0.6),
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    62.5% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em rgba(18,52,86,0.6),
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    75% {
+    background: #123456;
+      box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em rgba(18,52,86,0.6),
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    87.5% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em rgba(18,52,86,0.6),
+      -1em 1em #123456;
+    }
+  
+    100% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em rgba(18,52,86,0.6);
+    }
+}
+
+@-ms-keyframes blink {
+    12.5% {
+    background: rgba(18,52,86,0.6); 
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    25% {
+    background: #123456;
+      box-shadow:
+       1em 1em rgba(18,52,86,0.6),
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    37.5% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em rgba(18,52,86,0.6),
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    50% {
+    background: #123456;
+    box-shadow:
+      1em 1em #123456,
+      2em 2em #123456,
+      1em 3em rgba(18,52,86,0.6),
+      0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    62.5% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em rgba(18,52,86,0.6),
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    75% {
+    background: #123456;
+      box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em rgba(18,52,86,0.6),
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    87.5% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em rgba(18,52,86,0.6),
+      -1em 1em #123456;
+    }
+  
+    100% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em rgba(18,52,86,0.6);
+    }
+}
+
+
+@keyframes blink {
+    12.5% {
+    background: rgba(18,52,86,0.6); 
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    25% {
+    background: #123456;
+      box-shadow:
+       1em 1em rgba(18,52,86,0.6),
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    37.5% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em rgba(18,52,86,0.6),
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    50% {
+    background: #123456;
+    box-shadow:
+      1em 1em #123456,
+      2em 2em #123456,
+      1em 3em rgba(18,52,86,0.6),
+      0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    62.5% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em rgba(18,52,86,0.6),
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    75% {
+    background: #123456;
+      box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em rgba(18,52,86,0.6),
+      -2em 2em #123456,
+      -1em 1em #123456;
+    }
+
+    87.5% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em rgba(18,52,86,0.6),
+      -1em 1em #123456;
+    }
+  
+    100% {
+    background: #123456;
+    box-shadow:
+       1em 1em #123456,
+       2em 2em #123456,
+       1em 3em #123456,
+       0em 4em #123456,
+      -1em 3em #123456,
+      -2em 2em #123456,
+      -1em 1em rgba(18,52,86,0.6);
+    }
+}
+
+
+/****************************select*************************************************************/
+div.fancy-select {
+  position: relative;
+  font-size: 13px;
+  color:#666;
+  float: left;
+}
+
+div.fancy-select.disabled {
+  opacity: 0.5;
+}
+
+div.fancy-select select:focus + div.trigger {
+  box-shadow: 0 0 0 2px #4B5468;
+}
+
+div.fancy-select select:focus + div.trigger.open {
+  box-shadow: none;
+}
+
+div.fancy-select div.trigger {
+  cursor: pointer;
+  padding: 5px 24px 5px 9px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #4B5468;
+  width: 275px;
+  min-height:20px;
+  transition: all 240ms ease-out;
+  -webkit-transition: all 240ms ease-out;
+  -moz-transition: all 240ms ease-out;
+  -ms-transition: all 240ms ease-out;
+  -o-transition: all 240ms ease-out;
+}
+
+div.fancy-select div.trigger:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: #4B5468;
+  top: 12px;
+  right: 9px;
+}
+
+div.fancy-select div.trigger.open {
+  background: #fff;
+  border: 1px solid #999;
+  color: #7A8498;
+  box-shadow: none;
+}
+
+div.fancy-select div.trigger.open:after {
+  border-top-color: #7A8498;
+}
+
+div.fancy-select ul.options {
+  list-style: none;
+  margin: 0;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 50;
+  max-height: 300px;
+  overflow: auto;
+  min-width: 307px;
+  border: #999 1px solid;
+  background: #fff;
+
+  transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+  -ms-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+}
+
+div.fancy-select ul.options.open {
+  visibility: visible;
+  top: 30px;
+  opacity: 1;
+
+  /* have to use a non-visibility transition to prevent this iOS issue (bug?): */
+  /*http://stackoverflow.com/questions/10736478/css-animation-visibility-visible-works-on-chrome-and-safari-but-not-on-ios*/
+  transition: opacity 300ms ease-out, top 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, top 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, top 300ms ease-out;
+  -ms-transition: opacity 300ms ease-out, top 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, top 300ms ease-out;
+}
+
+div.fancy-select ul.options.overflowing {
+  top: auto;
+  bottom: 40px;
+
+  transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+  -ms-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+}
+
+div.fancy-select ul.options.overflowing.open {
+  top: auto;
+  bottom: 50px;
+
+  transition: opacity 300ms ease-out, bottom 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+  -ms-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+}
+
+div.fancy-select ul.options li {
+  padding: 8px 12px;
+  color: #666;
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition: all 150ms ease-out;
+  -webkit-transition: all 150ms ease-out;
+  -moz-transition: all 150ms ease-out;
+  -ms-transition: all 150ms ease-out;
+  -o-transition: all 150ms ease-out;
+}
+
+div.fancy-select ul.options li.selected {
+  background: #fff;
+  color: #666;
+}
+
+div.fancy-select ul.options li.hover {
+  color: #fff;
+  background: #51bbe1;
+}

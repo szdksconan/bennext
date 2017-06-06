@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipay.benext.mapper.TerminalMapper">
+    <select id="getValueForKey" parameterType="com.unipay.benext.model.park.TerminalDic" resultType="com.unipay.benext.model.park.TerminalDic">
+        select `key`,`value` from terminal_dic where `key`=#{key}
+    </select>
+
+    <update id="saveValueForKey" parameterType="com.unipay.benext.model.park.TerminalDic">
+        replace into terminal_dic values (#{key},#{value})
+    </update>
+</mapper>

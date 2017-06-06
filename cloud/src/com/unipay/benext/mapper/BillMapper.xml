@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipay.benext.mapper.BillMapper">
+    <insert id="save" parameterType="java.util.List">
+        insert into bill (id,billNo,carNo,parkName,parkId,exitWayName,exitWayId,payPanelId,
+        payPanelName,clientId,stopTime,exitTime,totalPrice,cardNo,rightsType,
+        createTime,creator,updateTime,updator,uploadTag,isRights,terminalId) values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id},#{item.billNo},#{item.carNo},#{item.parkName},#{item.parkId},#{item.exitWayName},#{item.exitWayId},#{item.payPanelId},
+            #{item.payPanelName},#{item.clientId},#{item.stopTime},#{item.exitTime},#{item.totalPrice},#{item.cardNo},#{item.rightsType},
+            now(),'admin',now(),'admin',#{item.uploadTag},#{item.isRights},#{item.terminalId})
+        </foreach>
+    </insert>
+
+    <!-- *********************bill table ********************* -->
+    <select id="getBill" parameterType="map" resultType="com.unipay.benext.model.cloud.Bill">
+        SELECT id,billNo,carNo,parkName,parkId,exitWayName,exitWayId,payPanelId,payPanelName
+        clientId,stopTime,DATE_FORMAT(exitTime,'%Y-%m-%d %H:%i:%S') as exitTime,totalPrice,cardNo,rightsType,
+        DATE_FORMAT(createTime,'%Y-%m-%d %H:%i:%S') as createTime,case when uploadTag = '1' then '已上传' ELSE '未上传' end as uploadTag
+        from bill where 1=1
+        <if test="startTime!=null and startTime !=''">
+            and createTime &gt;= #{startTime}
+        </if>
+        <if test="endTime!=null and endTime !=''">
+            and createTime  &lt;= #{endTime}
+        </if>
+        <if test="uploadTag!=null and uploadTag!=''">
+            and uploadTag=#{uploadTag}
+        </if>
+        order by createTime desc
+        <if test="startnum!=null and endnum !=null">
+            limit #{startnum},#{endnum};
+        </if>
+    </select>
+
+    <select id="getBillCount" parameterType="map" resultType="int">
+        SELECT count(id)
+        from bill where 1=1
+        <if test="startTime!=null and startTime !=''">
+            and createTime &gt;= #{startTime}
+        </if>
+        <if test="endTime!=null and endTime !=''">
+            and createTime  &lt;= #{endTime}
+        </if>
+    </select>
+
+    <update id="updateTagBatchO" parameterType="com.unipay.benext.model.cloud.Bill">
+        update bill set uploadTag=1
+        <where>
+            id in
+            <foreach open="(" close=")" collection="list" item="item" separator=",">
+                #{item}
+            </foreach>
+        </where>
+    </update>
+</mapper>

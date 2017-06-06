@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipay.benext.mapper.ServiceInfoMapper">
+
+    <select id="getServiceInfo" parameterType="map" resultType="com.unipay.benext.model.cloud.ServiceInfo">
+        SELECT id,name ,terminalCode,clientId, updateTime as updateTime FROM service_info
+        where 1=1
+        <if test="id!=null and id !=''">
+            and id=#{id}
+        </if>
+        <if test="clientId!=null and clientId !=''">
+            and clientId = #{clientId}
+        </if>
+        <if test="name!=null and name !=''">
+            and name like concat('%',#{name},'%')
+        </if>
+        <if test="terminalCode!=null and terminalCode !=''">
+            and terminalCode = #{terminalCode}
+        </if>
+        <if test="startnum!=null and endnum !=null">
+            limit #{startnum},#{endnum}
+        </if>
+    </select>
+
+    <select id="getServiceInfoCount" parameterType="map" resultType="int">
+        SELECT count(id) from service_info WHERE 1=1
+        <if test="name!=null and name !=''">
+            and name like concat('%',#{name},'%')
+        </if>
+        <if test="clientId!=null and clientId !=''">
+            and clientId = #{clientId}
+        </if>
+        <if test="terminalCode!=null and terminalCode !=''">
+            and terminalCode = #{terminalCode}
+        </if>
+    </select>
+
+    <insert id="serviceInfoAdd" parameterType="com.unipay.benext.model.cloud.ServiceInfo" >
+        INSERT INTO service_info(name,terminalCode,clientId) VALUES (#{name},#{terminalCode},#{clientId})
+    </insert>
+    
+    <update id="serviceInfoEdit" parameterType="com.unipay.benext.model.cloud.ServiceInfo">
+        UPDATE service_info SET name=#{name},terminalCode=#{terminalCode},clientId=#{clientId} where id = #{id}
+    </update>
+
+    <delete id="serviceInfoDel" parameterType="map">
+        DELETE  from service_info where id = #{id}
+    </delete>
+
+    <update id="updateBatch"  >
+          update service_info SET updateTime =#{now} where 1=1
+                AND id in
+                <foreach collection="list" item="id"
+                         index="index" open="(" close=")" separator=",">
+                    #{id}
+                </foreach>
+    </update>
+    <update id="terminalHeartAcess"  parameterType="map" >
+        update service_info SET updateTime =#{now} where 1=1
+        <if test="clientId!=null and clientId !=''">
+            and clientId =#{clientId}
+        </if>
+        <if test="terminalCode!=null and terminalCode !=''">
+            and terminalCode =#{terminalCode}
+        </if>
+
+    </update>
+
+</mapper>

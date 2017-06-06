@@ -1,0 +1,14 @@
+
+.wrapper{height:100%;background: #ffffff;font-size: 12px;}
+.header{height: 120px;background:#f39801; }
+
+.header .header-right{background: #f39801;width: 100%;height: 120px;background: url("../img/header-bg.gif") no-repeat right center;}
+.header .header-right span{float: left;height: 120px;}
+.verify{}
+.verify label{display: block;margin-bottom: 15px;width: 100%;}
+.inputName{width: 398px;height: 33px;padding-left: 10px;font-size: 14px;margin-left: 10px;border:none;border:solid 1px #cccccc;}
+.inputVerify{width: 271px;height: 33px;margin:0 0 0 50px;font-size: 14px;padding-left: 10px;float:left;border:none;border:solid 1px #cccccc;}
+.inputVerifys{ width: 118px; height: 33px; margin:2px 0 0 7px;display:block;float:left;}
+.star-wu img{padding: 6px 3px 0 0;}
+
+

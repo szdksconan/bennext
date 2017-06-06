@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipay.benext.mapper.RightsCountMapper">
+    <delete id="delAll">
+        truncate table rights_count
+    </delete>
+
+    <insert id="save" parameterType="java.util.List">
+        insert into rights_count values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.rightsId},#{item.rank},#{item.count})
+        </foreach>
+    </insert>
+    <select id="getRightsCountByFilter" parameterType="com.unipay.benext.model.entity.RightsCount" resultType="com.unipay.benext.model.entity.RightsCount">
+        select * from rights_count where 1=1
+        <if test="rightsId != null and rightsId != ''">
+            and  rightsId = #{rightsId}
+        </if>
+        <if test="rank != null and rank != ''">
+            and  rank = #{rank}
+        </if>
+    </select>
+    <select id="updateRightsCount" parameterType="com.unipay.benext.model.entity.RightsCount" >
+        update rights_count set count = #{count} where 1=1
+        <if test="rightsId != null and rightsId != ''">
+            and  rightsId = #{rightsId}
+        </if>
+        <if test="rank != null and rank != ''">
+            and  rank = #{rank}
+        </if>
+    </select>
+    <insert id="add" parameterType="com.unipay.benext.model.entity.RightsCount">
+        insert into rights_count values
+            (#{rightsId},#{rank},#{count})
+
+    </insert>
+</mapper>

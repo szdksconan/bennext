@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipay.benext.mapper.ParkMapper">
+
+    <select id="getParkInfo" resultType="com.unipay.benext.model.park.Park">
+        select * from park;
+    </select>
+
+    <insert id="addOrUpdatePark" parameterType="com.unipay.benext.model.park.Park">
+      REPLACE INTO park(id,parkName,parkId,supplyId,supplyName,createTime,updateTime,charge) VALUES ('1',#{parkName},#{parkId},#{supplyId},#{supplyName},now(),now(),#{charge});
+    </insert>
+
+    <insert id="addOrUpdateParkForCharge" parameterType="com.unipay.benext.model.park.Park">
+        REPLACE INTO park(id,charge) VALUES ('1',#{charge});
+    </insert>
+
+
+    <!-- *********************PayPanel table ********************* -->
+    <insert id="addPayPanel" parameterType="com.unipay.benext.model.park.PayPanel">
+        INSERT INTO pay_panel (payPanelName,payPanelCode,ip,createTime,updateTime) VALUES (#{payPanelName},#{payPanelCode},#{ip},now(),now());
+    </insert>
+
+    <update id="editPayPanel" parameterType="com.unipay.benext.model.park.PayPanel">
+        UPDATE pay_panel set ip=#{ip}, payPanelName = #{payPanelName},payPanelCode=#{payPanelCode},updateTime=now() WHERE  id = #{id};
+    </update>
+
+    <select id="getPayPanel" parameterType="map"  resultType="com.unipay.benext.model.park.PayPanel">
+        SELECT id,payPanelName,payPanelCode,ip,
+        DATE_FORMAT(createTime,'%Y-%m-%d %H:%i:%S') as createTime,
+        DATE_FORMAT(updateTime,'%Y-%m-%d %H:%i:%S') as updateTime
+         from pay_panel limit #{startnum},#{endnum};
+    </select>
+
+    <select id="getPayPanelById" parameterType="map"  resultType="com.unipay.benext.model.park.PayPanel">
+        SELECT id,payPanelName,payPanelCode,ip,
+        DATE_FORMAT(createTime,'%Y-%m-%d %H:%i:%S') as createTime,
+        DATE_FORMAT(updateTime,'%Y-%m-%d %H:%i:%S') as updateTime
+        from pay_panel where id = #{id}
+    </select>
+
+    <select id="getPayPanelCount" resultType="int">
+        SELECT count(id) from pay_panel;
+    </select>
+
+    <delete id="delPayPanel" parameterType="map">
+      DELETE from  pay_panel WHERE  id = #{id}
+    </delete>
+
+
+    <!-- *********************exitWay table ********************* -->
+    <select id="getExitWay" resultType="map" parameterType="map">
+        SELECT e.id as id , e.exitWayName as exitWayName,
+        e.payPanelId as payPanelId,
+        DATE_FORMAT(e.createTime,'%Y-%m-%d %H:%i:%S') as createTime,
+        DATE_FORMAT(e.updateTime,'%Y-%m-%d %H:%i:%S') as updateTime,
+         p.payPanelName  as payPanelName,
+         p.payPanelCode as payPanelCode,
+         p.ip as payPanelIp from exit_way e LEFT JOIN  pay_panel p ON e.payPanelId = p.id
+        limit #{startnum},#{endnum};
+    </select>
+
+    <select id="getExitWayById" resultType="map" parameterType="map">
+        SELECT e.id as id , e.exitWayName as exitWayName,
+        e.payPanelId as payPanelId,
+        DATE_FORMAT(e.createTime,'%Y-%m-%d %H:%i:%S') as createTime,
+        DATE_FORMAT(e.updateTime,'%Y-%m-%d %H:%i:%S') as updateTime,
+        p.payPanelName  as payPanelName,
+        p.payPanelCode as payPanelCode from exit_way e LEFT JOIN  pay_panel p ON e.payPanelId = p.id
+        WHERE e.id = #{id};
+    </select>
+
+    <select id="getExitWayCount" resultType="int">
+        SELECT count(e.id) from exit_way e LEFT JOIN  pay_panel p ON e.payPanelId = p.id;
+    </select>
+
+    <select id="getExitWayCountByCondi" parameterType="map" resultType="int">
+        SELECT count(id) from exit_way WHERE  1=1 
+        <if test="payPanelId!=null and payPanelId !=''">
+            and  payPanelId = #{payPanelId}
+        </if>
+    </select>
+
+    <insert id="addExitWay" parameterType="com.unipay.benext.model.park.ExitWay">
+         INSERT INTO exit_way (id,payPanelId,exitWayName,createTime,updateTime) VALUES (#{id},#{payPanelId},#{exitWayName},now(),now());
+    </insert>
+
+    <update id="editExitWay" parameterType="com.unipay.benext.model.park.ExitWay">
+          UPDATE exit_way  SET id=#{id}, payPanelId = #{payPanelId},exitWayName=#{exitWayName},updateTime=now() WHERE  id = #{oldId}
+    </update>
+
+    <delete id="delExitWay" parameterType="map">
+        DELETE from  exit_way WHERE  id = #{id}
+    </delete>
+
+    <!-- *********************bill table ********************* -->
+    <select id="getBill" parameterType="map" resultType="com.unipay.benext.model.park.Bill">
+        SELECT id,billNo,carNo,parkName,parkId,exitWayName,exitWayId,payPanelId,payPanelName
+        clientId,stopTime,DATE_FORMAT(exitTime,'%Y-%m-%d %H:%i:%S') as exitTime,totalPrice,cardNo,rightsType,
+        DATE_FORMAT(createTime,'%Y-%m-%d %H:%i:%S') as createTime,case when uploadTag = '1' then '已上传' ELSE '未上传' end as uploadTag
+        from bill where 1=1
+        <if test="startTime!=null and startTime !=''">
+            and createTime &gt;= #{startTime}
+        </if>
+        <if test="endTime!=null and endTime !=''">
+            and createTime  &lt;= #{endTime}
+        </if>
+        order by createTime desc
+        <if test="startnum!=null and endnum !=null">
+            limit #{startnum},#{endnum}
+        </if>
+
+    </select>
+
+    <select id="getBillCount" parameterType="map" resultType="int">
+        SELECT count(id)
+        from bill where 1=1
+        <if test="startTime!=null and startTime !=''">
+            and createTime &gt;= #{startTime}
+        </if>
+        <if test="endTime!=null and endTime !=''">
+            and createTime  &lt;= #{endTime}
+        </if>
+    </select>
+
+
+    <select id="getCloudSet" resultType="map">
+      SELECT cloudUrl FROM service_config
+    </select>
+    
+    <insert id="addOrUpdateCloudSet" parameterType="map">
+      replace into service_config(id,cloudUrl) VALUE (1,#{cloudUrl})
+    </insert>
+
+
+</mapper>

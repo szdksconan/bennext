@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- Title and other stuffs -->
+  <title>贵州银联权益平台</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+  <!-- Stylesheets -->
+  <link href="style/bootstrap.css" rel="stylesheet">
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="style/font-awesome.css"> 
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="style/jquery-ui.css"> 
+  <!-- Calendar -->
+  <link rel="stylesheet" href="style/fullcalendar.css">
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="style/prettyPhoto.css">  
+  <!-- Star rating -->
+  <link rel="stylesheet" href="style/rateit.css">
+  <!-- Date picker -->
+  <link rel="stylesheet" href="style/jquery.datetimepicker.css">
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="style/jquery.cleditor.css"> 
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="style/bootstrap-switch.css">
+  <!-- Main stylesheet -->
+  <link href="style/style.css" rel="stylesheet">
+  <!-- Widgets stylesheet -->
+  <link href="style/widgets.css" rel="stylesheet">     
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon/favicon.png">
+<link href="style/lzl.css" rel="stylesheet">
+</head>
+
+<body onload="noading()">
+
+
+<div class="lzloader">
+<div class="progress progress-striped active"><div class="progress-bar progress-bar-default"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div>
+</div>
+
+
+<!-- Header starts -->
+  <header class="lzlheader">
+    <div></div>
+  </header>
+
+<!-- Header ends -->
+
+<!-- Main content starts -->
+
+<div class="content">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-zi"><a href="">后台管理系统</a></div>
+        <ul id="nav">
+          <li style="display:none" menuName='平台管理维护'><a href="3110.html" class="open">平台管理维护</a></li>
+          <li style="display:none" menuName='营运方管理'><a href="3120.html">营运方管理</a></li> 
+          <li style="display:none" menuName='持卡人管理'><a href="3130.html">持卡人管理</a></li>
+          <li style="display:none" menuName='数据统计管理'><a href="3150.html">数据统计管理</a></li>
+        </ul>
+    </div>
+
+    <!-- Sidebar ends -->
+
+  	<!-- Main bar -->
+  	<div class="mainbar">
+      
+	    <!-- Page heading -->
+	    <div class="page-head">
+        <!-- Page heading -->
+	      <h2 class="pull-left">平台信息发布
+        </h2>
+
+
+        <!-- Breadcrumb -->
+        <div class="bread-crumb pull-right">
+          <a href="index.html"><i class="icon-home"></i> 主页</a> 
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="3110.html" class="bread-current">平台管理维护</a>
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="3114.html" class="bread-current">平台信息发布</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+	    </div>
+	    <!-- Page heading ends -->
+
+
+
+	    <!-- Matter -->
+
+	    <div class="matter">
+        <div class="container">
+
+          <div class="row" id="bodynav">
+             <div id='twoMenus' class="col-md-12" style="text-align:center">
+
+          <a href="3111.html" style="display:none" menuName='平台管理员注册审核' class="btn btn-info">平台管理员注册审核</a>
+          <a href="3112.html" style="display:none" menuName='个人信息维护' class="btn btn-info">个人信息维护</a>
+          <a href="3113.html" style="display:none" menuName='密码修改'  class="btn btn-info">密码修改</a>
+          <a href="3114.html" style="display:none" menuName='平台信息发布' class="btn btn-info"><i class="icon-magic"></i> 平台信息发布</a>
+          <a href="3115.html" style="display:none" menuName='供应方机构' class="btn btn-info">供应方机构</a>
+          <a href="qxconfig.html" style="display:none" menuName='角色权限分配' class="btn btn-info">角色权限分配</a>
+            </div>
+          </div> 
+
+          <div class="row">
+
+            <div class="col-md-12">
+            <div class="widget wgreen" id="addWin">
+                
+                <div class="widget-head">
+                  <div class="pull-left">发布平台信息</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wclose"><i class="icon-remove"></i></a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+
+                     <form class="form-horizontal" role="form">
+                              
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">信息标题</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="aa" maxlength="16" required="required" />
+                          </div>
+                          <!-- <div class="col-lg-4">
+                            <div class="alert alert-success lzl1" id='aacheck'><i class="icon-ok"></i> &nbsp;&nbsp;一句话</div>
+                          </div> -->
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">分类</label>
+                          <div class="col-lg-6">
+                            <select class="form-control" id="bb">
+                            </select>
+                          </div>
+                        </div> 
+                        
+                        <div class="form-group">
+                        <label class="col-lg-4 control-label">发布时间</label>
+                        <div id="datetimepicker1" class="input-append col-lg-6">
+                        <input class="form-control" type="text" id="cc" maxlength="19" required="required" />
+                        </div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">内容</label>
+                          <div class="col-lg-6">
+                            <textarea class="form-control" rows="5" id="dd" maxlength="300" required="required"></textarea>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">内容简介</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="ee" maxlength="30" />
+                          </div>
+                        </div> 
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">上传图片</label>
+                          <div class="col-lg-4">
+                            <input type="file" name="uploadfile" class="form-control" id="addjinfujian" maxlength="16" required="required" />
+                          </div>
+                          <div class="col-lg-2"><button type="button" class="btn btn-success" id="addchuanfujian">上传</button></div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">图片列表</label>
+                          <div class="col-lg-4">
+                            <select class="form-control" id="addzhuangfujian">
+                            </select>
+                          </div>
+                          <div class="col-lg-1"><button type="button" class="btn btn-success" id="addxiafujian">下载</button></div>
+                          <div class="col-lg-1"><button type="button" class="btn btn-danger" id="addshanfujian">删除</button></div>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                          <div class="col-lg-offset-1 col-lg-9">
+                            <button type="button" class="btn btn-primary" id="queren">发布</button>
+                            <button type="reset" class="btn btn-default">清空</button>
+                            
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+                  <div class="widget-foot">
+                    <!-- Footer goes here -->
+                  </div>
+              </div>
+
+
+                <div class="widget wgreen" id="editWin">
+                
+                <div class="widget-head">
+                  <div class="pull-left">修改平台信息</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wclose"><i class="icon-remove"></i></a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+
+                     <form class="form-horizontal" role="form">
+                              
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">信息标题</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="aaa" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">分类</label>
+                          <div class="col-lg-6">
+                            <select class="form-control" id="bbb">
+                            </select>
+                          </div>
+                        </div> 
+                        
+                        <div class="form-group">
+                        <label class="col-lg-4 control-label">发布时间</label>
+                        <div id="datetimepicker2" class="input-append col-lg-6">
+                        <input class="form-control" type="text" id="ccc" maxlength="19" required="required" />
+                        </div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">内容</label>
+                          <div class="col-lg-6">
+                            <textarea class="form-control" rows="5" id="ddd" maxlength="300" required="required"></textarea>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">内容简介</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="eee" maxlength="30" />
+                          </div>
+                        </div> 
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">上传附件</label>
+                          <div class="col-lg-4">
+                            <input type="file" name="uploadfile" class="form-control" id="gaijinfujian" maxlength="16" required="required" />
+                          </div>
+                          <div class="col-lg-2"><button type="button" class="btn btn-success" id="gaichuanfujian">上传</button></div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">商户图片文件列表</label>
+                          <div class="col-lg-4">
+                            <select class="form-control" id="gaizhuangfujian">
+                            </select>
+                          </div>
+                          <div class="col-lg-1"><button type="button" class="btn btn-success" id="gaixiafujian">下载</button></div>
+                          <div class="col-lg-1"><button type="button" class="btn btn-danger" id="gaishanfujian">删除</button></div>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                          <div class="col-lg-offset-1 col-lg-9">
+                            <button type="button" class="btn btn-primary" id="xiugai">修改</button>
+                            <button type="reset" class="btn btn-default">清空</button>
+                            
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+                  <div class="widget-foot">
+                    <!-- Footer goes here -->
+                  </div>
+              </div>
+
+
+
+              <!-- 查询条件 --> 
+        <div class="widget">
+            <div class="widget-head">
+              <div class="pull-left"></div>
+              
+              <div class="clearfix"></div>
+            </div>
+             <div class="widget-content">
+               <div class="padd">
+                 <form class="form-horizontal" role="form">
+               <div class="form-group">
+                    <label class="col-lg-4 control-label">分类</label>
+                    <div class="col-lg-2">
+                      <select class="form-control" id="aaaa">
+                         <option value=''>所有分类</option>
+                      </select>
+                    </div>
+                    
+
+                    <label class="col-lg-4 control-label">信息标题</label>
+                    <div class="col-lg-2">
+                      <input type="text" class="form-control" id="bbbb" placeholder="输入信息标题" maxlength="16" />
+                    </div>
+
+                    <div class="col-lg-2">
+                      <a href="#" class="btn btn-primary" id="xxsearch"><i class="icon-search"></i> 查询</a>
+                    </div>
+                  </div>
+                  </form>
+                 </div>
+               </div>
+                  
+
+        </div>
+
+
+
+           
+
+            <div class="widget">
+
+                <div class="widget-head">
+                  <div class="pull-left">平台信息展示</div>
+                  <div class="pull-right">
+                    <button style="display:none" class="btn btn-info tianjia" id="addWinBtn"><i class="icon-plus"></i> 添加平台信息</button>
+                    <a style="display:none" id="deleteBatch" href="" class="btn btn-danger allshanchu disabled"><i class="icon-remove"></i> 删除</a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                  <div class="widget-content">
+
+                    <table class="table table-striped table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th><input class="fugouxuan" type="checkbox" name="" value="" />全选</th>
+                          <th>信息标题</th>
+						              <th>类别</th>
+                          <th>发布时间</th>
+                          <!-- <th>图片</th> -->
+                          <th>详细操作</th>
+                        </tr>
+                      </thead>
+                      <tbody id='tableData'>
+                      </tbody>
+                    </table>
+
+                     <div class="widget-foot">
+                      
+                       <ul class="pager">
+                          <li class="previous"><a href="" id="qianBtn"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+                          <li id="currentPage">加载中</li>
+                          <li id="countPage">加载中</li>
+                          <li><input class="form-control" style="width:80px;display:inline;" placeholder="第几页" type="text" id="tiaozhuanPage" name="numonly"></li>
+                          <li><button class="btn btn-success" href="" id="tiaozhuanBtn">跳转</button></li>
+                          <li class="next"><a href="" id="houBtn">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                        </ul>
+                     
+                      <div class="clearfix"></div> 
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              
+
+
+
+
+
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+		  </div>
+
+		<!-- Matter ends -->
+
+    </div>
+
+   <!-- Mainbar ends -->	    	
+   <div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span> 
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title">平台信息详情</h4>
+    </div>
+    <div class="modal-body" id="genduobody">
+    <table class="table table-striped table-bordered table-hover" id="genduotable"></table>
+ 
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭窗口</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+<!--*****************************************添加的在这里哦*******************************************************************-->
+<div class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <p>您真的要删除这些数据吗?</p>
+        <ul class="cd-buttons">
+            <li><a href="javascript:void(0)">确定</a></li>
+            <li><a href="javascript:void(0)">取消</a></li>
+        </ul>
+        <a href="" class="cd-popup-close"></a>
+    </div> 
+</div>
+
+<div id="ziye-tishixx">
+
+<div class="notification notigreen">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-ok-sign"></i><h1></h1><p></p></div>
+</div>
+
+<div class="notification notired">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-remove-sign"></i><h1></h1><p></p></div>
+</div>
+
+<div class="notification notiblue">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-exclamation-sign"></i><h1></h1><p></p></div>
+</div>
+
+</div>
+
+<div class="suo"></div>
+<div class="geren"></div><div class="gerenyin"></div>
+<!-- JS -->
+<script src="js/jquery.js"></script> <!-- jQuery -->
+<script src="js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script> <!-- jQuery UI -->
+<script src="js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+
+<!-- jQuery Flot -->
+<script src="js/excanvas.min.js"></script>
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.flot.resize.js"></script>
+<script src="js/jquery.flot.pie.js"></script>
+<script src="js/jquery.flot.stack.js"></script>
+
+<!-- jQuery Notification - Noty -->
+<script src="js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="js/themes/default.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<script src="js/sparklines.js"></script> <!-- Sparklines -->
+<script src="js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="js/jquery.datetimepicker.js"></script> <!-- Date picker -->
+<script src="js/bootstrap-switch.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="js/filter.js"></script> <!-- Filter for support page -->
+<script src="js/custom.js"></script> <!-- Custom codes -->
+<script src="js/charts.js"></script> <!-- Charts & Graphs -->
+
+<script type="text/javascript" src="js/ajaxfileupload.js"></script> <!-- 上传 -->
+<script src="js/fun.js"></script>
+<script type="text/javascript">
+
+//根据用户菜单隐藏
+generalAjax('',"GET","../back/user/findMenus_ro",function(data){
+  //隐藏一级菜单
+  for ( var key in data.itemList[0]) {
+    $('#nav li[menuName="'+key+'"]').css('display','');
+  }
+  debugger;
+  //隐藏二级菜单
+  var twoMenus=data.itemList[0]['平台管理维护'];
+  for ( var idx in twoMenus) {
+    $('#twoMenus a[menuName="'+twoMenus[idx]+'"]').css('display','');
+  }
+  
+});
+
+
+
+
+/* Date picker */
+
+$('#cc').datetimepicker({
+    step:10,
+    lang:'ch',
+    format:'Y-m-d H:i:s'
+    });
+$('#ccc').datetimepicker({
+    step:10,
+    lang:'ch',
+    format:'Y-m-d H:i:s'
+    });
+
+//加载平台信息分类列表 
+loadSelectList("bb","../back/publish/findPublishClassIdName",'',"GET",{id:"ClassID",name:"ClassDescription"});
+loadSelectList("bbb","../back/publish/findPublishClassIdName",'',"GET",{id:"ClassID",name:"ClassDescription"});
+loadSelectList("aaaa","../back/publish/findPublishClassIdName",'',"GET",{id:"ClassID",name:"ClassDescription"},true);
+
+
+
+/**
+ * 添加
+ */
+$("#queren").click(function(event){
+	var thisclick = $(this);
+	var aa = kongge($("#aa").val());
+	var bb = kongge($("#bb").val());
+	var cc = kongge($("#cc").val());
+	var dd = kongge($("#dd").val());
+	var ee = kongge($("#ee").val());
+  var file = "";
+  for(i=0;i<$("#addzhuangfujian option").length;i++){file ==""?file=$("#addzhuangfujian option").eq(i).val():file+=","+$("#addzhuangfujian option").eq(i).val();}
+	if (aa=="" || bb=="" || cc=="" || dd=="" || ee=="") {notiblue("温馨提示","还有内容没填呢");return false;}
+	else{
+		event.preventDefault();
+		//notired(aa+bb+cc+dd+ee);InfoID
+		var params={
+				Title:aa,
+				ClassID:bb,
+				PublishTime:cc,
+				Content:dd,
+				Abstract:ee,
+        fileIds:file
+		}
+		//添加 带file和参数
+    generalAjax(params,"POST","../back/publish/add",function(){
+      //注册成功
+      notigreen("添加成功","您成功的添加了一条信息");
+      thisclick.next().click();
+      $("#addzhuangfujian option").remove();
+       tiaozhuanPage(currentPage,20,"GET","../back/publish/find");
+       $("#addWin").hide(100);
+    });
+	}
+});//************** click
+
+/**
+ * 修改
+ */
+function xiugai(event,obj){
+    event.preventDefault();
+    var thischeck = $(obj);
+    $("#addWin").hide();
+
+	debugger;
+	//设置对应值
+	var  tds= thischeck.parent().parent().children('td');
+	var id =$(tds.get(1)).attr('val'); 
+	var gai1 =$(tds.get(2)).attr('val'); 
+	var gai2 =$(tds.get(3)).attr('val'); 
+	var gai3 =$(tds.get(4)).attr('val');
+  var gai4 =$(tds.get(5)).attr('val'); 
+	var gai5 =$(tds.get(6)).attr('val'); 
+	$("#aaa").val(gai1);
+ 	select('bbb',gai2);
+	$("#ccc").val(gai3);
+  $("#ddd").val(gai4);
+	$("#eee").val(gai5);
+	//加载详情数据 成功后设置数据 和 修改事件
+
+  //设置已有文件列表
+  var fileList=InfoFiles[id];
+  var spfile=$("#gaizhuangfujian");
+  spfile.html("<option value ='' downPath=''>已上传的附件列表</option>");
+  for ( var idx in fileList) {
+    spfile.append("<option value ='"+fileList[idx].fileId+"' downPath='"+fileList[idx].filePath+"'>"+fileList[idx].fileName+"</option>");
+  }
+	//显示窗口
+  var $wcontent = $("#editWin");
+  if(!$wcontent.is(':visible')){
+    showOrHideWin("editWin");
+  }else{
+    showOrHideWin("editWin");
+    showOrHideWin("editWin");
+  }
+	
+	//设置数据
+	// var content=data.ItemList[0].Content;
+	// $("#ddd").val(content);
+	//绑定事件
+	$("#xiugai").unbind().click(function(){
+		var gaiclick = $(this);
+		debugger;
+		var aaa = kongge($("#aaa").val());
+		var bbb = kongge($("#bbb").val());
+		var ccc = kongge($("#ccc").val());
+		var ddd = kongge($("#ddd").val());
+		var eee = kongge($("#eee").val());
+    var file = "";
+    debugger;
+    for(i=0;i<$("#gaizhuangfujian option").length;i++){
+      file ==""?file=$("#gaizhuangfujian option").eq(i).val():file+=","+$("#gaizhuangfujian option").eq(i).val();
+      }
+
+		if (aaa=="" || bbb=="" || ccc=="" || ddd=="" || eee=="") {notiblue("温馨提示","还有内容没填呢");return false;}
+		else{
+			event.preventDefault();
+			var params={
+					InfoId:id,
+					Title:aaa,
+					ClassID:bbb,
+					PublishTime:ccc,
+					Content:ddd,
+					Abstract:eee,
+          fileIds:file
+			}
+      generalAjax(params,"POST","../back/publish/edit",function(data){
+          //"修改成功"
+         notigreen("修改成功","您成功的修改了一条信息");
+         gaiclick.next().click();
+         $("#gaizhuangfujian option").remove();
+         tiaozhuanPage(currentPage,20,"GET","../back/publish/find");
+         $("#editWin").hide(100);
+      });
+		}	//-----else
+
+
+	});
+	
+}//********** xiugai
+
+
+
+
+
+function genduo(event,obj){
+
+event.preventDefault();
+var thischeck = $(obj);
+var  tds = thischeck.parent().parent().children('td');
+var id = $(tds.get(1)).text();
+var gen2 = $(tds.get(2)).text();
+var gen3 = $(tds.get(3)).text();
+var gen4 = $(tds.get(4)).text();
+var gen5 = $(tds.get(5)).text();
+var gen6 = $(tds.get(6)).text();
+$("#genduotable").html("");
+$(".genduoctt").remove();
+
+var content = "<tbody style=''>";
+content += "<tr><td>信息标题</td><td>"+gen2+"</td></tr>";
+content += "<tr><td>类别</td><td>"+gen3+"</td></tr>";
+content += "<tr><td>发布时间</td><td>"+gen4+"</td></tr>";
+content += "<tr><td>内容简介</td><td>"+gen6+"</td></tr>";
+
+content += "</tbody>";
+var contentp = "<div class='alert alert-success genduoctt'>内容：<br />"+gen5+"</div>"
+$("#genduotable").append(content);
+$("#genduobody").append(contentp);       
+
+
+}
+
+
+
+
+
+
+/**
+ * 删除
+ */
+
+function shanchu(event,obj){
+	var thisclick = $(obj);
+	var  tds= thisclick.parent().parent().children('td');
+	debugger;
+	var id =$(tds.get(1)).attr('val'); 
+    $('.cd-popup').addClass('is-visible');
+	$(".cd-buttons a:eq(0)").unbind().click(function(){
+		//thisclick.parent().parent().remove();
+		var param={ids:parseInt(id)};
+		generalAjax(param,"POST","../back/publish/delete",function(){
+			//删除成功-关闭窗口 更新数据
+			debugger;
+			 notigreen("删除成功","您成功的删除了一条信息");
+			$('.cd-buttons a:eq(1)').click();
+			tiaozhuanPage(currentPage,20,"GET","../back/publish/find");
+      $("#addWin").hide();$("#editWin").hide();
+		});
+    });
+	/**
+	窗口其他监听
+	*/
+	$('.cd-buttons a:eq(1)').on('click', function(event){
+	        event.preventDefault();
+	        $('.cd-popup').removeClass('is-visible');
+	});
+	//close popup
+    $('.cd-popup').on('click', function(event){
+        if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+            event.preventDefault();
+            $(this).removeClass('is-visible');
+        }
+    });
+    //close popup when clicking the esc keyboard button
+    $(document).keyup(function(event){
+        if(event.which=='27'){
+            $('.cd-popup').removeClass('is-visible');
+        }
+    });
+}
+
+ 
+
+/**
+ * 查询
+ */
+$("#xxsearch").unbind().bind('click',function(){
+  //加入条件
+  debugger;
+  var xid=$("#aaaa").val();
+  var xname=$("#bbbb").val();
+  searchParams= {
+    ClassID: xid,
+    Title: xname,
+  };
+  tiaozhuanPage(1,20,"GET","../back/publish/find");
+  return false;
+}); 
+//默认无条件查询第一页
+var searchParams= {
+  ClassID:"",
+  Title:"",
+};
+tiaozhuanPage(1,20,"GET","../back/publish/find");
+var InfoFiles=null;
+//更新table数据
+function updateData(list){
+  InfoFiles={}
+	for(var i=0;i<list.length;i++){
+    var obj=list[i];
+    InfoFiles[obj.InfoId]=obj.fileList;
+		var tr= '<tr>'+
+        '<td><input class="zigouxuan" type="checkbox" name="" val="" /></td>'+
+				'<td val="'+obj.InfoId+'" style="display:none;">'+obj.InfoId+'</td>'+
+			  '<td val="'+obj.Title+'">'+obj.Title+'</td>'+
+			  '<td val="'+obj.ClassDescription+'"><span class="label label-success">'+obj.ClassDescription+'</span></td>'+
+			  '<td val="'+obj.PublishTime+'">'+obj.PublishTime+'</td>'+
+        '<td val="'+obj.Content+'" style="display:none;">'+obj.Content+'</td>'+
+        '<td val="'+obj.Abstract+'" style="display:none;">'+obj.Abstract+'</td>'+
+			  //'<td val="'+obj.MediaPath+'"><a href="">查看图片</a></td>'+
+			  '<td style="width: 100px;"><a href="#myModal" class="btn btn-xs btn-info genduo" data-toggle="modal"><i class="icon-zoom-in"></i> </a>'+
+			  '<button style="display:none" class="btn btn-xs btn-warning xiugai"><i class="icon-pencil"></i> </button>'+
+			  '<button style="display:none" class="btn btn-xs btn-danger shanchu"><i class="icon-remove"></i> </button>'+
+			  '</td>'+
+			  '</tr>';
+		$("#tableData").append(tr);
+    complete();
+	}
+	debugger//隐藏不需的功能（增加、删除、修改、审核）
+  //addWinBtn deleteBatch auditBatch shenhe xiugai shanchu
+  generalAjax({menuName:'平台信息发布'},"GET","../back/user/findPermissionsForMenuName_ro",function(data){
+    //隐藏功能按钮
+    for ( var idx in data.itemList) {
+      var pName=data.itemList[idx]['PName'];
+      var pbtn=[];
+      if(pName=='添加平台信息'){
+        pbtn.push($('#addWinBtn'));
+      }else
+      if(pName=='修改平台信息'){
+        pbtn.push($('.xiugai'));
+      }else
+      if(pName=='删除平台信息'){
+        pbtn.push($('#deleteBatch'));
+        pbtn.push($('.shanchu'));
+      }
+      debugger;
+      if(pbtn.length!=0){
+        for ( var idx in pbtn) {
+          pbtn[idx].css('display','');
+        }
+      }
+    }
+  });
+	//设置每行数据的操作监听
+	$(".xiugai").unbind().bind('click',function(event){
+		debugger;
+		xiugai(event,this);
+	});
+  $(".genduo").unbind().bind('click',function(event){
+    debugger;
+    genduo(event,this);
+  });
+	$(".shanchu").unbind().bind('click',function(event){
+		debugger;
+		shanchu(event,this);
+	});
+}
+
+
+
+
+
+
+$(".allshanchu").unbind().click(function(){
+
+var geshu = $("#tableData input:checked").length;
+
+var idall = "";
+for(i=0;i<geshu;i++){
+idall += $("#tableData input:checked").eq(i).parent().next().text()+",";
+}
+var chuliidall = idall.substring(0,idall.length-1);
+//alert(chuliidall);
+
+
+  $('.cd-popup').addClass('is-visible');
+  $(".cd-buttons a:eq(0)").unbind().click(function(){
+    //thisclick.parent().parent().remove();
+    var param={ids:chuliidall};
+    generalAjax(param,"POST","../back/publish/delete",function(){
+      //删除成功-关闭窗口 更新数据
+      $('.cd-popup').removeClass('is-visible');
+      tiaozhuanPage(currentPage,20,"GET","../back/publish/find");
+      $("#addWin").hide();$("#editWin").hide();
+    });
+    });
+  /**
+  窗口其他监听
+  */
+  $('.cd-buttons a:eq(1)').on('click', function(event){
+          event.preventDefault();
+          $('.cd-popup').removeClass('is-visible');
+  });
+  //close popup
+    $('.cd-popup').on('click', function(event){
+        if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+            event.preventDefault();
+            $(this).removeClass('is-visible');
+        }
+    });
+    //close popup when clicking the esc keyboard button
+    $(document).keyup(function(event){
+        if(event.which=='27'){
+            $('.cd-popup').removeClass('is-visible');
+        }
+    });
+//alert($("#tableData input:checked").eq(0).parent().next().text());
+return false;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function complete(){
+
+
+
+
+
+$(".fugouxuan").change(function() {
+
+var thisxuan = $(this);
+if (thisxuan.is(':checked')) {
+    $(".zigouxuan").prop("checked",true);
+    thisxuan.parent().parent().parent().parent().children("tbody").children("tr").addClass("warning").addClass("checkgouxuan");;
+}
+else{
+    $(".zigouxuan").prop("checked",false);
+    thisxuan.parent().parent().parent().parent().children("tbody").children("tr").removeClass("warning checkgouxuan");
+}
+
+$(".checkgouxuan").length > 0?$(".allshanchu").removeClass("disabled"):$(".allshanchu").addClass("disabled");
+});
+
+
+$(".zigouxuan").change(function() {
+
+var thisxuan = $(this);
+if (thisxuan.is(':checked')) {
+   thisxuan.parent().parent().addClass("warning").addClass("checkgouxuan");
+}
+else{
+    thisxuan.parent().parent().removeClass("warning checkgouxuan");
+}
+
+$(".checkgouxuan").length > 0?$(".allshanchu").removeClass("disabled"):$(".allshanchu").addClass("disabled");
+});
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+/**
+ * 设置事件-上传附件 删除附件 下载附件
+ * */
+function setUploadListener(type){
+  //上传附件
+  $("#"+type+"chuanfujian").unbind().bind('click',function(){
+
+   var file=$("#"+type+"jinfujian").val();
+   if(file==''){
+    notiblue("请选择文件","您还没有选择文件进行上传");
+    return false; 
+   }
+   else if (!checkimg(type+"jinfujian")) {
+    notiblue("文件格式错误","请选择图片文件进行上传，图片文件格式可以有：.jpg .png .jpeg .bmp");
+    return false; 
+   }
+   else{
+   $.ajaxFileUpload({
+            url: '../back/fileInfo/uploadFile', //用于文件上传的服务器端请求地址
+            secureuri: false, //是否需要安全协议，一般设置为false
+            fileElementId: type+"jinfujian", //文件上传域的ID
+            dataType: 'json', //返回值类型 一般设置为json
+            success:function(data, textStatus){
+
+          if(data.isSuccess){
+             //添加该附件信息到附件列表
+             for(var i=0;i<data.itemList.length;i++){
+              var obj=data.itemList[i];
+              var id=obj.fileId,downPath=obj.filePath,name=obj.fileName;
+              $("#"+type+"zhuangfujian").append("<option value ='"+id+"' downPath='"+downPath+"'>"+name+"</option>");
+              }
+              notigreen("操作成功","附件上传成功");
+              $("#"+type+"jinfujian").val("");
+          }else{
+            notiblue("温馨提示",data.message);
+          }
+      },
+            error: function (data, status, e){//服务器响应失败处理函数
+               notired("操作出错","上传失败");
+        }});//---ajax
+      }//----else
+  });
+   //删除附件
+   $("#"+type+"shanfujian").unbind().bind('click',function(){
+
+    var affixId=$("#"+type+"zhuangfujian").val();
+    if(affixId==''){
+      return; 
+     }
+    $.ajax({type:"GET",url:"../back/fileInfo/deleteFile",
+      async:false,
+      data:{"ids":affixId},
+      complete:function(XMLHttpRequest, textStatus){
+          eval("var data="+XMLHttpRequest.responseText);
+          if(data.isSuccess){
+            notigreen("删除成功","您刚刚删除了一个附件");
+            $("#"+type+"zhuangfujian option").remove("[value='"+affixId+"']");
+          }
+          else{
+            notired("删除失败","删除失败的原因是："+data.message);
+          }
+    
+      }});
+   });
+   //下载附件
+   $("#"+type+"xiafujian").unbind().bind('click',function(){
+
+    var id= $("#"+type+"zhuangfujian").val();
+    var downPath=$("#"+type+"zhuangfujian option[value="+id+"]").attr('downPath');
+    if(downPath==''){
+      return; 
+    }
+    var curl= window.location.href;
+    var baseurl="/gzUnionpayWeb/";
+    var url=baseurl+downPath;
+    window.location.target="_blank" ; 
+    window.open(url);
+   });
+}
+
+setUploadListener('add');
+setUploadListener('gai');
+</script>
+</body>
+</html>

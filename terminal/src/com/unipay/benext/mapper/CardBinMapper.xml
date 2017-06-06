@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipay.benext.mapper.CardBinMapper">
+    <insert id="saveCardBin" parameterType="java.util.List">
+        replace into card_bin (id,cardBin,cardClass,bankName,bankCode,cardName,cardRank,cardStart,rangLength,cardBeginRange,cardEndRange,
+        updateTime,createTime) values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id},#{item.cardBin},#{item.cardClass},#{item.bankName},#{item.bankCode},#{item.cardName},#{item.cardRank},#{item.cardStart},
+            #{item.rangLength},#{item.cardBeginRange},#{item.cardEndRange},#{item.updateTime},#{item.createTime})
+        </foreach>
+    </insert>
+    <select id="getLoclCardBinList" resultType="com.unipay.benext.model.entity.CardBin">
+        select * from card_bin
+    </select>
+    <select id="getLoclCardBinByCardNo" parameterType="java.lang.String" resultType="com.unipay.benext.model.entity.CardBin">
+        SELECT * from card_bin  where cardBin= LEFT(#{cardBin}, Length(cardBin))
+        and SUBSTRING(#{cardBin},cardStart,rangLength)&gt;=cardBeginRange  and SUBSTRING(#{cardBin},cardStart,rangLength)&lt;=cardEndRange
+    </select>
+
+</mapper>

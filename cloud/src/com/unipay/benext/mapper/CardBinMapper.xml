@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipay.benext.mapper.CardBinMapper">
+    <sql id="cardBinSql">
+        IFNULL(cardBin,'') cardBin,
+        IFNULL(cardClass,'') cardClass,
+        IFNULL(bankName,'') bankName,
+        IFNULL(bankCode,'') bankCode,
+        IFNULL(cardName,'') cardName,
+        IFNULL(cardBeginRange,'') cardBeginRange,
+        IFNULL(cardEndRange,'') cardEndRange,
+        IFNULL(isSynTag,'') isSynTag,
+        cardRank,cardStart,rangLength,
+        DATE_FORMAT(updateTime,'%Y-%m-%d %H:%i:%s') updateTime,
+        DATE_FORMAT(createTime,'%Y-%m-%d %H:%i:%s') createTime,
+        id
+    </sql>
+    <select id="getCarBinInfo" parameterType="com.alibaba.fastjson.JSONObject" resultType="com.unipay.benext.model.cloud.CardBin">
+        select <include refid="cardBinSql"/> from card_bin where 1=1
+        <if test="type==1">
+            and (updateTime &gt;= #{lastUpdateTime} or createTime &gt;= #{lastUpdateTime})
+        </if>
+    </select>
+
+    <delete id="deleteCardBin">
+        truncate table card_bin;
+    </delete>
+
+    <insert id="saveCardBinList" parameterType="java.util.List">
+        replace into card_bin (id,cardBin,cardClass,bankName,bankCode,cardName,cardRank,cardStart,rangLength,cardBeginRange,cardEndRange,
+        updateTime,createTime) values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id},#{item.cardBin},#{item.cardClass},#{item.bankName},#{item.bankCode},#{item.cardName},#{item.cardRank},#{item.cardStart},
+            #{item.rangLength},#{item.cardBeginRange},#{item.cardEndRange},now(),now())
+        </foreach>
+    </insert>
+</mapper>

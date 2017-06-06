@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- Title and other stuffs -->
+  <title>贵州银联权益平台</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+  <!-- Stylesheets -->
+  <link href="style/bootstrap.css" rel="stylesheet">
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="style/font-awesome.css"> 
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="style/jquery-ui.css"> 
+  <!-- Calendar -->
+  <link rel="stylesheet" href="style/fullcalendar.css">
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="style/prettyPhoto.css">  
+  <!-- Star rating -->
+  <link rel="stylesheet" href="style/rateit.css">
+  <!-- Date picker -->
+  <link rel="stylesheet" href="style/jquery.datetimepicker.css">
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="style/jquery.cleditor.css"> 
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="style/bootstrap-switch.css">
+  <!-- Main stylesheet -->
+  <link href="style/style.css" rel="stylesheet">
+  <!-- Widgets stylesheet -->
+  <link href="style/widgets.css" rel="stylesheet">   
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon/favicon.png">
+<link href="style/lzl.css" rel="stylesheet">
+</head>
+
+<body onload="noading()">
+
+
+<div class="lzloader">
+<div class="progress progress-striped active"><div class="progress-bar progress-bar-default"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div>
+</div>
+
+
+<!-- Header starts -->
+  <header class="lzlheader">
+    <div></div>
+  </header>
+
+<!-- Header ends -->
+
+<!-- Main content starts -->
+
+<div class="content">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-zi"><a href="">后台管理系统</a></div>
+        <ul id="nav">
+          <li style="display:none" menuName='平台管理维护'><a href="3110.html" class="open">平台管理维护</a></li>
+          <li style="display:none" menuName='营运方管理'><a href="3120.html">营运方管理</a></li> 
+          <li style="display:none" menuName='持卡人管理'><a href="3130.html">持卡人管理</a></li>
+          <li style="display:none" menuName='数据统计管理'><a href="3150.html">数据统计管理</a></li>
+        </ul>
+    </div>
+
+    <!-- Sidebar ends -->
+
+  	<!-- Main bar -->
+  	<div class="mainbar">
+      
+	    <!-- Page heading -->
+	    <div class="page-head">
+        <!-- Page heading -->
+	      <h2 class="pull-left">供应方机构管理
+        </h2>
+
+
+        <!-- Breadcrumb -->
+        <div class="bread-crumb pull-right">
+          <a href="index.html"><i class="icon-home"></i> 主页</a> 
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="3110.html" class="bread-current">平台管理维护</a>
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="3115.html" class="bread-current">供应方机构管理</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+	    </div>
+	    <!-- Page heading ends -->
+
+
+
+	    <!-- Matter -->
+
+	    <div class="matter">
+        <div class="container">
+
+          <div class="row" id="bodynav">
+             <div id='twoMenus' class="col-md-12" style="text-align:center">
+
+          <a href="3111.html" style="display:none" menuName='平台管理员注册审核' class="btn btn-info">平台管理员注册审核</a>
+          <a href="3112.html" style="display:none" menuName='个人信息维护' class="btn btn-info">个人信息维护</a>
+          <a href="3113.html" style="display:none" menuName='密码修改'  class="btn btn-info">密码修改</a>
+          <a href="3114.html" style="display:none" menuName='平台信息发布' class="btn btn-info">平台信息发布</a>
+          <a href="3115.html" style="display:none" menuName='供应方机构' class="btn btn-info"><i class="icon-magic"></i> 供应方机构</a>
+          <a href="qxconfig.html" style="display:none" menuName='角色权限分配' class="btn btn-info">角色权限分配</a>
+            </div>
+          </div> 
+
+          <div class="row">
+
+            <div class="col-md-12">
+            
+
+
+            <div class="widget wgreen" id="addWin">
+                
+                <div class="widget-head">
+                  <div class="pull-left">添加供应方机构数据</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+                    <a href="#" class="wclose"><i class="icon-remove"></i></a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+
+                     <form class="form-horizontal" role="form">
+                              
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">名称</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="aa" maxlength="16" required="required" />
+                          </div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">地址</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="bb" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">联系电话</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="cc" maxlength="11" required="required" name="numonly" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">经度</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="dd" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">纬度</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="ee" maxlength="16" required="required" />
+                          </div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">营业时间</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="ff" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">机构类型</label>
+                          <div class="col-lg-6">
+                            <select class="form-control" id="gg">
+                              <option>加载列表失败</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">商户代码</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="hh" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">终端代码</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="ii" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">终端备注</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="jj" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">终端状态</label>
+                          <div class="col-lg-6">
+                            <select class="form-control" id="kk">
+                              <option value="1">已启用</option>
+                              <option value="0">未启用</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">上传附件</label>
+                          <div class="col-lg-4">
+                            <input type="file" name="uploadfile" class="form-control" id="addjinfujian" maxlength="16" required="required" />
+                          </div>
+                          <div class="col-lg-2"><button type="button" class="btn btn-success" id="addchuanfujian">上传</button></div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">附件列表</label>
+                          <div class="col-lg-4">
+                            <select class="form-control" id="addzhuangfujian">
+                            </select>
+                          </div>
+                          <div class="col-lg-1"><button type="button" class="btn btn-success" id="addxiafujian">下载</button></div>
+                          <div class="col-lg-1"><button type="button" class="btn btn-danger" id="addshanfujian">删除</button></div>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                          <div class="col-lg-offset-1 col-lg-9">
+                            <button type="button" class="btn btn-primary" id="queren">添加数据</button>
+                            <button type="reset" class="btn btn-default">清空数据</button>
+                            
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+                  <div class="widget-foot">
+                    <!-- Footer goes here -->
+                  </div>
+              </div>
+
+
+
+
+
+               <div class="widget wgreen" id="editWin">
+                
+                <div class="widget-head">
+                  <div class="pull-left">修改供应方机构数据</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+                    <a href="#" class="wclose"><i class="icon-remove"></i></a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+
+                     <form class="form-horizontal" role="form">
+                              
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">名称</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="aaa" maxlength="16" required="required" />
+                          </div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">地址</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="bbb" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">联系电话</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="ccc" maxlength="11" required="required" name="numonly" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">经度</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="ddd" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">纬度</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="eee" maxlength="16" required="required" />
+                          </div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">营业时间</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="fff" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">机构类型</label>
+                          <div class="col-lg-6">
+                            <select class="form-control" id="ggg">
+                              <option>加载列表失败</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">商户代码</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="hhh" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">终端代码</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="iii" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">终端备注</label>
+                          <div class="col-lg-6">
+                            <input type="text" class="form-control" id="jjj" maxlength="16" required="required" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">终端状态</label>
+                          <div class="col-lg-6">
+                            <select class="form-control" id="kkk">
+                              <option value="1">已启用</option>
+                              <option value="0">未启用</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">上传附件</label>
+                          <div class="col-lg-4">
+                            <input type="file" name="uploadfile" class="form-control" id="gaijinfujian" maxlength="16" required="required" />
+                          </div>
+                          <div class="col-lg-2"><button type="button" class="btn btn-success" id="gaichuanfujian">上传</button></div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">商户图片文件列表</label>
+                          <div class="col-lg-4">
+                            <select class="form-control" id="gaizhuangfujian">
+                            </select>
+                          </div>
+                          <div class="col-lg-1"><button type="button" class="btn btn-success" id="gaixiafujian">下载</button></div>
+                          <div class="col-lg-1"><button type="button" class="btn btn-danger" id="gaishanfujian">删除</button></div>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                          <div class="col-lg-offset-1 col-lg-9">
+                            <button type="button" class="btn btn-primary" id="xiugai">修改数据</button>
+                            <button type="reset" class="btn btn-default">清空数据</button>
+                            
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+                  <div class="widget-foot">
+                    <!-- Footer goes here -->
+                  </div>
+              </div>
+
+
+
+
+
+
+
+              <!-- 查询条件 --> 
+        <div class="widget">
+            <div class="widget-head">
+              <div class="pull-left"></div>
+              
+              <div class="clearfix"></div>
+            </div>
+             <div class="widget-content">
+               <div class="padd">
+                 <form class="form-horizontal" role="form">
+               <div class="form-group">
+                    <label class="col-lg-4 control-label">机构类型</label>
+                    <div class="col-lg-2">
+                      <select class="form-control" id="aaaa">
+                         <option value=''>所有类型</option>
+                      </select>
+                    </div>
+                    
+
+                    <label class="col-lg-4 control-label">名称</label>
+                    <div class="col-lg-2">
+                      <input type="text" class="form-control" id="bbbb" placeholder="输入供应方名称" maxlength="16" />
+                    </div>
+
+                    <div class="col-lg-2">
+                      <a href="#" class="btn btn-primary" id="xxsearch"><i class="icon-search"></i> 查询</a>
+                    </div>
+                  </div>
+                  </form>
+                 </div>
+               </div>
+                  
+
+        </div>
+
+
+
+
+
+            <div class="widget">
+
+                <div class="widget-head">
+                  <div class="pull-left">供应方机构数据</div>
+                  <div class="pull-right">
+                    <button style="display:none" class="btn btn-info tianjia" id="addWinBtn"><i class="icon-plus"></i> 添加供应方数据</button>
+                    <a style="display:none" id="deleteBatch" href="" class="btn btn-danger allshanchu disabled"><i class="icon-remove"></i> 选中项删除</a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                  <div class="widget-content">
+
+                    <table class="table table-striped table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th><input class="fugouxuan" type="checkbox" name="" value="" />全选</th>
+                          <th>名称</th>
+                          <th>商户代码</th>
+                          <th>终端代码</th>
+                          <th>联系电话</th>
+                          <th>状态</th>
+                          <th>机构类型</th>
+                          <th>详细操作</th>
+                        </tr>
+                      </thead>
+                      <tbody id='tableData'>
+
+                      </tbody>
+                    </table>
+
+                    <div class="widget-foot">
+
+                        <ul class="pager">
+                          <li class="previous"><a href="" id="qianBtn"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+                          <li id="currentPage">加载中</li>
+                          <li id="countPage">加载中</li>
+                          <li><input class="form-control" style="width:80px;display:inline;" placeholder="第几页" type="text" id="tiaozhuanPage" name="numonly"></li>
+                          <li><button class="btn btn-success" href="" id="tiaozhuanBtn">跳转</button></li>
+                          <li class="next"><a href="" id="houBtn">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                        </ul>
+                     
+                      <div class="clearfix"></div> 
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+		  </div>
+
+		<!-- Matter ends -->
+
+    </div>
+
+   <!-- Mainbar ends -->	    	
+   <div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span> 
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title">供应方数据详情</h4>
+    </div>
+    <div class="modal-body" id="genduobody">
+    <table class="table table-striped table-bordered table-hover" id="genduotable"></table>
+ 
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭窗口</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<!--*****************************************添加的在这里哦*******************************************************************-->
+<div class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <p>您真的要删除这些数据吗?</p>
+        <ul class="cd-buttons">
+            <li><a href="javascript:void(0)">确定</a></li>
+            <li><a href="javascript:void(0)">取消</a></li>
+        </ul>
+        <a href="" class="cd-popup-close"></a>
+    </div> 
+</div>
+
+<div id="ziye-tishixx">
+
+<div class="notification notigreen">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-ok-sign"></i><h1></h1><p></p></div>
+</div>
+
+<div class="notification notired">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-remove-sign"></i><h1></h1><p></p></div>
+</div>
+
+<div class="notification notiblue">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-exclamation-sign"></i><h1></h1><p></p></div>
+</div>
+
+</div>
+
+
+
+<!-- Modal 审核窗口 -->
+    <div id="shenheWin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                     <h4 class="modal-title">审核注册信息</h4>
+                   </div>
+                   <div class="modal-body">
+                     <button type="button" class="btn btn-default" name='shenhe' val='1' uname=''>通过</button>
+                     <button type="button" class="btn btn-default" name='shenhe' val='2' uname=''>驳回</button>
+                   </div>
+                   <div class="modal-footer">
+                   <!--  
+                     <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+                     <button type="button" class="btn btn-primary">Save changes</button>
+                     -->
+                 </div>
+               </div>
+      </div>
+    </div>
+
+
+
+
+<div class="suo"></div>
+<div class="geren"></div><div class="gerenyin"></div>
+<!-- JS -->
+<script src="js/jquery.js"></script> <!-- jQuery -->
+<script src="js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script> <!-- jQuery UI -->
+<script src="js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+
+<!-- jQuery Flot -->
+<script src="js/excanvas.min.js"></script>
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.flot.resize.js"></script>
+<script src="js/jquery.flot.pie.js"></script>
+<script src="js/jquery.flot.stack.js"></script>
+
+<!-- jQuery Notification - Noty -->
+<script src="js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="js/themes/default.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<script src="js/sparklines.js"></script> <!-- Sparklines -->
+<script src="js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="js/jquery.datetimepicker.js"></script> <!-- Date picker -->
+<script src="js/bootstrap-switch.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="js/filter.js"></script> <!-- Filter for support page -->
+<script src="js/custom.js"></script> <!-- Custom codes -->
+<script src="js/charts.js"></script> <!-- Charts & Graphs -->
+
+<script type="text/javascript" src="js/ajaxfileupload.js"></script>
+<script src="js/fun.js"></script>
+<script type="text/javascript">
+
+//根据用户菜单隐藏
+generalAjax('',"GET","../back/user/findMenus_ro",function(data){
+  //隐藏一级菜单
+  for ( var key in data.itemList[0]) {
+    $('#nav li[menuName="'+key+'"]').css('display','');
+  }
+  debugger;
+  //隐藏二级菜单
+  var twoMenus=data.itemList[0]['平台管理维护'];
+  for ( var idx in twoMenus) {
+    $('#twoMenus a[menuName="'+twoMenus[idx]+'"]').css('display','');
+  }
+  
+});
+
+
+
+/**
+ * 加载数据列表
+ */
+ /* */
+ loadSelectList("gg","../back/supplyerInfo/findSupplyerTypeIdName",'',"GET",{id:"TypeID",name:"Description"});
+ loadSelectList("ggg","../back/supplyerInfo/findSupplyerTypeIdName",'',"GET",{id:"TypeID",name:"Description"});
+ loadSelectList("aaaa","../back/supplyerInfo/findSupplyerTypeIdName",'',"GET",{id:"TypeID",name:"Description"},true);
+
+
+
+
+
+
+$("#queren").click(function(event){
+  var thisclick = $(this);
+  var aa = kongge($("#aa").val());
+  var bb = kongge($("#bb").val());
+  var cc = kongge($("#cc").val());
+  var dd = kongge($("#dd").val());
+  var ee = kongge($("#ee").val());
+  var ff = kongge($("#ff").val());
+  var gg = $("#gg").val();
+  var hh = kongge($("#hh").val());
+  var ii = kongge($("#ii").val());
+  var jj = kongge($("#jj").val());
+  var kk = $("#kk").val();
+  var file = "";
+  for(i=0;i<$("#addzhuangfujian option").length;i++){file ==""?file=$("#addzhuangfujian option").eq(i).val():file+=","+$("#addzhuangfujian option").eq(i).val();}
+  var youxiang  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  var shouji = /^1\d{10}$/;
+  var dianhua =/^0\d{2,3}-?\d{7,8}$/;
+  //alert(file);
+  if (aa=="" || bb=="" || cc=="" || dd=="" || ee=="" || ff=="" || hh=="" || ii=="" || jj=="") {notiblue("温馨提示","还有内容没填呢");return false;}
+  else if(!shouji.test(cc) && !dianhua.test(cc)){
+      notired("保存失败","请输入正确的手机号码或者座机号码");
+    }
+  else{
+    event.preventDefault();
+    var params={
+        supplyerName:aa,
+        address:bb,
+        contact:cc,
+        longitude:dd,
+        latitude:ee,
+        trafficDate:ff,
+        typeId:gg,
+        merchantCode:hh,
+        termCode:ii,
+        remarks:jj,
+        state:kk,
+        fileIds:file
+
+    };
+    generalAjax(params,"POST","../back/supplyerInfo/add",function(){
+      //注册成功
+      notigreen("添加成功","您成功的添加了一个供应商");
+      thisclick.next().click();
+      $("#addzhuangfujian option").remove();
+       tiaozhuanPage(currentPage,20,"GET","../back/supplyerInfo/find");
+       $("#addWin").hide(100);
+    });
+  }
+});//************** click
+
+/**
+ * 修改
+ */
+function xiugai(event,obj){
+    event.preventDefault();
+    var thischeck = $(obj);
+    $("#addWin").hide();
+
+  debugger;
+  //设置对应值
+  var  tds= thischeck.parent().parent().children('td');
+  var id =$(tds.get(1)).text(); 
+  var gai2 =$(tds.get(2)).text(); 
+  var gai3 =$(tds.get(3)).text(); 
+  var gai4 =$(tds.get(4)).text(); 
+  var gai5 =$(tds.get(5)).text();
+  var gai6 =$(tds.get(6)).text(); 
+  var gai7 =$(tds.get(7)).text();
+  var gai8 =$(tds.get(8)).text(); 
+  var gai9 =$(tds.get(9)).text();
+  var gai10 =$(tds.get(10)).text();
+  var gai11 =$(tds.get(11)).text();
+  var gai12 =$(tds.get(12)).text();
+  $("#aaa").val(gai2);
+  $("#bbb").val(gai10);
+  $("#ccc").val(gai5);
+  $("#ddd").val(gai9);
+  $("#eee").val(gai8);
+  $("#fff").val(gai11);
+  select("ggg",gai7);
+  $("#hhh").val(gai3);
+  $("#iii").val(gai4);
+  $("#jjj").val(gai12);
+  select("kkk",gai6);
+  //设置已有文件列表
+  var fileList=supplyerFiles[id];
+  var spfile=$("#gaizhuangfujian");
+  spfile.html("<option value ='' downPath=''>已上传的附件列表</option>");
+  for ( var idx in fileList) {
+	  spfile.append("<option value ='"+fileList[idx].fileId+"' downPath='"+fileList[idx].filePath+"'>"+fileList[idx].fileName+"</option>");
+  }
+  //显示窗口
+  var $wcontent = $("#editWin");
+  if(!$wcontent.is(':visible')){
+    showOrHideWin("editWin");
+  }else{
+    showOrHideWin("editWin");
+    showOrHideWin("editWin");
+  }
+  $("#xiugai").unbind().click(function(){
+  var gaiclick = $(this);
+  debugger;
+
+  var aaa = kongge($("#aaa").val());
+  var bbb = kongge($("#bbb").val());
+  var ccc = kongge($("#ccc").val());
+  var ddd = kongge($("#ddd").val());
+  var eee = kongge($("#eee").val());
+  var fff = kongge($("#fff").val());
+  var ggg = kongge($("#ggg").val());
+  var hhh = kongge($("#hhh").val());
+  var iii = kongge($("#iii").val());
+  var jjj = kongge($("#jjj").val());
+  var kkk = kongge($("#kkk").val());
+
+  var youxiang  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  var shouji = /^1\d{10}$/;
+  var dianhua =/^0\d{2,3}-?\d{7,8}$/;
+  
+  var file = "";
+  debugger;
+  for(i=0;i<$("#gaizhuangfujian option").length;i++){
+	  file ==""?file=$("#gaizhuangfujian option").eq(i).val():file+=","+$("#gaizhuangfujian option").eq(i).val();
+	  }
+  
+  if (aaa=="" || bbb=="" || ccc=="" || ddd=="" || eee=="" || fff=="" || hhh=="" || iii=="" || jjj=="") {notiblue("温馨提示","还有内容没填呢");return false;}
+  else if(!shouji.test(ccc) && !dianhua.test(ccc)){
+      notired("保存失败","请输入正确的手机号码或者座机号码");
+    }
+  else{
+    event.preventDefault();
+    var params={
+        supplyerId:id,
+        supplyerName:aaa,
+        address:bbb,
+        contact:ccc,
+        longitude:ddd,
+        latitude:eee,
+        trafficDate:fff,
+        typeId:ggg,
+        merchantCode:hhh,
+        termCode:iii,
+        remarks:jjj,
+        state:kkk,
+        fileIds:file
+    };
+    generalAjax(params,"POST","../back/supplyerInfo/edit",function(){
+      //"修改成功"
+       notigreen("修改成功","您成功的修改了一个供应商");
+       gaiclick.next().click();
+       $("#gaizhuangfujian option").remove();
+       tiaozhuanPage(currentPage,20,"GET","../back/supplyerInfo/find");
+       $("#editWin").hide(100);
+    });
+  } 
+  });
+}//********** xiugai
+
+
+
+
+function genduo(event,obj){
+
+  event.preventDefault();
+  var thischeck = $(obj);
+  var  tds = thischeck.parent().parent().children('td');
+  var gen0 =$(tds.get(2)).text(); 
+  var gen1 =$(tds.get(3)).text(); 
+  var gen2 =$(tds.get(4)).text(); 
+  var gen3 =$(tds.get(5)).text(); 
+  var gen4 =$(tds.get(6)).text(); 
+  var gen5 =$(tds.get(7)).text();
+  var gen6 =$(tds.get(8)).text(); 
+  var gen7 =$(tds.get(9)).text();
+  var gen8 =$(tds.get(10)).text(); 
+  var gen9 =$(tds.get(11)).text();
+  var gen10 =$(tds.get(12)).text();
+
+  $("#genduotable").html("");
+
+  var content = "<tbody style=''>";
+  content += "<tr><td>名称</td><td>"+gen0+"</td></tr>";
+  content += "<tr><td>商户代码</td><td>"+gen1+"</td></tr>";
+  content += "<tr><td>终端代码</td><td>"+gen2+"</td></tr>";
+  content += "<tr><td>联系电话</td><td>"+gen3+"</td></tr>";
+  content += "<tr><td>状态</td><td>"+gen4+"</td></tr>";
+  content += "<tr><td>机构类型</td><td>"+gen5+"</td></tr>";
+  content += "<tr><td>经度</td><td>"+gen7+"</td></tr>";
+  content += "<tr><td>纬度</td><td>"+gen6+"</td></tr>";
+  content += "<tr><td>地址</td><td>"+gen8+"</td></tr>";
+  content += "<tr><td>营业时间</td><td>"+gen9+"</td></tr>";
+  
+  content += "<tr><td>终端备注</td><td>"+gen10+"</td></tr>";
+
+  // if(item.SelfRule1==2){
+  //     content += "<tr><td>规则1</td><td>每次都收费</td></tr>";
+  // }else if(item.SelfRule1==1){
+  //     content += "<tr><td>规则1</td><td>只首次收费</td></tr>";
+  // }else if(item.SelfRule1==3){
+  //     content += "<tr><td>规则1</td><td>不收费</td></tr>";
+  // }else{
+  //     content += "<tr><td>规则1</td><td>获取数据出错</td></tr>";
+  // }
+
+  // if(item.SelfRule2==1){
+  //     content += "<tr><td>规则2</td><td>非62银标卡可使用一次</td></tr>";
+  // }else if(item.SelfRule2==0){
+  //     content += "<tr><td>规则2</td><td>非62银标卡不可使用</td></tr>";
+  // }else{
+  //     content += "<tr><td>规则2</td><td>获取数据出错</td></tr>";
+  // }
+
+  content += "</tbody>";
+  $("#genduotable").append(content);
+}
+
+
+
+
+
+
+
+
+
+/**
+ * 删除
+ */
+
+function shanchu(event,obj){
+  var thisclick = $(obj);
+  var  tds= thisclick.parent().parent().children('td');
+  debugger;
+  var id =$(tds.get(1)).text(); 
+    $('.cd-popup').addClass('is-visible');
+  $(".cd-buttons a:eq(0)").unbind().click(function(){
+    //thisclick.parent().parent().remove();
+    var param={ids:parseInt(id)};
+    
+    generalAjax(param,"GET","../back/supplyerInfo/delete",function(){
+      //删除成功-关闭窗口 更新数据
+       notigreen("删除成功","您成功的删除了一个供应商");
+      $('.cd-popup').removeClass('is-visible');
+      tiaozhuanPage(currentPage,20,"GET","../back/supplyerInfo/find");
+      $("#addWin").hide();$("#editWin").hide();
+    });
+    });
+  /**
+  窗口其他监听
+  */
+  $('.cd-buttons a:eq(1)').on('click', function(event){
+          event.preventDefault();
+          $('.cd-popup').removeClass('is-visible');
+  });
+  //close popup
+    $('.cd-popup').on('click', function(event){
+        if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+            event.preventDefault();
+            $(this).removeClass('is-visible');
+        }
+    });
+    //close popup when clicking the esc keyboard button
+    $(document).keyup(function(event){
+        if(event.which=='27'){
+            $('.cd-popup').removeClass('is-visible');
+        }
+    });
+}
+
+/**
+ * 缓存查询list数据
+ */
+var nigaolist=[];
+
+
+/**
+ * 查询
+ */
+$("#xxsearch").unbind().bind('click',function(){
+  //加入条件
+  debugger;
+  var xid=$("#aaaa").val();
+  var xname=$("#bbbb").val();
+  searchParams= {
+    typeId: xid,
+    supplyerName: xname,
+  };
+  tiaozhuanPage(1,20,"GET","../back/supplyerInfo/find");
+  return false;
+}); 
+//默认无条件查询第一页
+var searchParams= {
+  typeId:"",
+  supplyerName:"",
+};
+//默认无条件查询第一页
+tiaozhuanPage(1,20,"GET","../back/supplyerInfo/find");
+var supplyerFiles=null;
+//更新table数据
+function updateData(list){
+  supplyerFiles={};
+  var zhuangtai = "";
+  var leixing = "";
+  for(var i=0;i<list.length;i++){
+    var obj=list[i];
+	supplyerFiles[obj.supplyerId]=obj.fileList;
+    //nigaolist=list.fileList;
+    obj.state == 1?zhuangtai="已启用":zhuangtai="未启用";
+    if(obj.typeId==1){
+        leixing = "酒店";
+    }else if(obj.typeId==2){
+        leixing = "汽车";
+    }else if(obj.typeId==3){
+        leixing = "停车";
+    }else if(obj.typeId==4){
+        leixing = "美食";
+    }else{
+        leixing = "其他";
+    }
+    var tr= '<tr>'+
+          '<td><input class="zigouxuan" type="checkbox" name="" val="" /></td>'+
+          '<td style="display:none;">'+obj.supplyerId+'</td>'+
+          '<td>'+obj.supplyerName+'</td>'+
+          '<td>'+obj.merchantCode+'</td>'+
+          '<td>'+obj.termCode+'</td>'+
+          '<td>'+obj.contact+'</td>'+
+          '<td val="'+obj.state+'">'+zhuangtai+'</td>'+
+          '<td>'+leixing+'</td>'+
+          '<td style="display:none;">'+obj.latitude+'</td>'+
+          '<td style="display:none;">'+obj.longitude+'</td>'+
+          '<td style="display:none;">'+obj.address+'</td>'+
+          '<td style="display:none;">'+obj.trafficDate+'</td>'+
+          '<td style="display:none;">'+obj.remarks+'</td>'+
+          // '<td>'+obj.SupplyerID+'</td>'+
+          // '<td>'+obj.SupplyerID+'</td>'+
+          '<td style="width: 100px;"><a href="#myModal" class="btn btn-xs btn-info genduo" data-toggle="modal"><i class="icon-zoom-in"></i> </a>'+
+          '<button style="display:none" class="btn btn-xs btn-warning xiugai"><i class="icon-pencil"></i> </button>'+
+          '<button style="display:none" class="btn btn-xs btn-danger shanchu"><i class="icon-remove"></i> </button>'+
+         '  </td>'+
+        ' </tr>';
+    $("#tableData").append(tr);
+    complete();
+  }
+  debugger//隐藏不需的功能（增加、删除、修改、审核）
+  //addWinBtn deleteBatch auditBatch shenhe xiugai shanchu
+  generalAjax({menuName:'供应方机构'},"GET","../back/user/findPermissionsForMenuName_ro",function(data){
+    //隐藏功能按钮
+    for ( var idx in data.itemList) {
+      var pName=data.itemList[idx]['PName'];
+      var pbtn=[];
+      if(pName=='添加供应方信息'){
+        pbtn.push($('#addWinBtn'));
+      }else
+      if(pName=='修改供应方信息'){
+        pbtn.push($('.xiugai'));
+      }else
+      if(pName=='删除供应方信息'){
+        pbtn.push($('#deleteBatch'));
+        pbtn.push($('.shanchu'));
+      }
+      debugger;
+      if(pbtn.length!=0){
+        for ( var idx in pbtn) {
+          pbtn[idx].css('display','');
+        }
+      }
+    }
+  });
+  //设置每行数据的操作监听
+  $(".xiugai").unbind().bind('click',function(event){
+    debugger;
+    xiugai(event,this);
+  });
+  $(".genduo").unbind().bind('click',function(event){
+    debugger;
+    genduo(event,this);
+  });
+  $(".shanchu").unbind().bind('click',function(event){
+    debugger;
+    shanchu(event,this);
+  });
+}
+
+
+
+
+
+
+
+
+$(".allshanchu").unbind().click(function(){
+
+var geshu = $("#tableData input:checked").length;
+
+var idall = "";
+for(i=0;i<geshu;i++){
+idall += $("#tableData input:checked").eq(i).parent().next().text()+",";
+}
+var chuliidall = idall.substring(0,idall.length-1);
+//alert(chuliidall);
+
+
+  $('.cd-popup').addClass('is-visible');
+  $(".cd-buttons a:eq(0)").unbind().click(function(){
+    //thisclick.parent().parent().remove();
+    var param={ids:chuliidall};
+    generalAjax(param,"POST","../back/supplyerInfo/delete",function(){
+      //删除成功-关闭窗口 更新数据
+      $('.cd-popup').removeClass('is-visible');
+      tiaozhuanPage(currentPage,20,"GET","../back/supplyerInfo/find");
+      $("#addWin").hide();$("#editWin").hide();
+    });
+    });
+  /**
+  窗口其他监听
+  */
+  $('.cd-buttons a:eq(1)').on('click', function(event){
+          event.preventDefault();
+          $('.cd-popup').removeClass('is-visible');
+  });
+  //close popup
+    $('.cd-popup').on('click', function(event){
+        if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+            event.preventDefault();
+            $(this).removeClass('is-visible');
+        }
+    });
+    //close popup when clicking the esc keyboard button
+    $(document).keyup(function(event){
+        if(event.which=='27'){
+            $('.cd-popup').removeClass('is-visible');
+        }
+    });
+//alert($("#tableData input:checked").eq(0).parent().next().text());
+return false;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function complete(){
+
+
+
+
+
+$(".fugouxuan").change(function() {
+
+var thisxuan = $(this);
+if (thisxuan.is(':checked')) {
+    $(".zigouxuan").prop("checked",true);
+    thisxuan.parent().parent().parent().parent().children("tbody").children("tr").addClass("warning").addClass("checkgouxuan");;
+}
+else{
+    $(".zigouxuan").prop("checked",false);
+    thisxuan.parent().parent().parent().parent().children("tbody").children("tr").removeClass("warning checkgouxuan");
+}
+
+$(".checkgouxuan").length > 0?$(".allshanchu").removeClass("disabled"):$(".allshanchu").addClass("disabled");
+});
+
+
+$(".zigouxuan").change(function() {
+
+var thisxuan = $(this);
+if (thisxuan.is(':checked')) {
+   thisxuan.parent().parent().addClass("warning").addClass("checkgouxuan");
+}
+else{
+    thisxuan.parent().parent().removeClass("warning checkgouxuan");
+}
+
+$(".checkgouxuan").length > 0?$(".allshanchu").removeClass("disabled"):$(".allshanchu").addClass("disabled");
+});
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ * 设置事件-上传附件 删除附件 下载附件
+ * */
+function setUploadListener(type){
+  //上传附件
+  $("#"+type+"chuanfujian").unbind().bind('click',function(){
+
+   var file=$("#"+type+"jinfujian").val();
+   if(file==''){
+    notiblue("请选择文件","您还没有选择文件进行上传");
+    return false; 
+   }
+   else if (!checkimg(type+"jinfujian")) {
+     notiblue("文件格式错误","请选择图片文件进行上传，图片文件格式可以有：.jpg .png .jpeg .bmp");
+    return false; 
+   }
+   else{
+   $.ajaxFileUpload({
+            url: '../back/fileInfo/uploadFile', //用于文件上传的服务器端请求地址
+            secureuri: false, //是否需要安全协议，一般设置为false
+            fileElementId: type+"jinfujian", //文件上传域的ID
+            dataType: 'json', //返回值类型 一般设置为json
+            success:function(data, textStatus){
+
+          if(data.isSuccess){
+             //添加该附件信息到附件列表
+             for(var i=0;i<data.itemList.length;i++){
+              var obj=data.itemList[i];
+              var id=obj.fileId,downPath=obj.filePath,name=obj.fileName;
+              $("#"+type+"zhuangfujian").append("<option value ='"+id+"' downPath='"+downPath+"'>"+name+"</option>");
+              }
+              notigreen("附件上传成功","您成功的上传一个附件");
+          }else{
+            notired(data.message);
+          }
+      },
+            error: function (data, status, e){//服务器响应失败处理函数
+               notired("上传失败","请检查网络或者联系管理员");
+        }});//---ajax
+      }//----else
+  });
+   //删除附件
+   $("#"+type+"shanfujian").unbind().bind('click',function(){
+
+    var affixId=$("#"+type+"zhuangfujian").val();
+    if(affixId==''){
+      return; 
+     }
+    $.ajax({type:"GET",url:"../back/fileInfo/deleteFile",
+      async:false,
+      data:{"ids":affixId},
+      complete:function(XMLHttpRequest, textStatus){
+          eval("var data="+XMLHttpRequest.responseText);
+          if(data.isSuccess){
+            notigreen("删除成功","您刚刚删除了一个附件");
+            $("#"+type+"zhuangfujian option").remove("[value='"+affixId+"']");
+          }
+          else{
+            notired("删除失败",data.message);
+          }
+    
+      }});
+   });
+   //下载附件
+   $("#"+type+"xiafujian").unbind().bind('click',function(){
+
+    var id= $("#"+type+"zhuangfujian").val();
+    var downPath=$("#"+type+"zhuangfujian option[value="+id+"]").attr('downPath');
+    if(downPath==''){
+      return; 
+    }
+    var curl= window.location.href;
+    var baseurl="/gzUnionpayWeb/";
+    var url=baseurl+downPath;
+    window.location.target="_blank" ; 
+    window.open(url);
+   });
+}
+
+setUploadListener('add');
+setUploadListener('gai');
+</script>
+</body>
+</html>

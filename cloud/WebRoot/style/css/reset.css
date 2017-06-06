@@ -1,0 +1,33 @@
+
+html,body{font-family:"";font-size:12px;padding:0;margin:0;width:100%;height:100%;background:#FFFFFF}
+div,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,p,hr{padding:0;margin:0}
+li,ul,ol,dl,dt,dd{list-style-type:none;margin:0;padding:0;display: block;}
+a:visited,a:link{text-decoration:none;color: #000000;}
+a:hover{color: #000000;}
+img{border:none;}
+input,button{outline:none;cursor:pointer;}
+i{font-style:normal}
+.left{float:left}
+.right{float:right}
+.clear{clear:both}
+.red{color:red}
+.blue{color:blue}
+.pink{color:#fc00ff}
+.green{color:green}
+.orange{color:orange}
+.clear{clear: both;}
+.zdyBtn {
+    border-radius: 5px;
+    text-decoration: none;
+    border:solid 1px #8F8F8F;
+    
+    padding: 2px 7px;
+}
+
+
+.searchBox th{float: left;line-height:20px;height:20px;}
+.searchBox td{width:180px; }
+.searchBox td input{width:130px;height:20px }
+.searchBox td select{width:135px;height:20px }
+
+.zheding1{width: 62px;height: 40px;display:block;margin: 0 0 10px 0;-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;border: none; }

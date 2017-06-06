@@ -1,0 +1,15 @@
+.wrapper{ width: 1115px; height: 1518px;background: #ffffff;font-size: 14px;}
+.content{ width: 1090px;margin: 10px 0 0 10px;}
+.nav{ height: 41px; background: #f5f5f5;}
+.nav h1{display: inline-block; line-height: 41px;padding-left: 60px;font-size: 18px; font-weight: normal;}
+.header{height: 55px; line-height: 55px;}
+.header b{ padding: 0 38px;}
+.listdo{ float: right;margin-right: 42px;}
+.jin{height: 40px; line-height: 40px;}
+.jin .c-box{margin: 0 10px 0 10px;background: #ffffff;}
+.jin span{margin: 0 14px 0 6px;}
+.jin .h-ren{margin: -9px 0 0 0;}
+.show-one{width: 1088px;height: 118px;border: solid 1px #E9E9E9;background: #FCFCFC;}
+.show-one .one-p{margin: 19px 0 0 49px;float: left;}
+.show-btn{width: 62px;float: right;margin: 14px 54px 0 0;}
+.show-btn button{width: 62px;height: 40px;display:block;margin: 0 0 10px 0;-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;border: none; }

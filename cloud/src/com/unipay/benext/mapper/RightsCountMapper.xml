@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipay.benext.mapper.RightsCountMapper">
+    <select id="getList" resultType="com.unipay.benext.model.cloud.RightsCount">
+        select * from rights_count
+    </select>
+
+    <delete id="deleteAllRightsCount">
+        truncate table rights_count
+    </delete>
+
+    <insert id="saveAllRightsCount" parameterType="java.util.List">
+        insert into rights_count values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.rightsId},#{item.rank},#{item.count})
+        </foreach>
+    </insert>
+</mapper>

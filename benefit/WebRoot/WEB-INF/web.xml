@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  
+  
+   <!--启动参数配置-->
+   <listener>
+   	<listener-class>com.xsscd.listener.ProjectLifeListener</listener-class>
+   </listener>
+   <!-- 重定向连接到主页面filter -->
+   <filter>
+	<filter-name>linkHomePageFilter</filter-name>
+	<filter-class>com.xsscd.filter.LinkHomePageFilter</filter-class>
+	</filter>
+  <filter-mapping>
+	<filter-name>linkHomePageFilter</filter-name>
+	<url-pattern>/back/*</url-pattern>
+  </filter-mapping>
+   <filter-mapping>
+	<filter-name>linkHomePageFilter</filter-name>
+	<url-pattern>/front/*</url-pattern>
+  </filter-mapping>
+   <!-- 页面请求登录控制filter -->
+   <filter>
+	<filter-name>userLoginFilter</filter-name>
+	<filter-class>com.xsscd.filter.UserLoginFilter</filter-class>
+	</filter>
+  <filter-mapping>
+	<filter-name>userLoginFilter</filter-name>
+	<url-pattern>/back/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+	<filter-name>userLoginFilter</filter-name>
+	<url-pattern>/front/huiyuan.html</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+	<filter-name>userLoginFilter</filter-name>
+	<url-pattern>/front/quanyi.html</url-pattern>
+  </filter-mapping>
+	<filter>
+		<filter-name>interfaceFilter</filter-name>
+		<filter-class>com.xsscd.filter.InterfaceFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>interfaceFilter</filter-name>
+		<url-pattern>/interface/*</url-pattern>
+	</filter-mapping>
+	<!-- 进入jfinal框架 -->
+   <filter>
+	<filter-name>jfinal</filter-name>
+	<filter-class>com.jfinal.core.JFinalFilter</filter-class>
+	<init-param>
+	<param-name>configClass</param-name>
+	<param-value>com.xsscd.JFinalConfig.MainConfig</param-value>
+	</init-param>
+  </filter>
+  <filter-mapping>
+	<filter-name>jfinal</filter-name>
+	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- 文件下载过滤处理header -->
+   <filter>
+	<filter-name>downFile</filter-name>
+	<filter-class>com.xsscd.filter.DownFileFilter</filter-class>
+  </filter>
+  <filter-mapping>
+	<filter-name>downFile</filter-name>
+	<url-pattern>/files/*</url-pattern>
+  </filter-mapping>
+   <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+</web-app>

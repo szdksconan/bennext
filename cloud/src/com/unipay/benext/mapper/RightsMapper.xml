@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipay.benext.mapper.RightsMapper">
+    <select id="getRightsInfoList" resultType="com.unipay.benext.model.cloud.Rights">
+        select *  from rights where 1=1
+        <if test="type==1">
+            and (updateTime &gt;= #{lastUpdateTime})
+        </if>
+    </select>
+
+    <!-- **************权益平台 停车场商户相关********** -->
+    <select id="getParkSupplyList" parameterType="com.unipay.benext.model.cloud.ParkSupply" resultType="com.unipay.benext.model.cloud.ParkSupply">
+        SELECT * from park
+    </select>
+
+    <!--根据商户id获取停车场权益信息-->
+    <select id="getRightsInfoForClientId" parameterType="String" resultType="com.unipay.benext.model.cloud.Rights">
+        select r.* from rights r inner join client_rights c on r.rightsType=c.rightsType where c.cilentId=#{_parameter}
+    </select>
+
+    <select id="getClientRightsListByFilter" parameterType="java.lang.String" resultType="com.unipay.benext.model.cloud.ClientRightsModel">
+        select * from client_rights where 1=1 and cilentId = #{supplyId}
+    </select>
+
+    <select id="getParkListByFilter" parameterType="com.unipay.benext.model.basic.RequestModel" resultType="com.unipay.benext.model.cloud.ParkSupply">
+      select parkName,clientId as supplyId,parkId,clientName as supplyName from park where 1=1
+      <if test="supplyName != null and supplyName != ''">
+        and clientName like concat('%',#{supplyName},'%')
+      </if>
+        <if test="parkName != null and parkName != ''">
+            and parkName like concat('%',#{parkName},'%')
+        </if>
+        and  useTag = "0"
+        ${orderSql}
+    </select>
+    <select id="getParkCountListByFilter" parameterType="com.unipay.benext.model.basic.RequestModel" resultType="java.lang.Integer">
+        select count(1) from park where 1=1
+        <if test="supplyName != null and supplyName != ''">
+            and clientName like concat('%',#{supplyName},'%')
+        </if>
+        <if test="parkName != null and parkName != ''">
+            and parkName like concat('%',#{parkName},'%')
+        </if>
+        and  useTag = "0"
+    </select>
+    <update id="updatePark"  parameterType="com.unipay.benext.model.basic.RequestModel">
+        update park SET useTag = "1" where parkId=#{parkId} and clientId=#{supplyId}
+    </update>
+
+    <delete id="deleteAllClientRightsModel">
+        truncate table client_rights
+    </delete>
+
+    <insert id="saveAllClientRightsModel" parameterType="java.util.List">
+        insert into client_rights(cilentId,rightsType,clientName,effectType,payRule,deductionHours,price) values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.cilentId},#{item.rightsType},#{item.clientName},#{item.effectType},#{item.payRule},#{item.deductionHours},#{item.price})
+        </foreach>
+    </insert>
+
+    <delete id="deleteAllRights">
+        truncate table rights
+    </delete>
+
+    <insert id="saveAllRights" parameterType="java.util.List">
+        insert into rights(cardNo,rightsType,rightCount,PayRule,rightMaxCount,deductionHours) values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.cardNo},#{item.rightsType},#{item.rightCount},#{item.PayRule},#{item.rightMaxCount},#{item.deductionHours})
+        </foreach>
+    </insert>
+    <select id="getRightsByFilter" parameterType="com.unipay.benext.model.cloud.Rights" resultType="com.unipay.benext.model.cloud.Rights">
+        select  * from rights where cardNo=#{cardNo} AND rightsType=#{rightsType}
+    </select>
+    <insert id="addRights" parameterType="com.unipay.benext.model.cloud.Rights">
+        INSERT INTO  rights(cardNo,rightsType,rightsCount,payRule,rightsMaxCount,updateTime) VALUES (#{cardNo},#{rightsType},#{rightsCount},#{payRule},#{rightsMaxCount},#{updateTime})
+    </insert>
+    <update id="updateRights" parameterType="com.unipay.benext.model.cloud.Rights">
+        UPDATE  rights SET rightsCount=#{rightsCount},payRule=#{payRule},updateTime=#{updateTime} where  cardNo=#{cardNo} AND rightsType=#{rightsType}
+    </update>
+</mapper>

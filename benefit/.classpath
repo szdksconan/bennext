@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="etc"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/fastjson-1.1.37.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/guava-16.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/javax.mail.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jfinal-1.9-bin-with-src.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jfinal-ext-3.1.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jodd-3.4.10.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/p6spy.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/slf4j-api-1.7.6.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/slf4j-log4j12-1.7.6.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/cos-26Dec2008.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/druid-1.0.2.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mysql-connector-java-5.1.26.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/poi-3.9.jar"/>
+	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
+</classpath>

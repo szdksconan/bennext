@@ -1,0 +1,21 @@
+ #ShowBigImgDiv
+   {
+       position: absolute;
+       x-index:0;
+       y-index:0;
+       z-index: 10001;
+       display: none;
+       cursor: pointer;
+   }
+   #FullScreenDiv
+   {
+       position: absolute;
+       z-index: 10000;
+       x-index:0;
+       y-index:0;
+       display: none;
+       background-color: #FFFFFF;
+       filter: alpha(opacity=50);
+       opacity: 0.5;
+       cursor: pointer;
+   }

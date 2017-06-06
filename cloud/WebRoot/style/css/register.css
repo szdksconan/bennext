@@ -1,0 +1,15 @@
+.wrapper{ width: 100%; height: 100%;background: #ffffff;font-size: 12px;}
+.verify{}
+.verify dl{ margin-bottom: 30px;}
+.verify dl dt{width: 95px;height: 95px;border: 1px solid #cccccc;border-radius: 10px;-webkit-border-radius: 10px;-moz-border-radius: 10px;-o-border-radius: 10px;text-align: center;line-height: 95px;font-size: 25px;display: inline-block;vertical-align: middle;}
+.verify dl dd{display: inline-block;ertical-align: middle;margin-left: 25px; font-weight: bold;text-decoration: underline;cursor: pointer;}
+.verify form label{ display: block; margin-bottom: 15px;}
+.verify form label b{display: inline-block;width: 95px;text-align: right;vertical-align: middle;}
+.verify form label b span{ display: inline-block; color: #f95539; font-size: 16px;}
+.inputName{ width: 408px; height: 33px; font-size: 14px; padding-left: 10px;margin-left: 10px;}
+.inputVerify{ width: 271px;height: 33px;margin-left: 10px;font-size: 14px;padding-left: 10px;}
+.inputVerifys{ width: 118px; height: 33px; margin-left: 10px;}
+.verify div p{ display: inline-block;padding-left: 32px; vertical-align: middle;}
+.verify div p span{color: #f7563a;line-height: 30px;}
+.verify div b{display: inline-block; width: 95px;text-align: right;}
+.button{width: 363px;height: 65px; border: none;background: #f75639;font-size: 16px; color: #ffffff;border-radius: 50px; -wbkit-border-radius: 50px; -moz-border-radius: 50px;-border-radius: 50px; margin: 50px 0 50px 80px;}

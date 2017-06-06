@@ -1,0 +1,12 @@
+.wrap{position: relative;font-size: 10px;min-width:1354px;}
+.wrap-right{position: absolute;left: 44.5%;top: 22.2%;top: 16.2% \0;width: 43%;height: 400px;overflow: hidden;}
+.wrap-right input{background: url("../img/log.jpg") no-repeat;width: 19.9em;height: 3.1em;outline:none;cursor:pointer;color:#B2B0B1;font-size:1.5em;border:none;padding: 11px 0 10px 30px;padding:28px 0 15px 30px \0;margin: 0 0 15px 0;margin: 0 0 -10px 0 \0;}
+.wrap-right .password{}
+.wrap-right .yanzheng{float: left;}
+.wrap-right .yan-box{float:left;width: 28%;height:7%;display: inline-block;margin: 0.9% 0 0 20px;margin: 0.2% 0 0 20px \0;}
+.wrap-right .yan-img{float: left;cursor:pointer;margin :2.6% 0 0 16px;}
+.wrap-right .login{background: url("../img/red-butt.png") no-repeat;width: 20.2em;width: 20.2em \0;height: 3.8em;outline:none;cursor:pointer;padding:11px 0 10px 3px;padding:15px 0 20px 3px \0;margin: 0 0 0 18px;font-size:1.5em;color: #ffffff; }
+.wrap-right p{width: 56%;text-align: center;margin: 0.6em 0 0 3em;font-size: 16px;}
+.wrap-right .regist{margin: 0 36px 0 0;color: #f75639; cursor:pointer;}
+.wrap-right .forget-pass{cursor:pointer;}
+.wrap-right .copyright{margin: 1em 0 0 5em;margin: 1em 0 0 4em \0;color: #B7B7B7;font-size:12px;font-size:14px \0;}

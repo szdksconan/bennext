@@ -1,0 +1,80 @@
+.wrap{width:1348px;width:1344px \0;height:auto;margin:0 auto;font-size:12px \0;}
+.header{width:1348px;width:1344px \0;height: 120px;background:#f39801; }
+
+.header .header-right{background: #f39801;height: 120px;background: url("../img/header-bg.gif") no-repeat right center;}
+.header .header-right span{float: left;height: 120px;}
+
+.header-right .out p{height:20px;float: right;color: #cccccc;line-height: 20px;margin: 83px -130px 0 0;font-size:14px;font-size:14px \0;}
+.header-right .out p a{cursor: pointer;}
+.header-right .out p .super{margin: 0 20px 0 0;color:#ffffff;}
+.header-right .out p .tuichu{font-size: 14px;color: #ffffff;}
+.header-right .out span{cursor:pointer;margin:0 10px 0 0;display: inline-block;width: 19px;height: 19px;}
+.header-right .out i{cursor:pointer;margin:0 10px 0 20px;display: inline-block;width: 10px;height: 11px;background: url("../img/index-sprite.png") no-repeat;background-position: -200px -250px;}
+.header-right .out b{color: #ffffff;font-size: 16px;float: right;margin: 31px 50px 0 0;}
+
+.m-left{height: 770px;height: 860px \0;width: 240px;background: #CACACA;float: left;}
+.m-left ul li{width: 240px;height: 50px;background: #CACACA;line-height: 50px;}
+
+
+
+.m-left ul li span{display:inline-block;height: 43px;width: 43px;float: left;margin: 3.5px 10px 0 24px;}
+.m-left ul li a{display:inline-block;height: 50px;float: left;font-size:14px \0;}
+.m-left .li1{background: #DDDDDD;}
+.m-left .li2{background: #CACACA;}
+.m-left .li3{background: #DDDDDD;}
+.m-left .li4{background: #CACACA;}
+.m-right{float: left;}
+/*鍟嗗搧淇℃伅*/
+.shop-list{ width: 1088px;margin: 10px 0 0 10px; height: 760px;height: 850px \0;background: #ffffff;font-size: 14px;}
+.nav{ height: 41px; background: #f5f5f5;}
+.nav h1{display: inline-block; line-height: 41px;padding-left: 60px;font-size: 18px; font-weight: normal;}
+
+
+.listdo{ float: right;margin-right: 78px;line-height:41px;}
+.jin{height: 40px; line-height: 40px;}
+.jin .c-box{margin: 0 10px 0 10px;background: #ffffff;}
+.jin span{margin: 0 14px 0 6px;}
+.jin .h-ren{margin: -9px 0 0 0;}
+.show-one{width: 1028px;height: 118px;border: solid 1px #E9E9E9;background: #FCFCFC;margin:20px 0 0 0;}
+.show-one p{width:120px;float:left;}
+.show-one .one-p{margin: 15px 0 0 49px;}
+.add-btn{margin:20px 0 0 20px;margin:20px 0 0 20px \0;}
+.add-btn button{width: 300px;height: 65px; border: none;background: #f75639;font-size: 16px; color: #ffffff;border-radius: 50px; -wbkit-border-radius: 50px; -moz-border-radius: 50px;-border-radius: 50px;}
+.show-btn{width: 62px;float: right;margin: 14px 54px 0 0;}
+.show-btn button{width: 62px;height: 40px;display:block;margin: 0 0 10px 0;-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;border: none; }
+/*商家评论  */
+.lab-hd{width:1090px;margin:10px 0 0 10px;border: solid 1px #E9E9E9;}
+.lab-hd .zhuagntai{height:40px;background:#F5F5F5;line-height:40px;font-size:14px;}
+.lab-hd .zhuagntai .tai{margin:0 744px 0 38px;}
+.lab-hd .tai-show .chang{margin:0 0 0 38px;}
+.lab-hd .tai-show{height:62px;line-height:62px;background:#FCFCFC;}
+.lab-hd .tai-show .ping-show {margin:12px 169px 0 0;}
+.lab-hd .tai-show .ping-show img{margin:0 5px 0 0;}
+/* 预约反馈 */
+.table-1{margin:10px 0 0 10px;}
+.tr-1{height:41px;line-height:41px;}
+。th-1{width:115px;width:118px \0;}
+.th-2{width:175px;width:178px \0;}
+.th-3{width:155px;width:158px \0;}
+.th-4{width:105px;width:108px \0;}
+.th-5{width:145px;width:148px \0;}
+.th-6{width:115px;width:118px \0;}
+.th-7{width:300px;width:303px \0;}
+#yybody tr{height:41px;line-height:41px;text-align:center;}
+/*鍟嗗淇℃伅*/
+.verify{ }
+.verify dl{ margin-bottom: 30px;}
+.verify dl dt{width: 95px;height: 95px;border: 1px solid #cccccc;border-radius: 10px;-webkit-border-radius: 10px;-moz-border-radius: 10px;-o-border-radius: 10px;text-align: center;line-height: 95px;font-size: 25px;display: inline-block;vertical-align: middle;}
+.verify dl dd{display: inline-block;vertical-align: middle;margin-left: 25px; font-weight: bold;text-decoration: underline;cursor: pointer;}
+.verify form label{ display: block; margin-bottom: 15px;}
+.verify form label b{display: inline-block;width: 95px;text-align: right;vertical-align: middle;}
+.verify form label b span{ display: inline-block; color: #f95539; font-size: 16px;}
+.inputName{ width: 408px; height:50px \0;font-size: 14px; padding: 4px 0 0 10px;padding:16px 0 0 10px \0;margin-left: 10px;}
+.inputVerify{ width: 271px;height: 33px;margin-left: 10px;font-size: 14px;padding-left: 10px;}
+.inputVerifys{ width: 118px; height: 33px; margin-left: 10px;}
+.verify div p{ display: inline-block;padding-left: 32px; vertical-align: middle;}
+.verify div p span{color: #f7563a;line-height: 30px;}
+.verify div b{display: inline-block; width: 95px;text-align: right;}
+.button{background: url("../img/red-butt.png") no-repeat;width: 363px;height: 65px; border: none;font-size: 16px; color: #ffffff; }
+.footer{height:35px;width:1344px;width:1344px \0;background:#f39801;}
+.m-left .high{background: white;}

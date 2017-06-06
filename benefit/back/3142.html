@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- Title and other stuffs -->
+  <title>收银员信息管理</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+  <!-- Stylesheets -->
+  <link href="style/bootstrap.css" rel="stylesheet">
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="style/font-awesome.css"> 
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="style/jquery-ui.css"> 
+  <!-- Calendar -->
+  <link rel="stylesheet" href="style/fullcalendar.css">
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="style/prettyPhoto.css">  
+  <!-- Star rating -->
+  <link rel="stylesheet" href="style/rateit.css">
+  <!-- Date picker -->
+  <link rel="stylesheet" href="style/bootstrap-datetimepicker.min.css">
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="style/jquery.cleditor.css"> 
+  <!-- Uniform -->
+  <link rel="stylesheet" href="style/uniform.default.css"> 
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="style/bootstrap-switch.css">
+  <!-- Main stylesheet -->
+  <link href="style/style.css" rel="stylesheet">
+  <!-- Widgets stylesheet -->
+  <link href="style/widgets.css" rel="stylesheet">   
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon/favicon.png">
+<link href="style/lzl.css" rel="stylesheet">
+</head>
+
+<body onload="noading()">
+
+
+<div class="lzloader">
+<div class="progress progress-striped active"><div class="progress-bar progress-bar-default"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div>
+</div>
+
+
+<!-- Header starts -->
+  <header class="lzlheader">
+    <div></div>
+  </header>
+
+<!-- Header ends -->
+
+<!-- Main content starts -->
+
+<div class="content">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-zi"><a href="">后台管理系统</a></div>
+        <ul id="nav">
+          <li><a href="3110.html">平台管理维护</a></li>                           
+          <li><a href="3120.html">营运方管理</a></li> 
+          <li><a href="3130.html">持卡人管理</a></li>
+          <li><a href="3140.html" class="open">收银员积分管理</a></li>
+        </ul>
+    </div>
+
+    <!-- Sidebar ends -->
+
+  	<!-- Main bar -->
+  	<div class="mainbar">
+      
+	    <!-- Page heading -->
+	    <div class="page-head">
+        <!-- Page heading -->
+	      <h2 class="pull-left">积分兑换
+        </h2>
+
+
+        <!-- Breadcrumb -->
+        <div class="bread-crumb pull-right">
+          <a href="index.html"><i class="icon-home"></i> 主页</a> 
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="3140.html" class="bread-current">收银员积分管理</a>
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="3142.html" class="bread-current">积分兑换</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+	    </div>
+	    <!-- Page heading ends -->
+
+
+
+	    <!-- Matter -->
+
+	    <div class="matter">
+        <div class="container">
+
+          <div class="row" id="bodynav">
+             <div class="col-md-12" style="text-align:center">
+
+          <a href="3141.html" class="btn btn-info">收银员信息管理</a>
+          <a href="3142.html" class="btn btn-info">积分兑换</a>
+          <a href="3144.html" class="btn btn-info">积分统计与查询</a>
+            </div>
+          </div> 
+
+          <div class="row">
+
+            <div class="col-md-12">
+            
+            <div class="widget wgreen">
+                
+                <div class="widget-head">
+                  <div class="pull-left">增加收银员信息</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+                    <a href="#" class="wclose"><i class="icon-remove"></i></a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+
+                    <!-- Form starts.  -->
+                     <form class="form-horizontal" role="form">
+                              
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">商品名称</label>
+                          <div class="col-lg-6">
+                            <input class="form-control" placeholder="Input Box" type="text" id="aa">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">积分</label>
+                          <div class="col-lg-6">
+                            <input class="form-control" placeholder="Input Box" type="text" id="bb">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">积分折扣</label>
+                          <div class="col-lg-6">
+                            <input class="form-control" placeholder="Input Box" type="text" id="cc">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                        <label class="col-lg-4 control-label">发布时间</label>
+                        <div id="datetimepicker1" class="input-append col-lg-6">
+                        <input data-format="yyyy-MM-dd" class="form-control dtpicker" type="text" id="dd" maxlength="16" required="required" />
+                        <span class="add-on">
+                        <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="btn btn-info btn-lg icon-calendar"></i>
+                        </span>
+                        </div>
+                        </div>
+
+
+
+                        <hr />                            
+                        
+
+                        <div class="form-group">
+                          <div class="col-lg-offset-1 col-lg-9">
+                            <button type="button" class="btn btn-primary" id="queren">提交</button>
+                            <button type="reset" class="btn btn-default">重置</button>
+                            
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+                  <div class="widget-foot">
+                    <!-- Footer goes here -->
+                  </div>
+              </div>
+
+
+
+
+
+
+              <div class="widget wgreen">
+                
+                <div class="widget-head">
+                  <div class="pull-left">修改收银员信息</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+                    <a href="#" class="wclose"><i class="icon-remove"></i></a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+
+                    <!-- Form starts.  -->
+                     <form class="form-horizontal" role="form">
+                              
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">商品名称</label>
+                          <div class="col-lg-6">
+                            <input class="form-control" placeholder="Input Box" type="text" id="aaa">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">积分</label>
+                          <div class="col-lg-6">
+                            <input class="form-control" placeholder="Input Box" type="text" id="bbb">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label">积分折扣</label>
+                          <div class="col-lg-6">
+                            <input class="form-control" placeholder="Input Box" type="text" id="ccc">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                        <label class="col-lg-4 control-label">发布时间</label>
+                        <div id="datetimepicker2" class="input-append col-lg-6">
+                        <input data-format="yyyy-MM-dd" class="form-control dtpicker" type="text" id="ddd" maxlength="16" required="required" />
+                        <span class="add-on">
+                        <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="btn btn-info btn-lg icon-calendar"></i>
+                        </span>
+                        </div>
+                        </div>
+
+
+                        <hr />                            
+                        
+
+                        <div class="form-group">
+                          <div class="col-lg-offset-1 col-lg-9">
+                            <button type="button" class="btn btn-primary" id="xiugai">提交</button>
+                            <button type="reset" class="btn btn-default">重置</button>
+                            
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+                  <div class="widget-foot">
+                    <!-- Footer goes here -->
+                  </div>
+              </div>
+
+
+
+            
+
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+          <div class="row">
+
+            <div class="col-md-12">
+            
+            <div class="widget">
+
+                <div class="widget-head">
+                  <div class="pull-left">供应方机构数据</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+                    <a href="#" class="wclose"><i class="icon-remove"></i></a>
+                  </div>  
+                  <div class="clearfix"></div>
+                </div>
+
+                  <div class="widget-content">
+
+                    <table class="table table-striped table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>商品名称</th>
+                          <th>积分</th>
+                          <th>积分折扣</th>
+                          <th>活动时间</th>
+                          <th>详细操作</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr>
+                          <td>1</td>
+                          <td>大米20斤</td>
+                          <td>500</td>
+                          <td>8折</td>
+                          <td>2015-01-10</td>
+                          <td>
+
+                              <button class="btn btn-xs btn-success xiangqing"><i class="icon-ok"></i> </button>
+                              <button class="btn btn-xs btn-warning xiugai"><i class="icon-pencil"></i> </button>
+                              <button class="btn btn-xs btn-danger shanchu"><i class="icon-remove"></i> </button>
+                          
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>2</td>
+                          <td>话费20元</td>
+                          <td>500</td>
+                          <td>9折</td>
+                          <td>2015-01-10</td>
+                          <td>
+
+                              <button class="btn btn-xs btn-success xiangqing"><i class="icon-ok"></i> </button>
+                              <button class="btn btn-xs btn-warning xiugai"><i class="icon-pencil"></i> </button>
+                              <button class="btn btn-xs btn-danger shanchu"><i class="icon-remove"></i> </button>
+                          
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>3</td>
+                          <td>Q币100个</td>
+                          <td>1500</td>
+                          <td>9折</td>
+                          <td>2015-01-10</td>
+                          <td>
+
+                              <button class="btn btn-xs btn-success xiangqing"><i class="icon-ok"></i> </button>
+                              <button class="btn btn-xs btn-warning xiugai"><i class="icon-pencil"></i> </button>
+                              <button class="btn btn-xs btn-danger shanchu"><i class="icon-remove"></i> </button>
+                          
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>4</td>
+                          <td>停车一个月</td>
+                          <td>3000</td>
+                          <td>9折</td>
+                          <td>2015-01-10</td>
+                          <td>
+
+                              <button class="btn btn-xs btn-success xiangqing"><i class="icon-ok"></i> </button>
+                              <button class="btn btn-xs btn-warning xiugai"><i class="icon-pencil"></i> </button>
+                              <button class="btn btn-xs btn-danger shanchu"><i class="icon-remove"></i> </button>
+                          
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>5</td>
+                          <td>iPhone7一个</td>
+                          <td>55500</td>
+                          <td>9折</td>
+                          <td>2015-01-10</td>
+                          <td>
+
+                              <button class="btn btn-xs btn-success xiangqing"><i class="icon-ok"></i> </button>
+                              <button class="btn btn-xs btn-warning xiugai"><i class="icon-pencil"></i> </button>
+                              <button class="btn btn-xs btn-danger shanchu"><i class="icon-remove"></i> </button>
+                          
+                          </td>
+                        </tr>
+
+                        
+                        
+
+
+                                                         
+
+                      </tbody>
+                    </table>
+
+                    <div class="widget-foot">
+
+                     
+                        <ul class="pagination pull-right">
+                          <li><a href="#">上一页</a></li>
+                          <li><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">下一页</a></li>
+                        </ul>
+                     
+                      <div class="clearfix"></div> 
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+            </div>
+
+          </div>
+
+        </div>
+		  </div>
+
+		<!-- Matter ends -->
+
+    </div>
+
+   <!-- Mainbar ends -->	    	
+   <div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span> 
+
+
+
+<!--*****************************************添加的在这里哦*******************************************************************-->
+<div class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <p>您真的要删除这些数据吗?</p>
+        <ul class="cd-buttons">
+            <li><a href="javascript:void(0)">确定</a></li>
+            <li><a href="javascript:void(0)">取消</a></li>
+        </ul>
+        <a href="" class="cd-popup-close"></a>
+    </div> 
+</div>
+
+<div id="ziye-tishixx">
+
+<div class="notification notigreen">
+<div class="notiinfo"><h1></h1><p></p></div>
+<div class="notiicon"><i class="fa fa-asterisk"></i></div>
+</div>
+
+<div class="notification notired">
+<div class="notiinfo"><h1></h1><p></p></div>
+<div class="notiicon"><i class="fa fa-heart"></i></div>
+</div>
+
+<div class="notification notipurple">
+<div class="notiinfo"><h1></h1><p></p>
+</div>
+<div class="notiicon"><i class="fa fa-bicycle"></i></div>
+</div>
+
+<div class="notification notiblue">
+<div class="notiinfo"><h1></h1><p></p></div>
+<div class="notiicon"><i class="fa fa-twitter"></i></div>
+</div>
+
+</div>
+
+<div class="suo"></div>
+<div class="geren"></div><div class="gerenyin"></div>
+<!-- JS -->
+<script src="js/jquery.js"></script> <!-- jQuery -->
+<script src="js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script> <!-- jQuery UI -->
+<script src="js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+
+<!-- jQuery Flot -->
+<script src="js/excanvas.min.js"></script>
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.flot.resize.js"></script>
+<script src="js/jquery.flot.pie.js"></script>
+<script src="js/jquery.flot.stack.js"></script>
+
+<!-- jQuery Notification - Noty -->
+<script src="js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="js/themes/default.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<script src="js/sparklines.js"></script> <!-- Sparklines -->
+<script src="js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="js/jquery.uniform.min.js"></script> <!-- jQuery Uniform -->
+<script src="js/bootstrap-switch.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="js/filter.js"></script> <!-- Filter for support page -->
+<script src="js/custom.js"></script> <!-- Custom codes -->
+<script src="js/charts.js"></script> <!-- Charts & Graphs -->
+
+<script src="js/fun.js"></script>
+<script type="text/javascript">
+/* Date picker */
+
+$(function() {
+$('#datetimepicker1').datetimepicker({
+  pickTime: false,
+  lang:'ch'
+});
+});
+$(function() {
+$('#datetimepicker2').datetimepicker({
+  pickTime: false,
+  lang:'ch'
+});
+});
+
+
+$("#queren").click(function(event){
+var thisclick = $(this);
+
+var aa = kongge($("#aa").val());
+var bb = kongge($("#bb").val());
+var cc = kongge($("#cc").val());
+var dd = kongge($("#dd").val());
+
+
+if (aa=="" || bb=="" || cc=="") {notiblue("温馨提示","请填写标题和内容");return false;}
+
+
+else{
+event.preventDefault();
+alert(aa);alert(bb);alert(cc);alert(dd);
+// $.ajax({type:"POST",url:"web/department/addDepartment.do",async:false,
+//   data:{"name":sysaddbmname,"Introduction":sysaddbmdetail},
+//   complete:function(XMLHttpRequest, textStatus){
+//     eval("var data="+XMLHttpRequest.responseText);
+//     if(data.success==false){
+//         notired("添加失败","添加失败的原因是："+data.msg);
+//     }
+//     else if(data.success==true){
+//         notigreen("添加成功","");
+//     }
+//     else{
+//         alert("");
+//       }
+
+//   }});
+
+}
+
+
+});//************** click
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * 修改
+ */
+$(".xiugai").unbind().click(function(event){
+    event.preventDefault();
+    var thischeck = $(this);
+
+var gai4 = thischeck.parent().prev().prev().prev().prev().html();
+var gai3 = thischeck.parent().prev().prev().prev().html();
+var gai2 = thischeck.parent().prev().prev().html();
+var gai1 = thischeck.parent().prev().html();
+
+$("#aaa").val(gai4);
+$("#bbb").val(gai3);
+$("#ccc").val(gai2);
+$("#ddd").val(gai1);
+//$("#gaishangchuan").val(gai7);
+
+
+$("#xiugai").unbind().click(function(){
+var gaiclick = $(this);
+
+var aaa = kongge($("#aaa").val());
+var bbb = kongge($("#bbb").val());
+var ccc = kongge($("#ccc").val());
+var ddd = kongge($("#ddd").val());
+
+
+if (aaa=="" || bbb=="" || ccc=="") {notiblue("温馨提示","请填写标题和内容");return false;}
+
+
+else{
+event.preventDefault();
+alert(aaa);alert(bbb);alert(ccc);alert(ddd);
+
+// $.ajax({type:"POST",url:"web/user/updateUser.do",async:false,
+//   data:{"id":gaiid,
+//   "name":sysgaiyhname,
+//   "departmentId":sysgaiyhdepart,
+//   "phone":sysgaiyhphone,
+//   "roleIds":roleIds},
+//   complete:function(XMLHttpRequest, textStatus){
+//     eval("var data="+XMLHttpRequest.responseText);
+//     if(data.success==false){
+//         alert("修改失败的原因是："+data.msg);
+//     }
+//     else if(data.success==true){
+//         gaiclick.next().click();
+//         $(".ziye-header a:eq(1)").click();
+//         notigreen("修改成功","您成功的修改了一个用户");
+//         $('#sys-gaiyhroleIds').html("<option value=''>已选择好的角色列表,点击删除</option>");
+//     }
+//     else{
+//         alert("修改失败的原因是：未知错误，请联系管理员");
+//       }
+
+//   }});//*******ajax
+
+}
+
+
+});
+
+
+});//********** xiugai yonghu
+
+
+// var gai11 = thischeck.parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().html();
+// var gai10 = thischeck.parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().html();
+// var gai9 = thischeck.parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().html();
+// var gai8 = thischeck.parent().prev().prev().prev().prev().prev().prev().prev().prev().html();
+// var gai7 = thischeck.parent().prev().prev().prev().prev().prev().prev().prev().html();
+// var gai6 = thischeck.parent().prev().prev().prev().prev().prev().prev().html();
+// var gai5 = thischeck.parent().prev().prev().prev().prev().prev().html();
+// var gai4 = thischeck.parent().prev().prev().prev().prev().html();
+// var gai3 = thischeck.parent().prev().prev().prev().html();
+// var gai2 = thischeck.parent().prev().prev().html();
+// var gai1 = thischeck.parent().prev().html();
+
+// $("#aaa").val(gai11);
+// $("#bbb").val(gai10);
+// $("#ccc").val(gai9);
+// $("#ddd").val(gai8);
+// $("#eee").val(gai7);
+// $("#fff").val(gai6);
+// $("#ggg").val(gai5);
+// $("#hhh").val(gai4);
+// $("#iii").val(gai3);
+// $("#jjj").val(gai2);
+// $("#kkk").val(gai1);
+
+
+
+
+
+$(".shanchu").unbind().click(function(){
+  var thisclick = $(this);
+    
+    $('.cd-popup').addClass('is-visible');
+
+$(".cd-buttons a:eq(0)").unbind().click(function(){
+thisclick.parent().parent().remove();
+$('.cd-popup').removeClass('is-visible');
+notigreen("删除成功","您成功的删除了一条信息");
+// $.ajax({type:"GET",url:"web/user/deleteBatchUser.do",async:false,
+//  data:{"userIds":chuliidall},
+//  complete:function(XMLHttpRequest, textStatus){
+//     eval("var data="+XMLHttpRequest.responseText);
+//     if(data.success==true){
+//       notigreen("删除成功","您刚刚删除了选中的用户");
+//       $(".ziye-gaiz,.ziye-delz").css("display","block");
+//       $(".buttonRed").parent().parent().remove();
+//         $('.cd-popup').removeClass('is-visible');
+//     }
+//     else if(data.success==false){
+//       notired("删除失败","删除失败的原因是："+data.msg);
+//     }
+//     else{
+//       notired("删除失败","删除失败的原因是：未知错误，请联系管理员");
+//     }
+
+//   }});//*************ajax
+
+
+        
+    });
+
+
+    // else{alert("还没有选出要删除的部分");}
+    
+
+
+$('.cd-buttons a:eq(1)').on('click', function(event){
+        event.preventDefault();
+        $('.cd-popup').removeClass('is-visible');
+});
+
+//close popup
+    $('.cd-popup').on('click', function(event){
+        if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+            event.preventDefault();
+            $(this).removeClass('is-visible');
+        }
+    });
+    //close popup when clicking the esc keyboard button
+    $(document).keyup(function(event){
+        if(event.which=='27'){
+            $('.cd-popup').removeClass('is-visible');
+        }
+    });
+
+
+});
+</script>
+</body>
+</html>

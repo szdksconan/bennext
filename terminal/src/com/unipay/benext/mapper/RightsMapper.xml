@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipay.benext.mapper.RightsMapper">
+
+    <select id="add" parameterType="com.unipay.benext.model.basic.Rights">
+          INSERT INTO rights(cardNo,rightsType,rightCount,PayRule,rightMaxCount,updateTime) VALUES (#{cardNo}, #{rightsType},#{rightCount},#{PayRule},#{rightMaxCount},#{updateTime})
+    </select>
+    <select id="sel" parameterType="com.unipay.benext.model.basic.Rights"  resultType="com.unipay.benext.model.basic.Rights">
+        SELECT *
+        from rights where 1=1
+        <if test="cardNo != null and cardNo != ''">
+            and	cardNo=#{cardNo}
+        </if>
+        <if test="rightsType != null and rightsType != ''">
+            and	rightsType=#{rightsType}
+        </if>
+    </select>
+    <insert id="addClientRights" parameterType="com.unipay.benext.model.basic.ClientRightsModel">
+          INSERT INTO  client_rights(cilentId,rightsType,clientName,effectType,payRule,deductionHours,price) VALUES (#{cilentId},#{rightsType},#{clientName},#{effectType},#{payRule},#{deductionHours},#{price})
+    </insert>
+    <select id="getLocalClientRightsListByRightsIds" parameterType="com.alibaba.fastjson.JSONObject" resultType="com.unipay.benext.model.basic.ClientRightsModel">
+        SELECT  * from client_rights WHERE  1=1 and rightsType in
+        <foreach collection="list" item="rightsCount" open="(" close=")" separator=",">
+            #{rightsCount.rightsType}
+        </foreach>
+        <if test="orderSql != null and  orderSql != ''">
+            ${orderSql}
+        </if>
+    </select>
+    <select id="getRightsCountByRank" parameterType="com.alibaba.fastjson.JSONObject" resultType="com.unipay.benext.model.basic.RightsCount">
+        SELECT  * from rights_count WHERE  rank = #{rank}
+    </select>
+    <select id="getRightsByFilter" parameterType="com.alibaba.fastjson.JSONObject" resultType="com.unipay.benext.model.basic.Rights">
+        SELECT  * from rights WHERE  1=1 and rightsType=#{rightsType} and cardNo =#{cardNo}
+    </select>
+    <insert id="addBill" parameterType="com.unipay.benext.model.basic.Bill">
+        INSERT INTO  bill(billNo,carNo,parkName,parkId,exitWayName,exitWayId,payPanelId,payPanelName,clientId,stopTime,exitTime,totalPrice,cardNo,rightsType,uploadTag,createTime,creator,
+        updateTime,updator,terminalId) VALUES (#{billNo},#{carNo},#{parkName},#{parkId},#{exitWayName},#{exitWayId},#{payPanelId},#{payPanelName},#{clientId},#{stopTime},#{exitTime},#{totalPrice},#{cardNo},#{rightsType},#{uploadTag},#{createTime},#{creator},
+        #{updateTime},#{updator},#{terminalId})
+    </insert>
+    <select id="checkUseRights" parameterType="java.lang.String" resultType="com.unipay.benext.model.basic.Bill">
+        SELECT  * from bill WHERE  1=1 and cardNo=#{cardNo} and to_days(createTime) = to_days(now())
+    </select>
+    <select id="getLocalClientRightsListByRightsIdsD" parameterType="com.alibaba.fastjson.JSONObject" resultType="com.unipay.benext.model.basic.ClientRightsModel">
+        SELECT  * from client_rights WHERE  1=1 and rightsType in
+        <foreach collection="list" item="rightsCount" open="(" close=")" separator=",">
+            #{rightsCount.rightsId}
+        </foreach>
+    </select>
+
+    <insert id="addRights" parameterType="com.unipay.benext.model.basic.Rights">
+        INSERT INTO  rights(cardNo,rightsType,rightsCount,payRule,rightsMaxCount,updateTime) VALUES (#{cardNo},#{rightsType},#{rightsCount},#{payRule},#{rightsMaxCount},#{updateTime})
+    </insert>
+    <update id="updateRights" parameterType="com.unipay.benext.model.basic.Rights">
+        UPDATE  rights SET rightsCount=#{rightsCount},payRule=#{payRule},updateTime=#{updateTime} where  cardNo=#{cardNo} AND rightsType=#{rightsType}
+    </update>
+
+    <update id="updateClientRights" parameterType="com.unipay.benext.model.basic.ClientRightsModel">
+        update client_rights set clientName=#{clientName},effectType=#{effectType},payRule=#{payRule},deductionHours=#{deductionHours},price=#{price} where 1=1 and cilentId=#{cilentId} and rightsType=#{rightsType}
+    </update>
+    <select id="getClientRights" parameterType="com.unipay.benext.model.basic.ClientRightsModel" resultType="com.unipay.benext.model.basic.ClientRightsModel">
+      select * from client_rights where 1=1 and cilentId=#{cilentId} and rightsType=#{rightsType}
+    </select>
+
+    <select id="getRights2" resultType="com.unipay.benext.model.basic.Rights">
+        select * from rights2 where 1=1
+    </select>
+    <select id="getCount" parameterType="com.unipay.benext.model.basic.Rights" resultType="int">
+        SELECT  count(1) from rights2 WHERE  1=1 and rightsType=#{rightsType} and cardNo =#{cardNo}
+    </select>
+    <delete id="deleteAllClientRights" parameterType="java.lang.String">
+       DELETE from client_rights where 1=1 and cilentId != #{supplyId}
+    </delete>
+
+</mapper>

@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- Title and other stuffs -->
+  <title>贵州银联权益平台</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+  <!-- Stylesheets -->
+  <link href="style/bootstrap.css" rel="stylesheet">
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="style/font-awesome.css"> 
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="style/jquery-ui.css"> 
+  <!-- Calendar -->
+  <link rel="stylesheet" href="style/fullcalendar.css">
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="style/prettyPhoto.css">  
+  <!-- Star rating -->
+  <link rel="stylesheet" href="style/rateit.css">
+  <!-- Date picker -->
+  <link rel="stylesheet" href="style/jquery.datetimepicker.css">
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="style/jquery.cleditor.css"> 
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="style/bootstrap-switch.css">
+  <!-- Main stylesheet -->
+  <link href="style/style.css" rel="stylesheet">
+  <!-- Widgets stylesheet -->
+  <link href="style/widgets.css" rel="stylesheet">   
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon/favicon.png">
+<link href="style/lzl.css" rel="stylesheet">
+</head>
+
+<body onload="noading()">
+
+
+<div class="lzloader">
+<div class="progress progress-striped active"><div class="progress-bar progress-bar-default"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div>
+</div>
+
+
+<!-- Header starts -->
+  <header class="lzlheader">
+    <div></div>
+  </header>
+
+<!-- Header ends -->
+
+<!-- Main content starts -->
+
+<div class="content">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-zi"><a href="">后台管理系统</a></div>
+        <ul id="nav">
+          <li style="display:none" menuName='平台管理维护'><a href="3110.html">平台管理维护</a></li>
+          <li style="display:none" menuName='营运方管理'><a href="3120.html" class="open">营运方管理</a></li> 
+          <li style="display:none" menuName='持卡人管理'><a href="3130.html">持卡人管理</a></li>
+          <li style="display:none" menuName='数据统计管理'><a href="3150.html">数据统计管理</a></li>
+        </ul>
+    </div>
+
+    <!-- Sidebar ends -->
+
+  	<!-- Main bar -->
+  	<div class="mainbar">
+      
+	    <!-- Page heading -->
+	    <div class="page-head">
+        <!-- Page heading -->
+	      <h2 class="pull-left">服务信息管理
+        </h2>
+
+
+        <!-- Breadcrumb -->
+        <div class="bread-crumb pull-right">
+          <a href="index.html"><i class="icon-home"></i> 主页</a> 
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="3120.html" class="bread-current">营运方管理</a>
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="3122.html" class="bread-current">服务信息管理</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+	    </div>
+	    <!-- Page heading ends -->
+
+
+
+	    <!-- Matter -->
+
+	    <div class="matter">
+        <div class="container">
+
+          <div class="row" id="bodynav">
+            <div id='twoMenus' class="col-md-12" style="text-align:center">
+              <a href="3122.html" style="display:none" menuName='服务信息管理' class="btn btn-info"><i class="icon-magic"></i> 服务信息管理</a>
+              <a href="3123.html" style="display:none" menuName='权益规则管理' class="btn btn-info">权益规则管理</a>
+            </div>
+          </div> 
+
+          <div class="row">
+
+            <div class="col-md-12">
+
+
+                <div class="widget wgreen" id="addWin">
+                
+                <div class="widget-head">
+                  <div class="pull-left">增加服务数据信息</div>
+                  <!-- 
+                    <a href="#" class="wminimize"><i class="icon-chevron-up"></i></a>
+                     -->
+                  <div class="widget-icons pull-right"> 
+                    <a href="#" class="wclose"><i class="icon-remove"></i></a>
+                  </div>
+                  
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+
+                    <!-- Form starts.  -->
+                     <form class="form-horizontal" role="form">
+                              
+                        <div class="form-group">
+                         <label class="col-lg-4 control-label" style="width: 150px;">服务名称</label>
+                          <div class="col-lg-6">
+                            <input class="form-control" type="text" id="aa" maxlength="30">
+                          </div>
+                         
+                        </div>
+
+                        <div class="form-group">
+                         <label class="col-lg-4 control-label" style="width: 150px;">服务介绍</label>
+                          <div class="col-lg-6">
+                            <input class="form-control" type="text" id="bb" maxlength="50">
+                          </div>
+                         
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label" style="width: 150px;">供应方机构</label>
+                          <div class="col-lg-6">
+                            <div class="alert alert-info" id="cc">
+
+                            </div>
+                          </div>
+                          <div class="col-lg-2">
+                            <a href="#gytan" class="btn btn-default selectgong" data-toggle="modal">选择供应方机构</a>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label" style="width: 150px;">服务类型</label>
+                          <div class="col-lg-6">
+                          <select class="form-control" id="dd">
+                          </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                        <label class="col-lg-4 control-label" style="width: 150px;">开始时间</label>
+                        <div id="datetimepicker1" class="input-append col-lg-6">
+                        <input class="form-control" type="text" id="ee" maxlength="19">
+                        </div>
+                        </div>
+
+                        <div class="form-group">
+                        <label class="col-lg-4 control-label" style="width: 150px;">结束时间</label>
+                        <div id="datetimepicker2" class="input-append col-lg-8">
+                        <input class="form-control dtpicker" type="text" id="ff" maxlength="19" style="max-width: 320px">
+                        <button class="btn btn-info" id="endtt" style="height:34px;">不限时间</button>
+                        </div>
+                        </div>
+
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label" style="width: 150px;">添加权益</label>
+                          <div class="col-lg-6">
+                            <a href="#addqytan" class="btn btn-default addquanyi" data-toggle="modal">点击选择权益</a>
+                          </div>
+                        </div>
+
+                        <!-- 添加服务信息已添加去那一列表 -->
+                        <div class="form-group">
+                        	<label class="col-lg-4 control-label" style="width: 150px;">已添加的权益列表</label>
+	                        <div class="col-lg-6" id="tianjialist">
+	                            <select id='addServiceRightList' class="form-control" size="5" multiple="multiple">
+	                            </select>
+	                        </div>
+	                        <div class="col-md-4" id="xzbg" style="width:240px;"><div class="alert alert-danger"><strong>选中项权益详情：</strong><br />
+							权益名称：<span class="label label-danger" id="xzaa"></span><br />
+							需消费金额：<span class="label label-danger" id="xzbb"></span><br />
+							每卡每天上限：<span class="label label-danger" id="xzcc"></span><br />
+              每卡每月上限：<span class="label label-danger" id="xzcca"></span><br />
+              每卡每年上限：<span class="label label-danger" id="xzccb"></span><br />
+							每卡每天店铺上限：<span class="label label-danger" id="xzdd"></span><br />
+
+							自定义规则1：<span class="label label-danger" id="xzee" val="">每次都收费</span><br />
+							<span class="label label-danger"></span><br />
+							<button type="button" class="btn btn-danger shanqywindow" val="">删除此权益</button>
+							</div>
+							</div>
+	                    </div>
+
+
+
+                        <div class="clearfix"></div>
+                        <br />
+                        <hr />
+                        <br />
+
+                        
+
+                        <div class="form-group">
+                          <div class="col-lg-offset-1 col-lg-9" style="text-align:center">
+                            <button type="button" class="btn btn-primary" id="queren">提交已添加好的服务信息</button>
+                            <button type="reset" class="btn btn-default">重置</button>
+                            
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+                  <div class="widget-foot">
+                    <!-- Footer goes here -->
+                  </div>
+              </div>
+
+
+
+
+<!-- 修改服务数据信息 -->
+              <div class="widget wgreen" id="editWin">
+                
+                <div class="widget-head">
+                  <div class="pull-left">修改服务数据信息</div>
+                   <!--
+                    <a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+                     -->
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wclose"><i class="icon-remove"></i></a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+
+                    <!-- Form starts.  -->
+                     <form class="form-horizontal" role="form">
+                              
+                        <div class="form-group">
+                         <label class="col-lg-4 control-label" style="width: 150px;">服务名称</label>
+                          <div class="col-lg-6">
+                            <input class="form-control" type="text" id="aaa" maxlength="30">
+                          </div>
+                         
+                        </div>
+
+                        <div class="form-group">
+                         <label class="col-lg-4 control-label" style="width: 150px;">服务介绍</label>
+                          <div class="col-lg-6">
+                            <input class="form-control" type="text" id="bbb" maxlength="50">
+                          </div>
+                         
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label" style="width: 150px;">供应方机构</label>
+                          <div class="col-lg-6">
+                            <div class="alert alert-info" id="ccc">
+
+                            </div>
+                          </div>
+                          <div class="col-lg-2">
+                            <a href="#gaigytan" class="btn btn-default gaiselectgong" data-toggle="modal">选择供应方机构</a>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label" style="width: 150px;">服务类型</label>
+                          <div class="col-lg-6">
+                           <select class="form-control" id="ddd">
+                        </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                        <label class="col-lg-4 control-label" style="width: 150px;">开始时间</label>
+                        <div id="datetimepicker3" class="input-append col-lg-6">
+                        <input class="form-control" type="text" id="eee" maxlength="19">
+                        </div>
+                        </div>
+
+                        <div class="form-group">
+                        <label class="col-lg-4 control-label" style="width: 150px;">结束时间</label>
+                        <div id="datetimepicker4" class="input-append col-lg-6">
+                        <input class="form-control dtpicker" type="text" id="fff" maxlength="19" style="max-width: 320px">
+                        <button class="btn btn-info" id="endttt" style="height:34px;">不限时间</button>
+                        </div>
+                        </div>
+						
+						            <div class="form-group">
+                          <label class="col-lg-4 control-label" style="width: 150px;">权益操作</label>
+                          <div class="col-lg-6">
+                            <a href="#editServiceRightWin" id='editServiceRightWin_a' class="btn btn-primary addquanyi" data-toggle="modal">增加权益</a>
+                            <button type="button" class="btn btn-warning" id="editServiceEditRight" >修改选中权益</button>
+                            <button type="button" class="btn btn-danger" id="editServiceDeleteRight" >删除选中权益</button>
+                          </div>
+                        </div>
+
+                        <!-- 修改服务信息已添加去那一列表 -->
+
+                          
+                        <div class="form-group">
+                        	<label class="col-lg-4 control-label" style="width: 150px;">已添加的权益列表</label>
+	                        <div class="col-lg-6" >
+	                            <select id='editServiceRightList' class="form-control" size="10" multiple="multiple">
+	                            </select>
+	                        </div>
+                          <!-- <div class="col-lg-4 dong3">
+                            <div class="alert alert-danger" style="margin-bottom: 0;padding: 10px 15px;" id='teaitai'><i class="icon-remove" style="margin-right: 15px;"></i><p style="display:inline;">这个用户可以注册这个用户可以注册这个用户可以注册这个用户可以注册这个用户可以注册这个用户可以注册</p></div>
+                          </div> -->
+
+	                    </div>
+
+
+
+                        <br />
+                        <hr />
+                        <br />
+                        
+                        <div class="form-group">
+                          <div class="col-lg-offset-1 col-lg-9" style="text-align:center">
+                            <button type="button" class="btn btn-primary" id="xiugai">提交已修改好的服务信息</button>
+                            
+                          </div>
+                        </div>
+                        </form>
+                  </div>
+                </div>
+                  <div class="widget-foot">
+                    <!-- Footer goes here -->
+                  </div>
+              </div>
+
+
+
+
+              <!-- 查询条件 --> 
+        <div class="widget">
+            <div class="widget-head">
+              <div class="pull-left"></div>
+              
+              <div class="clearfix"></div>
+            </div>
+             <div class="widget-content">
+               <div class="padd">
+                 <form class="form-horizontal" role="form">
+               <div class="form-group">
+                    <label class="col-lg-4 control-label">权益类型</label>
+                    <div class="col-lg-2">
+                      <select class="form-control" id="aaaa">
+                         <option value=''>所有类型</option>
+                      </select>
+                    </div>
+                    
+
+                    <label class="col-lg-4 control-label">服务名称</label>
+                    <div class="col-lg-2">
+                      <input type="text" class="form-control" id="bbbb" placeholder="输入服务名称" maxlength="16" />
+                    </div>
+
+                    <div class="col-lg-2">
+                      <a href="#" class="btn btn-primary" id="xxsearch"><i class="icon-search"></i> 查询</a>
+                    </div>
+                  </div>
+                  </form>
+                 </div>
+               </div>
+                  
+
+        </div>
+
+
+
+          
+            <div class="widget">
+                <div class="widget-head">
+                  <div class="pull-left">服务信息查询</div>
+                  <div class="pull-right">
+                    <button class="btn btn-info tianjia" id="addWinBtn"><i class="icon-plus"></i> 添加权益基本数据信息</button>
+                    <a style="display:none" id="deleteBatch" href="" class="btn btn-danger allshanchu disabled"><i class="icon-remove"></i> 删除</a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                  <div class="widget-content">
+
+                    <table class="table table-striped table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th><input class="fugouxuan" type="checkbox" name="" value="" />全选</th>
+                          <th>服务名称</th>
+                          <th>服务介绍</th>
+                          <!-- <th>供应方机构</th> -->
+                          <th>权益类型</th>
+                          <th>开始时间</th>
+                          <th>结束时间</th>
+                          <th>详细操作</th>
+                        </tr>
+                      </thead>
+                      <tbody id='tableData'>
+                      </tbody>
+                    </table>
+
+                    <div class="widget-foot">
+                         
+                       <ul class="pager">
+                          <li class="previous"><a href="" id="qianBtn"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+                          <li id="currentPage">加载中</li>
+                          <li id="countPage">加载中</li>
+                          <li><input class="form-control" style="width:80px;display:inline;" placeholder="第几页" type="text" id="tiaozhuanPage" name="numonly"></li>
+                          <li><button class="btn btn-success" href="" id="tiaozhuanBtn">跳转</button></li>
+                          <li class="next"><a href="" id="houBtn">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                        </ul>
+                     
+                      <div class="clearfix"></div> 
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+		  </div>
+
+		<!-- Matter ends -->
+    </div>
+
+   <!-- Mainbar ends -->	    	
+   <div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span> 
+
+
+
+<!--添加服务权益窗口-->
+<div id="addqytan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title">添加权益信息</h4>
+    </div>
+    <div class="modal-body">
+    
+
+<!-- Form starts.  -->
+                     <form class="form-horizontal" role="form">
+                              
+
+
+                        <div class="form-group">
+                         <label class="col-lg-4 control-label" style="width:150px">权益名称</label>
+                          <div class="col-lg-8" style="width: 424px">
+                            <input class="form-control" type="text" id="xa" maxlength="16">
+                          </div>
+                         
+                        </div>
+
+                        
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label" style="width:150px">需消费金额（元）</label>
+                          <div class="col-lg-8" style="width: 424px">
+                            <input class="form-control" type="text" id="xb" placeholder="支持小数点后2位" name="numonly" maxlength="10">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                         <label class="col-lg-4 control-label" style="width:150px">每卡每天上限</label>
+                          <div class="col-lg-8" style="width: 424px">
+                           <input class="form-control" type="text" id="xc" name="numonly" maxlength="9">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                         <label class="col-lg-4 control-label" style="width:150px">每卡每月上限</label>
+                          <div class="col-lg-8" style="width: 424px">
+                           <input class="form-control" type="text" id="xca" name="numonly" maxlength="9">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                         <label class="col-lg-4 control-label" style="width:150px">每卡每年上限</label>
+                          <div class="col-lg-8" style="width: 424px">
+                           <input class="form-control" type="text" id="xcb" name="numonly" maxlength="9">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label" style="width:150px">每卡每天店铺上限</label>
+                          <div class="col-lg-8" style="width: 424px">
+                            <input class="form-control" type="text" id="xd" name="numonly" maxlength="9">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                         <label class="col-lg-4 control-label" style="width:150px">自定义规则1</label>
+                          <div class="col-lg-8" style="width: 424px">
+                            <select class="form-control" id="xe">
+                              <option value="2">每次都收费</option>
+                              <option value="1">只首次收费</option>
+                              <option value="3">不收费</option>
+                            </select>
+                          </div>
+                         
+                        </div>
+                      
+
+                        <div class="form-group">
+                          <label class="col-lg-4 control-label" style="width:150px">银行卡类型</label>
+                          <div class="col-lg-4" style="width: 190px">
+                            <select class="form-control" id="xg">
+                            </select>
+                          </div>
+                          <div class="col-lg-2" style="width: 110px">
+                            <input class="form-control" placeholder="权益次数" type="text" id="xh" name="numonly" maxlength="5">
+                          </div>
+                          <div class="col-lg-3 neizhong" style="padding:0;width:120px;">
+                            <button type="button" class="btn btn-info" id="addkacishu">添加权益规则</button>
+                          </div>
+                        </div>
+
+
+                        <div class="alert alert-info" id="ytjk">准备提交的权益规则：</div>
+
+                      </form>
+
+
+ 
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭窗口</button>
+      <button type="button" class="btn btn-primary" id="saveaddqy">保存更改</button>
+    </div>
+  </div>
+</div>
+</div>
+<!--修改服务权益窗口-->
+<div id="editServiceRightWin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close gaiguanqing" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title">权益信息操作</h4>
+    </div>
+    <div class="modal-body">
+<!-- Form starts.  -->
+         <form class="form-horizontal" role="form">
+            <div class="form-group">
+             <input type="hidden" id="editRightId">
+             <label class="col-lg-4 control-label" style="width: 150px">权益名称</label>
+              <div class="col-lg-6" style="width: 424px">
+                <input class="form-control" type="text" id="editRightName" maxlength="16">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-4 control-label" style="width: 150px">需消费金额（元）</label>
+              <div class="col-lg-6" style="width: 424px">
+                <input class="form-control" type="text" id="editNeedMoney" placeholder="支持小数点后2位" name="numonly" maxlength="10">
+              </div>
+            </div>
+            <div class="form-group">
+             <label class="col-lg-4 control-label" style="width: 150px">每卡每天上限</label>
+              <div class="col-lg-6" style="width: 424px">
+               <input class="form-control" type="text" id="editCardDayTop" name="numonly" maxlength="9">
+              </div>
+            </div>
+            <div class="form-group">
+             <label class="col-lg-4 control-label" style="width: 150px">每卡每月上限</label>
+              <div class="col-lg-6" style="width: 424px">
+               <input class="form-control" type="text" id="editCardMonthTop" name="numonly" maxlength="9">
+              </div>
+            </div>
+            <div class="form-group">
+             <label class="col-lg-4 control-label" style="width: 150px">每卡每年上限</label>
+              <div class="col-lg-6" style="width: 424px">
+               <input class="form-control" type="text" id="editCardYearTop" name="numonly" maxlength="9">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-4 control-label" style="width: 150px">每卡每天店铺上限</label>
+              <div class="col-lg-6" style="width: 424px">
+                <input class="form-control" type="text" id="editCardDayStoreTop" name="numonly" maxlength="9">
+              </div>
+            </div>
+            <div class="form-group">
+             <label class="col-lg-4 control-label" style="width: 150px">自定义规则1</label>
+              <div class="col-lg-6" style="width: 424px">
+                <select class="form-control" id="editSelfRule1">
+                  <option value="2">每次都收费</option>
+                  <option value="1">只首次收费</option>
+                  <option value="3">不收费</option>
+                </select>
+              </div>
+            </div>
+   
+            <div class="form-group">
+              <label class="col-lg-4 control-label" style="width: 150px">银行卡类型</label>
+              <div class="col-lg-4" style="width: 190px">
+                <select class="form-control" id="editServiceCardType">
+                </select>
+              </div>
+              <div class="col-lg-2" style="width: 110px">
+                <input class="form-control" placeholder="权益次数" type="text" id="editServiceCardCount" name="numonly" maxlength="5">
+              </div>
+              <div class="col-lg-3 neizhong" style="padding:0;width:120px;">
+                <button type="button" class="btn btn-info" id="editServiceRightCountSaveBtn">添加权益规则</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+             <label class="col-lg-4 control-label" style="width: 150px">已添加的权益<br />规则列表</label>
+              <div class="col-lg-6"  style="width: 424px">
+                  <select id='editServiceRightCountList' class="form-control" size="3" multiple="multiple">
+                  </select>
+              </div>
+            </div>
+
+          </form>
+
+
+ 
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default gaiguanqing" data-dismiss="modal" aria-hidden="true">关闭窗口</button>
+      <button type="button" class="btn btn-primary" id="editServiceRightSaveBtn">保存更改</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title">权益信息详情</h4>
+    </div>
+    <div class="modal-body">
+    <table class="table table-striped table-bordered table-hover" id="genduotable"></table>
+ 
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭窗口</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<!-- 添加**供应方弹出框 -->
+<div id="gytan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title">选择供应方</h4>
+    </div>
+    <div class="modal-body">
+    <ul class="task" id="tangong">
+
+                                                                              
+    </ul>
+ 
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭窗口</button>
+      <button type="button" class="btn btn-primary" id="savegong">保存更改</button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- 修改**供应方弹出框 -->
+<div id="gaigytan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title">选择供应方</h4>
+    </div>
+    <div class="modal-body">
+    <ul class="task" id="gaitangong">
+
+                                                                              
+    </ul>
+ 
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭窗口</button>
+      <button type="button" class="btn btn-primary" id="gaisavegong">保存更改</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--*****************************************添加的在这里哦*******************************************************************-->
+<div class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <p>您真的要删除这些数据吗?</p>
+        <ul class="cd-buttons">
+            <li><a href="javascript:void(0)">确定</a></li>
+            <li><a href="javascript:void(0)">取消</a></li>
+        </ul>
+        <a href="" class="cd-popup-close"></a>
+    </div> 
+</div>
+
+<div id="ziye-tishixx">
+
+<div class="notification notigreen">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-ok-sign"></i><h1></h1><p></p></div>
+</div>
+
+<div class="notification notired">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-remove-sign"></i><h1></h1><p></p></div>
+</div>
+
+<div class="notification notiblue">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-exclamation-sign"></i><h1></h1><p></p></div>
+</div>
+
+</div>
+
+<!-- Modal 审核窗口 -->
+		<div id="shenheWin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+			      <div class="modal-header">
+	                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	                   <h4 class="modal-title">审核注册信息</h4>
+	                 </div>
+	                 <div class="modal-body">
+	                   <button type="button" class="btn btn-default" name='shenhe' val='101' shenheId=''>通过</button>
+	                   <button type="button" class="btn btn-default" name='shenhe' val='102' shenheId=''>驳回</button>
+	                 </div>
+	                 <div class="modal-footer">
+	                 <!--  
+	                   <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+	                   <button type="button" class="btn btn-primary">Save changes</button>
+	                   -->
+                 </div>
+               </div>
+			</div>
+		</div>
+<div class="suo"></div>
+<div class="geren"></div><div class="gerenyin"></div>
+<!-- JS -->
+<script src="js/jquery.js"></script> <!-- jQuery -->
+<script src="js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script> <!-- jQuery UI -->
+<script src="js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+
+<!-- jQuery Flot -->
+<script src="js/excanvas.min.js"></script>
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.flot.resize.js"></script>
+<script src="js/jquery.flot.pie.js"></script>
+<script src="js/jquery.flot.stack.js"></script>
+
+<!-- jQuery Notification - Noty -->
+<script src="js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="js/themes/default.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<script src="js/sparklines.js"></script> <!-- Sparklines -->
+<script src="js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="js/jquery.datetimepicker.js"></script> <!-- Date picker -->
+<script src="js/bootstrap-switch.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="js/filter.js"></script> <!-- Filter for support page -->
+<script src="js/custom.js"></script> <!-- Custom codes -->
+<script src="js/charts.js"></script> <!-- Charts & Graphs -->
+
+<script src="js/fun.js"></script>
+<script type="text/javascript">
+
+//根据用户菜单隐藏
+generalAjax('',"GET","../back/user/findMenus_ro",function(data){
+  //隐藏一级菜单
+  for ( var key in data.itemList[0]) {
+    $('#nav li[menuName="'+key+'"]').css('display','');
+  }
+  //隐藏二级菜单
+  var twoMenus=data.itemList[0]['营运方管理'];
+  for ( var idx in twoMenus) {
+    $('#twoMenus a[menuName="'+twoMenus[idx]+'"]').css('display','');
+  }
+});
+
+
+/* Date picker */
+
+$('#ee').datetimepicker({
+    step:10,
+    lang:'ch',
+    format:'Y-m-d H:i:s'
+    });
+$('#ff').datetimepicker({
+    step:10,
+    lang:'ch',
+    format:'Y-m-d H:i:s'
+    });
+$('#eee').datetimepicker({
+    step:10,
+    lang:'ch',
+    format:'Y-m-d H:i:s'
+    });
+$('#fff').datetimepicker({
+    step:10,
+    lang:'ch',
+    format:'Y-m-d H:i:s'
+    });
+/**
+ * 加载数据列表
+ */
+
+ loadSelectList("xg","../back/service/findCardTypeIdName",'',"GET",{id:"CardTypeID",name:"Description"});
+ loadSelectList("editServiceCardType","../back/service/findCardTypeIdName",'',"GET",{id:"CardTypeID",name:"Description"});
+ loadSelectList("dd","../back/service/findServiceTypeIdName",'',"GET",{id:"typeId",name:"typeName"});
+ loadSelectList("ddd","../back/service/findServiceTypeIdName",'',"GET",{id:"typeId",name:"typeName"});
+ loadSelectList("aaaa","../back/service/findServiceTypeIdName",'',"GET",{id:"typeId",name:"typeName"},true);
+ //loadSelectList("ff","../back/service/findCountTypeIdName",'',"GET",{id:"CountTypeID",name:"CountTypeDes"});
+ //loadSelectList("fff","../back/service/findCountTypeIdName",'',"GET",{id:"CountTypeID",name:"CountTypeDes"});
+
+
+$.ajax({
+  type: "GET",
+  url: "../back/service/findSupplyerIdName",
+  data: {},
+  dataType: "json",
+  success: function(data){
+    $.each(data.itemList,function(idx,item){
+        var content = '<li val='+item.supplyerId+'>'+item.supplyerName+'';
+        content += '<span class="label label-danger pull-right">未添加</span>';
+        content += '</li>';
+        $("#tangong").append(content);
+        $("#gaitangong").append(content);
+
+        });
+
+        $("#tangong li").unbind().click(function(){
+          var thispan = $(this).children("span");
+          if(thispan.text()=="未添加"){
+            thispan.text("已添加").removeClass("label-danger").addClass("label-success").addClass("gybiaoji");}
+          else{
+            thispan.text("未添加").removeClass("label-success gybiaoji").addClass("label-danger");
+          }
+        });
+        $("#gaitangong li").unbind().click(function(){
+          var thispan = $(this).children("span");
+          if(thispan.text()=="未添加"){
+            thispan.text("已添加").removeClass("label-danger").addClass("label-success").addClass("gaigybiaoji");}
+          else{
+            thispan.text("未添加").removeClass("label-success gaigybiaoji").addClass("label-danger");
+          }
+        });
+          
+      
+        
+  }
+  
+}); //--------ajax
+
+
+
+
+
+
+
+
+
+
+ //加载静态权益基本数据数量种类列表
+ /*
+for(var i=0;i<quanyiCountType.length;i++){
+	var  op="<option value='"+quanyiCountType[i][1]+"'>"+quanyiCountType[i][0]+"</option>";
+	$("#ff").append(op);
+	$("#fff").append(op);
+}*/
+
+
+
+
+function bangding(){
+/**
+ * 添加
+ */
+$("#queren").unbind().click(function(){
+	var thisclick = $(this);
+	var aa = kongge($("#aa").val());
+	var bb = kongge($("#bb").val());
+	var cc = "";
+  var ccount = $("#cc p").length;
+  for(i=0;i<ccount;i++){
+    cc==""?cc=$("#cc p").eq(i).attr("val"):cc += ","+$("#cc p").eq(i).attr("val");
+  }
+	var dd = $("#dd").val();
+	var ee = $("#ee").val();
+	var ff = $("#ff").val();
+	//var gg = kongge($("#gg").val());
+
+  var dahebing = 0;
+  var qygeshu = $("#addServiceRightList option").length;
+  for(i=0;i<qygeshu;i++){
+    dahebing == 0?dahebing=$("#addServiceRightList option").eq(i).attr("hebing"):dahebing+=","+$("#addServiceRightList option").eq(i).attr("hebing");
+  }
+  
+  //alert(dahebing);
+	
+	var youxiang  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	var shouji = /^1\d{10}$/;
+	var dianhua =/^0\d{2,3}-?\d{7,8}$/;//alert(aa);alert(bb);alert(cc);alert(dd);alert(ee);alert(ff);
+	
+	if (aa=="" || bb=="" || ee==""|| ff=="") {notiblue("温馨提示","还有内容没有填写");return false;}
+  else if(cc==""){notiblue("温馨提示","至少选择一个供应商机构");return false;}
+  else if(qygeshu==0){notiblue("温馨提示","至少添加一项权益");return false;}
+	else{
+		var params={
+				serviceName:aa,
+				typeId:dd,
+				serviceProvision:bb,
+				startDate:ee,
+				endDate:ff,
+				supplyerIds:cc,
+				rightList:dahebing, 
+		};
+		generalAjax(params,"POST","../back/service/add",function(){
+			//注册成功
+			notigreen("添加成功","您成功的添加了一个服务");
+			thisclick.next().click();
+			 tiaozhuanPage(currentPage,20,"GET","../back/service/find");
+			 $("#addWin").hide(100);
+       $("#xzbg").hide();
+       $("#cc").html("");$("#addServiceRightList").html("");
+		});
+	}
+});//************** click
+
+
+
+
+
+
+
+
+
+
+$("#addkacishu").unbind().click(function(){//************** click   银行卡次数拼接
+  var thisclick = $(this);
+  var xg = $("#xg").val();
+  var xz = $("#xg").find("option:selected").text();
+  var xh = kongge($("#xh").val());
+  
+  if ($("#ytjk span[aidi="+xg+"]").length>0) {notiblue("温馨提示","已经有该类型卡被添加");return false;}
+  else if(xh==""){notiblue("温馨提示","请填写权益次数");return false;}
+  else{
+    var kabing = xg +"="+ xh;
+    var kazi = xz +" "+ xh +"次";
+    var zifuka = '<span class="label label-info lzl12" aidi="'+xg+'" val="'+kabing+'">'+kazi+'&nbsp;&nbsp;<i class="icon-remove"></i></span>';
+    $("#ytjk").append(zifuka);
+    //
+    $(".lzl12").unbind().click(function(){
+      $(this).remove();
+    });
+  }
+});//************** click   银行卡次数拼接
+
+
+
+$("#savegong").unbind().click(function(){//添加------click 供应方机构
+  var thisave = $(this);
+  var gybiaoji = $(".gybiaoji");
+  var geshu = gybiaoji.length;
+  $("#cc").html("");
+  for(i=0;i<geshu;i++){
+    var gynum = gybiaoji.eq(i).parent().attr("val");
+    $p = gybiaoji.eq(i).parent().clone();
+    var gytext = $p.children().remove().end().text();
+    //alert(gynum);alert(gytext);
+    $("#cc").append('<p class="label label-info lzl13" val="'+gynum+'">'+gytext+'&nbsp;&nbsp;<i class="icon-remove"></i></p>');
+  }
+  $(".lzl13").unbind().click(function(){
+    var thisguan= $(this);
+    thisguan.remove();
+    //var zheval = 
+
+  });
+  thisave.prev().click();
+});//------添加click 供应方机构
+$("#gaisavegong").unbind().click(function(){//------修改click 供应方机构
+  var thisave = $(this);
+  var gybiaoji = $(".gaigybiaoji");
+  var geshu = gybiaoji.length;
+  $("#ccc").html("");
+  for(i=0;i<geshu;i++){
+    var gynum = gybiaoji.eq(i).parent().attr("val");
+    $p = gybiaoji.eq(i).parent().clone();
+    var gytext = $p.children().remove().end().text();
+    //alert(gynum);alert(gytext);
+    $("#ccc").append('<p class="label label-info lzl13" val="'+gynum+'">'+gytext+'&nbsp;&nbsp;<i class="icon-remove"></i></p>');
+  }
+  $(".lzl13").unbind().click(function(){
+    var thisguan= $(this);
+    thisguan.remove();
+    //var zheval = 
+
+  });
+  thisave.prev().click();
+});//修改------click 供应方机构
+
+
+
+$("#saveaddqy").unbind().click(function(){//------弹出框的保存按钮 添加多个权益
+  var thisadd = $(this);
+  //
+  var xa = kongge($("#xa").val());
+  var xb = kongge($("#xb").val());
+  var xc = kongge($("#xc").val());
+  var xca = kongge($("#xca").val());
+  var xcb = kongge($("#xcb").val());
+  var xd = kongge($("#xd").val());
+  var xe = kongge($("#xe").val());
+
+  var ytjk = 0;
+  var ytjkcount = $("#ytjk span").length;
+  for(i=0;i<ytjkcount;i++){
+    ytjk==0?ytjk=$("#ytjk span").eq(i).attr("val"):ytjk += "_"+$("#ytjk span").eq(i).attr("val");
+  }
+
+  var hebing = xa +"_"+ xb +"_"+ xc +"_"+ xca +"_"+ xcb +"_"+ xd +"_"+ xe +"_"+ ytjk;
+  //alert(hebing);
+  var userreg=/^[0-9]{1,7}([.]{1}[0-9]{1,2})?$/; 
+
+  if (xa=="" || xb=="" || xc=="" || xca=="" || xcb=="" || xd=="") {notiblue("温馨提示","还有内容没有填写");return false;}
+  else if(!userreg.test(xb)) {notiblue("温馨提示","请输入正确的金额(0-9999999.99)");return false;}
+  else if($("#addServiceRightList option[xa="+xa+"]").length>0) {notiblue("温馨提示","权益名称出现重复");return false;}
+  else if($("#ytjk span").length==0){notiblue("温馨提示","提交的权益规则至少有一个");return false;}
+  else{
+  var content = "<option xa='"+xa+"' xb='"+xb+"' xc='"+xc+"' xca='"+xca+"' xcb='"+xcb+"' xd='"+xd+"' xe='"+xe+"' hebing='"+hebing+"'>"+xa+"</option>";
+  $("#addServiceRightList").append(content);
+  
+
+  $("#addServiceRightList option").unbind().click(function(){//----------------------点击多选框的option
+  	$("#xzbg").show();
+  	var thisoption = $(this);
+  	var ya = thisoption.attr("xa");
+  	var yb = thisoption.attr("xb");
+  	var yc = thisoption.attr("xc");
+    var yca = thisoption.attr("xca");
+    var ycb = thisoption.attr("xcb");
+  	var yd = thisoption.attr("xd");
+  	var ye = thisoption.attr("xe");
+  	$("#xzaa").text(ya);
+	$("#xzbb").text(yb);
+	$("#xzcc").text(yc);
+  $("#xzcca").text(yca);
+  $("#xzccb").text(ycb);
+	$("#xzdd").text(yd);
+	if(ye==2){
+	  $("#xzee").attr("val","2").text("每次都收费");
+	}else if(ye==1){
+	  $("#xzee").attr("val","1").text("只首次收费");
+	}else if(ye==3){
+	  $("#xzee").attr("val","3").text("不收费");
+	}else{
+	  
+	}
+
+  $(".shanqywindow").attr("val",ya);
+	
+  });//-----点击option显示详情权益
+  thisadd.prev().click();
+  $("#xa").val("");$("#xb").val("");$("#xc").val("");$("#xca").val("");$("#xcb").val("");$("#xd").val("");$("#xh").val("");
+  $("#ytjk span").remove();
+  }//------else
+});//------click 添加多个权益
+
+
+
+
+
+
+$(".selectgong").unbind().click(function(){
+	$("#tangong span").removeClass("label-success gybiaoji").addClass("label-danger").text("未添加");
+	var pp = $("#cc p");
+	for (var i = 0; i < pp.length; i++) {
+		var zz = pp.eq(i).attr("val");
+		$("#tangong li[val="+zz+"]").children("span").removeClass("label-danger").addClass("label-success").addClass("gybiaoji").text("已添加");
+	}
+});
+$(".gaiselectgong").unbind().click(function(){
+	$("#gaitangong span").removeClass("label-success gaigybiaoji").addClass("label-danger").text("未添加");
+	var pp = $("#ccc p");
+	for (var i = 0; i < pp.length; i++) {
+		var zz = pp.eq(i).attr("val");
+		$("#gaitangong li[val="+zz+"]").children("span").removeClass("label-danger").addClass("label-success").addClass("gaigybiaoji").text("已添加");
+	}
+});
+
+
+
+
+$("#endtt").unbind().click(function(){
+  $("#ff").val("2100-01-01 00:00:00");
+  return false;
+});
+$("#endttt").unbind().click(function(){
+  $("#fff").val("2100-01-01 00:00:00");
+  return false;
+});
+
+
+
+
+
+
+
+
+
+
+}//---------bangding()
+
+
+
+$(".shanqywindow").unbind().click(function(){
+  var idname = $(this).attr("val");
+  for(i=0;i<addServiceRightList.length;i++){
+    if($("#addServiceRightList option").eq(i).text()==idname){$("#addServiceRightList option").eq(i).remove();break;}
+  }
+  $("#xzbg").hide();
+});
+
+/**
+  修改服务权益详情添加权益规则
+*/
+$('#editServiceRightCountSaveBtn').unbind().bind('click',function(){
+      var selRightCounts=$("#editServiceRightCountList");
+      var cardTypeId=$("#editServiceCardType").val();
+      var cardTypeName=$("#editServiceCardType option[value='"+cardTypeId+"']").html();
+      var count=$("#editServiceCardCount").val();
+      if ($("#editServiceRightCountList option[cardtypeid="+cardTypeId+"]").length>0) {notiblue("温馨提示","已经有该类型卡被添加");return false;}
+      else if($("#editServiceCardCount").val()==""){notiblue("温馨提示","请填写权益次数");return false;}
+      else{
+      var op="<option count="+count+" cardTypeId="+cardTypeId+">卡类型:"+cardTypeName+"  次数:"+count+"</option>";
+      selRightCounts.append(op);
+      //修改服务权益详情删除权益规则
+      $("#editServiceRightCountList option").unbind().bind('click',function(){
+             $(this).remove();
+      });
+  }//----else
+});
+/**
+修改或添加权益
+*/
+$("#editServiceRightSaveBtn").unbind().bind('click',function(){
+	var gaithis = $(this);
+    //判断添加还是修改,id不为空则为修改
+    var id=$('#editRightId').val();
+    var editRightName=$('#editRightName').val();
+    var editNeedMoney=$('#editNeedMoney').val();
+    var editCardDayTop=$('#editCardDayTop').val();
+    var editCardMonthTop=$('#editCardMonthTop').val();
+    var editCardYearTop=$('#editCardYearTop').val();
+    var editCardDayStoreTop=$('#editCardDayStoreTop').val();
+    var editSelfRule1=$('#editSelfRule1').val();
+    var editSelfRule2='';
+    var rightRules=[];
+    var userreg=/^[0-9]{1,7}([.]{1}[0-9]{1,2})?$/; 
+    
+    if (editRightName=="" || editNeedMoney=="" || editCardDayTop=="" || editCardMonthTop=="" || editCardYearTop=="" || editCardDayStoreTop=="") {notiblue("温馨提示","权益信息未添加完整");return;}
+    else if(!userreg.test(editNeedMoney)) {notiblue("温馨提示","请输入正确的金额(0-9999999.99)");return false;}
+    var oldRight= $("#editServiceRightList option[display="+editRightName+"]");
+    if (oldRight.length>0 && id=="") {
+       notiblue("温馨提示","添加权益名称出现重复");return false;
+    }
+    var oldId=$(oldRight.get(0)).attr('RightID');
+    if(oldRight.length>0&&id!=""&&oldId!=id){
+       notiblue("温馨提示","修改权益名称出现重复");return false;
+    }
+    if($("#editServiceRightCountList option").length==0){notiblue("温馨提示","提交的权益规则至少有一个");return false;}
+    else{
+    $("#editServiceRightCountList option").each(function(idx,obj){
+        var count= $(obj).attr('count');
+        var cardTypeId=$(obj).attr('cardTypeId');
+        var obj={};
+        obj.count=count;
+        obj.typeId=cardTypeId;
+        rightRules.push(obj);
+    });
+     var opAdd='<option value='+editRightName;
+      opAdd+=' RightID="'+id+'" DailyNumPerStore="'+editCardDayStoreTop+'"';
+      opAdd+=' MonthNumTop="'+editCardMonthTop+'" YearNumTop="'+editCardYearTop+'"';
+      opAdd+=' DailyNumTop="'+editCardDayTop+'" Display="'+editRightName+'"';
+      opAdd+=' NeedMoney="'+editNeedMoney+'" SelfRule1="'+editSelfRule1+'"';
+      opAdd+=' SelfRule2="" rightRules='+JSON.stringify(rightRules)+'';
+      opAdd+='>权益名称:'+editRightName+' 需要金额:'+editNeedMoney+'</option>';
+    //修改-删除原来的
+    
+    if(id!=''){
+      $("#editServiceRightList option[RightID="+id+"]").remove();
+    }
+    //添加
+      var rightsSel=$("#editServiceRightList");
+      rightsSel.append(opAdd);
+      gaithis.prev().click();
+    }//------else 
+     
+});
+/**
+修改服务-修改权益
+*/
+$('#editServiceEditRight').unbind().bind('click',function(){
+  
+  var rightsSel=$("#editServiceRightList");
+  var op=$('#editServiceRightList option[value='+rightsSel.val()+']');
+   var id=op.attr('RightID');
+   if(id==''){
+      notired("操作错误","该权益没有存库请删除重新添加!");
+    return;
+   }
+   $('#editRightId').val(id);
+   $('#editRightName').val(op.attr('Display'));
+   $('#editNeedMoney').val(op.attr('NeedMoney'));
+    $('#editCardDayTop').val(op.attr('DailyNumTop'));
+    $('#editCardMonthTop').val(op.attr('MonthNumTop'));
+    $('#editCardYearTop').val(op.attr('YearNumTop'));
+    $('#editCardDayStoreTop').val(op.attr('DailyNumPerStore'));
+   $('#editSelfRule1').val(op.attr('SelfRule1'));
+    debugger;
+    var rightRules= JSON.parse(op.attr('rightRules'));
+   var sel=$('#editServiceRightCountList');
+   sel.html('');
+    for (var i = 0; i < rightRules.length; i++) {
+        var obj=rightRules[i];
+        if(obj.count==''){
+          continue;
+        }
+        //找到typeName
+        var typeName= $("#editServiceCardType option[value="+obj.typeId+"]").html();
+         var op="<option count="+obj.count+" cardTypeId="+obj.typeId+">卡类型:"+typeName+"  次数:"+obj.count+"</option>";
+          sel.append(op);
+         
+    }
+     //修改服务权益详情删除权益规则
+         $("#editServiceRightCountList option").unbind().bind('click',function(){
+             $(this).remove();
+         });
+   
+  $('#editServiceRightWin_a').click();
+});
+
+/**
+修改服务-删除权益
+*/
+$('#editServiceDeleteRight').unbind().bind('click',function(){
+  
+  var rightsSel=$("#editServiceRightList");
+  var op=$('#editServiceRightList option[value='+rightsSel.val()+']');
+  op.remove();
+});
+
+
+
+
+
+
+/**
+ * 修改
+ */
+function xiugai(event,obj){
+    event.preventDefault();
+    var thischeck = $(obj);
+    $("#addWin").hide();
+
+	
+	//设置对应值
+	var  tds= thischeck.parent().parent().children('td');
+	var id =$(tds.get(1)).text(); 
+	var gai1 =$(tds.get(2)).text(); 
+	var gai2 =$(tds.get(3)).text(); 
+	var gai3 =$(tds.get(4)).text(); 
+	var gai4 =$(tds.get(5)).text(); 
+	var gai5 =$(tds.get(6)).text();
+	$("#aaa").val(gai1);
+	$("#bbb").val(gai2);
+  select('ddd',gai3);
+	// $("#ccc").val(gai3);
+	// $("#ddd").val(gai4);
+	$("#eee").val(gai4);
+	$("#fff").val(gai5);
+	//alert(gai1);alert(gai2);alert(gai3);alert(gai4);alert(gai5);alert(gai6);
+	//加载 商户数据 
+	// generalAjax({serviceId:id},"POST","../back/service/findSupplyerIdByServiceId",function(data){
+	// 	
+	// });
+	$.ajax({type: "GET",url: "../back/service/findSupplyerIdByServiceId",data: {"serviceId":id},dataType: "json",
+	  beforeSend:function(){
+	    loading();
+      $("#ccc").html("");
+	  },
+	  success: function(data){
+	    $.each(data.itemList,function(idx,item){
+	    	var gybiaoji = $("#gaitangong li[val="+item.supplyerId+"]");
+			var mingzi = gybiaoji.clone().children().remove().end().text();
+			$("#ccc").append("<p class='label label-info lzl13' val='"+item.supplyerId+"'>"+mingzi+"&nbsp;&nbsp;<i class='icon-remove'></i></p>");
+			$(".lzl13").click(function(){$(this).remove();});
+	    });
+	    noading();
+	  }
+	  
+	}); //--------ajax
+
+
+
+
+
+	//加载权益和规则数据 ../service/findRightAndRightRuleByServiceId
+	generalAjax({serviceId:id},"POST","../back/service/findRightAndRightRuleByServiceId",function(data){
+		// editServiceRightList
+		var rightsSel=$("#editServiceRightList");
+		rightsSel.html('');
+		for ( var idx in data.itemList) {
+			/**
+				DailyNumPerStore: 
+				DailyNumTop: 99999
+				Display: "4小时免费停车"
+				NeedMoney: 600
+				RightID: 11Self
+				Rule1: 1Self
+				Rule2: 
+			*/
+      debugger;
+			var obj=data.itemList[idx];
+			var op='<option value="'+obj.Display+'"';
+			op+=' RightID="'+obj.RightID+'" DailyNumPerStore="'+obj.DailyNumPerStore+'"';
+      op+=' MonthNumTop="'+obj.MonthNumTop+'" YearNumTop="'+obj.YearNumTop+'"';
+			op+=' DailyNumTop="'+obj.DailyNumTop+'" Display="'+obj.Display+'"';
+			op+=' NeedMoney="'+obj.NeedMoney+'" SelfRule1="'+obj.SelfRule1+'"';
+			op+=' rightRules='+JSON.stringify(obj.rightRules)+'';
+      // op+=' gaihebing='+obj.Display+'_'+obj.NeedMoney+'_'+obj.DailyNumTop+'_'+obj.DailyNumPerStore+'_'+obj.SelfRule1+'_'+obj.SelfRule2+'_'++''++''++
+			op+='>权益名称:'+obj.Display+' 需要金额:'+obj.NeedMoney+'</option>';
+			rightsSel.append(op);
+		}
+		
+	});
+	//显示窗口
+	var $wcontent = $("#editWin");
+ 	if(!$wcontent.is(':visible')){
+		showOrHideWin("editWin");
+	}else{
+		showOrHideWin("editWin");
+		showOrHideWin("editWin");
+	}
+	$("#xiugai").unbind().click(function(){
+		
+		  var gaiclick = $(this);
+		  var aaa = kongge($("#aaa").val());
+		  var bbb = kongge($("#bbb").val());
+		  var ccc = "";
+      var cccount = $("#ccc p").length;
+      for(i=0;i<cccount;i++){
+        ccc==""?ccc=$("#ccc p").eq(i).attr("val"):cc += ","+$("#ccc p").eq(i).attr("val");
+      }
+		  var ddd = $("#ddd").val();
+		  var eee = $("#eee").val();
+		  var fff = $("#fff").val();
+		  //var gg = kongge($("#gg").val());
+		 
+		  var rightListstr='';
+		  $("#editServiceRightList option").each(function(idx,obj){
+		  	var op =$(obj);
+		  	var rightStr='';
+		  	var RightID=op.attr('RightID');
+		  	var Display=op.attr('Display');
+		  	var NeedMoney=op.attr('NeedMoney');
+		  	var DailyNumTop=op.attr('DailyNumTop');
+        var MonthNumTop=op.attr('MonthNumTop');
+        var YearNumTop=op.attr('YearNumTop');
+		  	var DailyNumPerStore=op.attr('DailyNumPerStore');
+		  	var SelfRule1=op.attr('SelfRule1');
+		  	rightStr+=RightID+'_'+Display+'_'+NeedMoney+'_'+DailyNumTop+'_'+MonthNumTop+'_'+YearNumTop+'_'+DailyNumPerStore+'_'+SelfRule1+'_';
+		  	var rightRules= JSON.parse(op.attr('rightRules'));
+			for (var i = 0; i < rightRules.length; i++) {
+				var obj= rightRules[i];
+        if(obj.count==''){
+          continue;
+        }
+				rightStr+=obj.typeId+'='+obj.count+'_';
+			}
+			rightStr=rightStr.substr(0,rightStr.length-1);
+			rightListstr+=rightStr+',';
+
+		  });
+		  rightListstr=rightListstr.substr(0,rightListstr.length-1);
+
+		  var youxiang  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		  var shouji = /^1\d{10}$/;
+		  var dianhua =/^0\d{2,3}-?\d{7,8}$/;
+		  
+		  if (aaa=="" || bbb=="" || ddd=="" || eee==""|| fff=="") {notiblue("温馨提示","还有内容没有填写");return false;}
+			else if(ccc==""){notiblue("温馨提示","至少选择一个供应商机构");return false;}
+      else if($("#editServiceRightList option").length==0){notiblue("温馨提示","至少添加一项权益");return false;}
+			else{
+				event.preventDefault();
+				var params={
+				serviceId:id,
+		        serviceName:aaa,
+		        typeId:ddd,
+		        serviceProvision:bbb,
+		        startDate:eee,
+		        endDate:fff,
+		        supplyerIds:ccc,
+		        rightList:rightListstr, 
+				};
+				generalAjax(params,"POST","../back/service/edit",function(){
+					//"修改成功"
+					 notigreen("修改成功","您成功的修改了一个服务");
+					 gaiclick.next().click();
+					 tiaozhuanPage(currentPage,20,"GET","../back/service/find");
+					 $("#editWin").hide(100);
+				});
+			}	
+			});
+
+$(".gaiguanqing").unbind().click(function(){
+	$("#editRightId").val("");
+	$("#editRightName").val("");
+	$("#editNeedMoney").val("");
+	$("#editCardDayTop").val("");
+	$("#editCardDayStoreTop").val("");
+	$("#editServiceCardCount").val("");
+	$("#editServiceRightCountList").html("");
+});
+
+
+}//********** xiugai
+
+
+
+
+
+
+
+function genduo(event,obj){//--------详情--查询具体权益
+
+event.preventDefault();
+var thischeck = $(obj);
+var  tds= thischeck.parent().parent().children('td');
+var id =$(tds.get(1)).text();
+$("#genduotable").html("");
+//alert(id);
+$.ajax({
+  type: "GET",
+  url: "../back/service/findRightAndRightRuleByServiceId",
+  data: {"serviceId":id},
+  dataType: "json",
+  beforeSend:function(){
+    loading();
+  },
+  success: function(data){
+
+    $.each(data.itemList,function(idx,item){
+        var content = "<tbody style=''>";
+        content += "<tr><td>权益名称</td><td>"+item.Display+"</td></tr>";
+        content += "<tr><td>每卡每天上限</td><td>"+item.DailyNumTop+"次</td></tr>";
+        content += "<tr><td>每卡每月上限</td><td>"+item.MonthNumTop+"次</td></tr>";
+        content += "<tr><td>每卡每年上限</td><td>"+item.YearNumTop+"次</td></tr>";
+        content += "<tr><td>每卡每天店铺上限</td><td>"+item.DailyNumPerStore+"次</td></tr>";
+        content += "<tr><td>需消费金额</td><td>"+item.NeedMoney+"元</td></tr>";
+
+        if(item.SelfRule1==2){
+            content += "<tr><td>规则1</td><td>每次都收费</td></tr>";
+        }else if(item.SelfRule1==1){
+            content += "<tr><td>规则1</td><td>只首次收费</td></tr>";
+        }else if(item.SelfRule1==3){
+            content += "<tr><td>规则1</td><td>不收费</td></tr>";
+        }else{
+            content += "<tr><td>规则1</td><td>获取数据出错</td></tr>";
+        }
+        $.each(item.rightRules,function(idx1,item1){
+          content +="<tr>";
+          content +="<td>卡类型："+item1.typeName+"</td>";
+          content +="<td>数量："+item1.count+" &nbsp;&nbsp; 当前状态："+item1.state+"</td>";
+          content +="</tr>";
+        });
+
+
+        content += "</tbody>";
+        $("#genduotable").append(content);
+        $("#genduotable").append("<br /><br />");
+        
+    });
+    noading();
+  }
+  
+}); //--------ajax
+
+}//--------详情--查询具体权益
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * 删除
+ */
+
+function shanchu(event,obj){
+	var thisclick = $(obj);
+	var  tds= thisclick.parent().parent().children('td');
+	
+	var id =$(tds.get(1)).text(); 
+    $('.cd-popup').addClass('is-visible');
+	$(".cd-buttons a:eq(0)").unbind().click(function(){
+		//thisclick.parent().parent().remove();
+		var param={ids:parseInt(id)};
+		
+		generalAjax(param,"GET","../back/service/delete",function(){
+			//删除成功-关闭窗口 更新数据
+			 notigreen("删除成功","您成功的删除了一个服务");
+			$('.cd-popup').removeClass('is-visible');
+			tiaozhuanPage(currentPage,20,"GET","../back/service/find");
+      $("#addWin").hide();$("#editWin").hide();
+		});
+    });
+	/**
+	窗口其他监听
+	*/
+	$('.cd-buttons a:eq(1)').on('click', function(event){
+	        event.preventDefault();
+	        $('.cd-popup').removeClass('is-visible');
+	});
+	//close popup
+    $('.cd-popup').on('click', function(event){
+        if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+            event.preventDefault();
+            $(this).removeClass('is-visible');
+        }
+    });
+    //close popup when clicking the esc keyboard button
+    $(document).keyup(function(event){
+        if(event.which=='27'){
+            $('.cd-popup').removeClass('is-visible');
+        }
+    });
+}
+
+/**
+ * 查询
+ */
+$("#xxsearch").unbind().bind('click',function(){
+  //加入条件
+  
+  var xid=$("#aaaa").val();
+  var xname=$("#bbbb").val();
+  searchParams= {
+    typeId: xid,
+    serviceName: xname,
+  };
+  tiaozhuanPage(1,20,"GET","../back/service/find");
+  return false;
+}); 
+//默认无条件查询第一页
+var searchParams= {
+  typeId:"",
+  serviceName:"",
+};
+tiaozhuanPage(1,20,"GET","../back/service/find");
+
+//更新table数据
+function updateData(list){
+	for(var i=0;i<list.length;i++){
+		var obj=list[i];
+
+		var tr= '<tr>'+
+	   			 '<td><input class="zigouxuan" type="checkbox" name="" val="" /></td>'+
+           '<td style="display:none;">'+obj.serviceId+'</td>'+
+			     '<td>'+obj.serviceName+'</td>'+
+			     '<td>'+obj.serviceProvision+'</td>'+
+           '<td val="'+obj.typeId+'">'+obj.typeName+'</td>'+
+			     '<td>'+obj.startDate+'</td>'+
+			     '<td>'+obj.endDate+'</td>'+
+			    '<td style="width: 100px;"><a href="#myModal" class="btn btn-xs btn-info genduo" data-toggle="modal"><i class="icon-zoom-in"></i> </a>'+
+          '<button style="display:none" class="btn btn-xs btn-warning xiugai"><i class="icon-pencil"></i> </button>'+
+			    '<button style="display:none" class="btn btn-xs btn-danger shanchu"><i class="icon-remove"></i> </button>'+
+			   '  </td>'+
+			  ' </tr>';
+		$("#tableData").append(tr);
+    complete();
+	}
+	//隐藏不需的功能（增加、删除、修改、审核）
+  //addWinBtn deleteBatch auditBatch shenhe xiugai shanchu
+  generalAjax({menuName:'服务信息管理'},"GET","../back/user/findPermissionsForMenuName_ro",function(data){
+    //隐藏功能按钮
+    for ( var idx in data.itemList) {
+      var pName=data.itemList[idx]['PName'];
+      var pbtn=[];
+      if(pName=='添加服务信息'){
+        pbtn.push($('#addWinBtn'));
+      }else
+      if(pName=='修改服务信息'){
+        pbtn.push($('.xiugai'));
+      }else
+      if(pName=='删除服务信息'){
+        pbtn.push($('#deleteBatch'));
+        pbtn.push($('.shanchu'));
+      }
+      
+      if(pbtn.length!=0){
+        for ( var idx in pbtn) {
+          pbtn[idx].css('display','');
+        }
+      }
+    }
+  });
+	//设置每行数据的操作监听
+	$(".shenhe").unbind().bind('click',function(event){
+		
+		shenhe(event,this);
+	});
+	$(".xiugai").unbind().bind('click',function(event){
+		
+		xiugai(event,this);
+	});
+  $(".genduo").unbind().bind('click',function(event){
+    
+    genduo(event,this);
+  });
+	$(".shanchu").unbind().bind('click',function(event){
+		
+		shanchu(event,this);
+	});
+}
+
+
+
+
+
+
+$(".allshanchu").unbind().click(function(){
+
+var geshu = $("#tableData input:checked").length;
+
+var idall = "";
+for(i=0;i<geshu;i++){
+idall += $("#tableData input:checked").eq(i).parent().next().text()+",";
+}
+var chuliidall = idall.substring(0,idall.length-1);
+//alert(chuliidall);
+
+
+  $('.cd-popup').addClass('is-visible');
+  $(".cd-buttons a:eq(0)").unbind().click(function(){
+    //thisclick.parent().parent().remove();
+    var param={ids:chuliidall};
+    generalAjax(param,"POST","../back/service/delete",function(){
+      //删除成功-关闭窗口 更新数据
+      $('.cd-popup').removeClass('is-visible');
+      tiaozhuanPage(currentPage,20,"GET","../back/service/find");
+      $("#addWin").hide();$("#editWin").hide();
+    });
+    });
+  /**
+  窗口其他监听
+  */
+  $('.cd-buttons a:eq(1)').on('click', function(event){
+          event.preventDefault();
+          $('.cd-popup').removeClass('is-visible');
+  });
+  //close popup
+    $('.cd-popup').on('click', function(event){
+        if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+            event.preventDefault();
+            $(this).removeClass('is-visible');
+        }
+    });
+    //close popup when clicking the esc keyboard button
+    $(document).keyup(function(event){
+        if(event.which=='27'){
+            $('.cd-popup').removeClass('is-visible');
+        }
+    });
+//alert($("#tableData input:checked").eq(0).parent().next().text());
+return false;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function complete(){
+
+
+
+
+
+$(".fugouxuan").change(function() {
+
+var thisxuan = $(this);
+if (thisxuan.is(':checked')) {
+    $(".zigouxuan").prop("checked",true);
+    thisxuan.parent().parent().parent().parent().children("tbody").children("tr").addClass("warning").addClass("checkgouxuan");;
+}
+else{
+    $(".zigouxuan").prop("checked",false);
+    thisxuan.parent().parent().parent().parent().children("tbody").children("tr").removeClass("warning checkgouxuan");
+}
+
+$(".checkgouxuan").length > 0?$(".allshanchu").removeClass("disabled"):$(".allshanchu").addClass("disabled");
+});
+
+
+$(".zigouxuan").change(function() {
+
+var thisxuan = $(this);
+if (thisxuan.is(':checked')) {
+   thisxuan.parent().parent().addClass("warning").addClass("checkgouxuan");
+}
+else{
+    thisxuan.parent().parent().removeClass("warning checkgouxuan");
+}
+
+$(".checkgouxuan").length > 0?$(".allshanchu").removeClass("disabled"):$(".allshanchu").addClass("disabled");
+});
+
+
+
+
+
+
+
+
+
+
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/*通讯录设置样式修改*/
+#departmentTree #_easyui_tree_1{
+	height:40px;
+	line-height:40px;
+	background-color:#daeef5;
+}
+.tree-node-selected{
+	color:#000;
+}
+#_easyui_tree_1 span{
+	vertical-align:middle;
+}
+#departmentTree{
+	width:100% !important;
+	margin:0 !important;
+}
+.addressBookSave{
+	margin:20px;
+}
+
+/*联系人管理的tabs切换样式修改*/
+#tt li a.tabs-inner{
+	width:100px;
+}
+/*登录页面登录按钮背景设置*/
+#login.l-btn{
+	background: linear-gradient(to bottom, #1a7bc9 0px, #1a7bc9 100%) repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #1a7bc9;
+}
+#login.l-btn:HOVER{
+	background: #0b7daf;
+    border: 1px solid #0b7daf;
+}
+textarea {
+	resize:none;
+}
+/*弹出框拖动bug*/
+.window-shadow {
+	display: none !important;
+}
+
+
+
+
+
+
+
+
+

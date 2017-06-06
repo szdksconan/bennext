@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- Title and other stuffs -->
+  <title>贵州银联权益平台</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+  <!-- Stylesheets -->
+  <link href="style/bootstrap.css" rel="stylesheet">
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="style/font-awesome.css"> 
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="style/jquery-ui.css"> 
+  <!-- Calendar -->
+  <link rel="stylesheet" href="style/fullcalendar.css">
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="style/prettyPhoto.css">  
+  <!-- Star rating -->
+  <link rel="stylesheet" href="style/rateit.css">
+  <!-- Date picker -->
+  <link rel="stylesheet" href="style/jquery.datetimepicker.css">
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="style/jquery.cleditor.css"> 
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="style/bootstrap-switch.css">
+  <!-- Main stylesheet -->
+  <link href="style/style.css" rel="stylesheet">
+  <!-- Widgets stylesheet -->
+  <link href="style/widgets.css" rel="stylesheet">     
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon/favicon.png">
+<link href="style/lzl.css" rel="stylesheet">
+</head>
+
+<body onload="noading()">
+
+
+<div class="lzloader">
+<div class="progress progress-striped active"><div class="progress-bar progress-bar-default"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div>
+</div>
+
+
+<!-- Header starts -->
+  <header class="lzlheader">
+    <div></div>
+  </header>
+
+<!-- Header ends -->
+
+<!-- Main content starts -->
+
+<div class="content">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-zi"><a href="">后台管理系统</a></div>
+        <ul id="nav">
+          <li style="display:none" menuName='平台管理维护'><a href="3110.html">平台管理维护</a></li>
+          <li style="display:none" menuName='营运方管理'><a href="3120.html">营运方管理</a></li> 
+          <li style="display:none" menuName='持卡人管理'><a href="3130.html" class="open">持卡人管理</a></li>
+          <li style="display:none" menuName='数据统计管理'><a href="3150.html">数据统计管理</a></li>
+        </ul>
+    </div>
+
+    <!-- Sidebar ends -->
+
+  	<!-- Main bar -->
+  	<div class="mainbar">
+      
+	    <!-- Page heading -->
+	    <div class="page-head">
+        <!-- Page heading -->
+	      <h2 class="pull-left">权益信息查询
+        </h2>
+
+
+        <!-- Breadcrumb -->
+        <div class="bread-crumb pull-right">
+          <a href="index.html"><i class="icon-home"></i> 主页</a> 
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="3130.html" class="bread-current">持卡人管理</a>
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="3136.html" class="bread-current">权益信息查询</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+	    </div>
+	    <!-- Page heading ends -->
+
+
+
+	    <!-- Matter -->
+
+	    <div class="matter">
+        <div class="container">
+
+          <div class="row" id="bodynav">
+            <div id='twoMenus' class="col-md-12" style="text-align:center">
+              <a href="3131.html" style="display:none" menuName='持卡人信息管理' class="btn btn-info">持卡人信息管理</a>
+              <a href="3136.html" style="display:none" menuName='权益信息查询' class="btn btn-info"><i class="icon-magic"></i> 权益信息查询</a>
+            </div>
+          </div> 
+
+          <div class="row">
+
+            <div class="col-md-12">
+
+
+
+
+
+            <!-- 查询条件 --> 
+        <div class="widget">
+            <div class="widget-head">
+              <div class="pull-left"></div>
+              
+              <div class="clearfix"></div>
+            </div>
+             <div class="widget-content">
+               <div class="padd">
+                 <form class="form-horizontal" role="form">
+               <div class="form-group">
+                    <label class="col-lg-4 control-label" style="margin-top:10px;">用户名</label>
+                    <div class="col-lg-2" style="margin-top:10px;">
+                      <input type="text" class="form-control" id="aaaa" placeholder="输入用户名" maxlength="16" />
+                    </div>
+                    
+
+                    <label class="col-lg-4 control-label" style="margin-top:10px;">银行名称</label>
+                    <div class="col-lg-2" style="margin-top:10px;">
+                      <input type="text" class="form-control" id="bbbb" placeholder="输入银行名称" maxlength="16" />
+                    </div>
+
+                    <label class="col-lg-4 control-label" style="margin-top:10px;">卡名称</label>
+                    <div class="col-lg-2" style="margin-top:10px;">
+                      <select class="form-control" id="cccc">
+                        <option value=''>所有卡名称</option>
+                      </select>
+                    </div>
+
+                    <label class="col-lg-4 control-label" style="margin-top:10px;">卡号</label>
+                    <div class="col-lg-2" style="margin-top:10px;">
+                      <input type="text" class="form-control" id="dddd" placeholder="输入卡号" maxlength="16" />
+                    </div>
+
+                    <!-- <label class="col-lg-4 control-label" style="margin-top:10px;">供应商名称</label>
+                    <div class="col-lg-2" style="margin-top:10px;">
+                      <input type="text" class="form-control" id="eeee" placeholder="供应商名称" maxlength="16" />
+                    </div> -->
+
+                    <label class="col-lg-4 control-label" style="margin-top:10px;">权益名称</label>
+                    <div class="col-lg-2" style="margin-top:10px;">
+                      <input type="text" class="form-control" id="ffff" placeholder="权益名称" maxlength="16" />
+                    </div>
+
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-12" style="text-align:center;">
+                      <a href="#" class="btn btn-primary" id="xxsearch"><i class="icon-search"></i> 根据选择的条件查询</a>
+                    </div>
+                  </div>
+                  </form>
+                 </div>
+               </div>
+                  
+
+        </div>
+
+
+
+           
+            <div class="widget">
+
+                <div class="widget-head">
+                  <div class="pull-left">权益信息查询</div>
+                  <div class="clearfix"></div>
+                </div>
+
+                  <div class="widget-content">
+
+                    <table class="table table-striped table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th>用户名</th>
+                          <th>权益名称</th>
+                          <th>卡类型</th>
+                          <th>银行</th>
+                          <th>银行卡号</th>
+                          <th>剩余数量</th>
+                          <th>详情</th>
+                        </tr>
+                      </thead>
+                      <tbody id='tableData'>                                                
+
+                      </tbody>
+                    </table>
+
+                    <div class="widget-foot">
+
+                     
+                        <ul class="pager">
+                          <li class="previous"><a href="" id="qianBtn"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+                          <li id="currentPage">加载中</li>
+                          <li id="countPage">加载中</li>
+                          <li><input class="form-control" style="width:80px;display:inline;" placeholder="第几页" type="text" id="tiaozhuanPage" name="numonly"></li>
+                          <li><button class="btn btn-success" href="" id="tiaozhuanBtn">跳转</button></li>
+                          <li class="next"><a href="" id="houBtn">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                        </ul>
+                     
+                      <div class="clearfix"></div> 
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+            </div>
+
+          </div>
+
+        </div>
+		  </div>
+
+		<!-- Matter ends -->
+
+    </div>
+
+   <!-- Mainbar ends -->	    	
+   <div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span> 
+
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog" style="width:960px">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title">权益数据详情</h4>
+    </div>
+    <div class="modal-body" id="genduobody">
+    <table class="table table-striped table-bordered table-hover" id="genduotable"></table>
+ 
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭窗口</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="ziye-tishixx">
+
+<div class="notification notigreen">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-ok-sign"></i><h1></h1><p></p></div>
+</div>
+
+<div class="notification notired">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-remove-sign"></i><h1></h1><p></p></div>
+</div>
+
+<div class="notification notiblue">
+<div class="notiicon"></div>
+<div class="notiinfo"><i class="icon-exclamation-sign"></i><h1></h1><p></p></div>
+</div>
+
+</div>
+
+<div class="suo"></div>
+<div class="geren"></div><div class="gerenyin"></div>
+<!-- JS -->
+<script src="js/jquery.js"></script> <!-- jQuery -->
+<script src="js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script> <!-- jQuery UI -->
+<script src="js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+
+<!-- jQuery Flot -->
+<script src="js/excanvas.min.js"></script>
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.flot.resize.js"></script>
+<script src="js/jquery.flot.pie.js"></script>
+<script src="js/jquery.flot.stack.js"></script>
+
+<!-- jQuery Notification - Noty -->
+<script src="js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="js/themes/default.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<script src="js/sparklines.js"></script> <!-- Sparklines -->
+<script src="js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="js/jquery.datetimepicker.js"></script> <!-- Date picker -->
+<script src="js/bootstrap-switch.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="js/filter.js"></script> <!-- Filter for support page -->
+<script src="js/custom.js"></script> <!-- Custom codes -->
+<script src="js/charts.js"></script> <!-- Charts & Graphs -->
+
+<script src="js/fun.js"></script>
+<script type="text/javascript">
+
+//根据用户菜单隐藏
+generalAjax('',"GET","../back/user/findMenus_ro",function(data){
+  //隐藏一级菜单
+  for ( var key in data.itemList[0]) {
+    $('#nav li[menuName="'+key+'"]').css('display','');
+  }
+  debugger;
+  //隐藏二级菜单
+  var twoMenus=data.itemList[0]['持卡人管理'];
+  for ( var idx in twoMenus) {
+    $('#twoMenus a[menuName="'+twoMenus[idx]+'"]').css('display','');
+  }
+  
+});
+
+
+loadSelectList("cccc","../back/service/findCardTypeIdName",'',"GET",{id:"CardTypeID",name:"Description"},true);
+
+/**
+ * 查询
+ */
+$("#xxsearch").unbind().bind('click',function(){
+  //加入条件
+  debugger;
+  var x1=$("#aaaa").val();
+  var x2=$("#bbbb").val();
+  var x3=$("#cccc").val();
+  var x4=$("#dddd").val();
+  var x6=$("#ffff").val();
+  searchParams= {
+    UName: x1,
+    BankName: x2,
+    CardTypeId: x3,
+    CardNum: x4,
+    RightName: x6,
+  };
+  tiaozhuanPage(1,20,"GET","../back/user/findCardRight");
+  return false;
+}); 
+//默认无条件查询第一页
+var searchParams= {
+  UName:"",
+  BankName:"",
+  CardTypeId:"",
+  CardNum:"",
+  RightName:"",
+};
+tiaozhuanPage(1,20,"GET","../back/user/findCardRight");
+
+//更新table数据
+function updateData(list){
+  for(var i=0;i<list.length;i++){
+    var obj=list[i];
+
+    var tr= '<tr>'+
+           '<td>'+obj.UName+'</td>'+
+           //'<td>'+obj.SupplyerName+'</td>'+
+           '<td>'+obj.RightName+'</td>'+
+           '<td>'+obj.CardName+'</td>'+
+           '<td>'+obj.BankName+'</td>'+
+           //'<td style="display:none;">'+obj.Contact+'</td>'+
+           //'<td style="display:none;">'+obj.Address+'</td>'+
+           '<td style="display:none;">'+obj.startDate+'</td>'+
+           '<td style="display:none;">'+obj.endDate+'</td>'+
+           // '<td style="display:none;">'+obj.Longitude+'</td>'+
+           // '<td style="display:none;">'+obj.Latitude+'</td>'+
+           '<td style="display:none;">'+obj.NeedMoney+'</td>'+
+           '<td style="">'+obj.CardNum+'</td>'+
+           '<td>'+obj.Count+'</td>'+
+           '<td style="display:none;">'+obj.serviceId+'</td>'+
+           '<td style="width: 50px;"><a href="#myModal" class="btn btn-xs btn-info genduo" data-toggle="modal"><i class="icon-zoom-in"></i> </a>'+
+         '  </td>'+
+        ' </tr>';
+    $("#tableData").append(tr);
+  }
+  debugger;
+  //设置每行数据的操作监听
+  $(".genduo").unbind().bind('click',function(event){
+    debugger;
+    genduo(event,this);
+  });
+ // genduo();
+}
+
+
+
+
+
+function genduo(event,obj){
+
+  event.preventDefault();
+  var thischeck = $(obj);
+  var  tds = thischeck.parent().parent().children('td');
+  var gen0 =$(tds.get(0)).text(); 
+  var gen1 =$(tds.get(1)).text(); 
+  var gen2 =$(tds.get(2)).text(); 
+  var gen3 =$(tds.get(3)).text(); 
+  var gen4 =$(tds.get(4)).text(); 
+  var gen5 =$(tds.get(5)).text();
+  var gen6 =$(tds.get(6)).text(); 
+  var gen7 =$(tds.get(7)).text();
+  var gen8 =$(tds.get(8)).text();
+  var gen9 =$(tds.get(9)).text();
+
+  $("#genduotable").html("");
+  $("#shanghutb").remove();
+
+  var content = "<tbody style=''>";
+  content += "<tr><td>用户名称</td><td>"+gen0+"</td></tr>";
+  content += "<tr><td>权益名称</td><td>"+gen1+"</td></tr>";
+  content += "<tr><td>卡类型</td><td>"+gen2+"</td></tr>";
+  content += "<tr><td>银行</td><td>"+gen3+"</td></tr>";
+  content += "<tr><td>开始时间</td><td>"+gen4+"</td></tr>";
+  content += "<tr><td>结束时间</td><td>"+gen5+"</td></tr>";
+  content += "<tr><td>需消费金额</td><td>"+gen6+"</td></tr>";
+  content += "<tr><td>银行卡号</td><td>"+gen7+"</td></tr>";
+  content += "<tr><td>数量</td><td>"+gen8+"</td></tr>";
+
+
+  content += "</tbody>";
+  $("#genduotable").append(content);
+
+  $.ajax({type:"GET",url:"../back/user/findServiceSupplyerList",
+    async:false,
+    data:{"serviceId":gen9},
+    complete:function(XMLHttpRequest, textStatus){
+        eval("var data="+XMLHttpRequest.responseText);
+        if(data.isSuccess){
+          //if ($("#shanghutb").length == 0) {
+            var contentwai ='<div id="shanghutb" class="row"><div class="col-md-12"><hr>';
+            contentwai += '<table class="table table-striped table-hover table-bordered"><thead><tr><th>商户标识</th><th>营业时间</th><th>联系方式</th><th>地址</th><th>经度</th><th>纬度</th></tr>';
+            contentwai +='<tbody id="shanghutbody"></tbody></table></div></div>';
+            $("#genduobody").append(contentwai);
+          //}
+          
+          $.each(data.itemList,function(idx,item){
+            var contentnei = '<tr>';
+            contentnei += '<td>'+item.supplyerName+'</td>';
+            contentnei += '<td>'+item.trafficDate+'</td>';
+            contentnei += '<td>'+item.contact+'</td>';
+            contentnei += '<td>'+item.address+'</td>';
+            contentnei += '<td>'+item.longitude+'</td>';
+            contentnei += '<td>'+item.latitude+'</td>';
+            contentnei += '</tr>';
+            $("#shanghutbody").append(contentnei);
+
+          });
+
+                        
+        }
+        else{
+          notired("",data.message);
+        }
+  
+    }});
+
+
+
+
+
+
+}
+
+
+</script>
+</body>
+</html>
